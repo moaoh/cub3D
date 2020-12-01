@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_info.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: junmkang <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 19:29:23 by junmkang          #+#    #+#             */
-/*   Updated: 2020/11/30 20:22:06 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/12/01 19:37:54 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,9 @@
 
 #	define	_ERROR	-1
 
-typedef struct		s_cub_info
-{
-	int				r;
-	int				no;
-	int				so;
-	int				we;
-	int				ea;
-	int				s;
-	int				f;
-	int				c;
-}					t_cub_info;
+int			ft_map_resolution(char *line, t_map *map);
+int			ft_map_texure(char *line, t_map *map);
+int			ft_map_sprite(char *line, t_map *map);
+int			ft_map_color(char *line, t_map *map);
 
 #	endif

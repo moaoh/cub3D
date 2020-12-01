@@ -8,7 +8,7 @@ int     main(int argc, char **argv)
     fd = open("test.cub", O_RDONLY);
     while (get_next_line(fd, &line) > 0)
     {
-		ft_map_info(line);
+        printf("%s\n", line);
         free(line);
     }
     printf("%s\n", line);

@@ -6,11 +6,11 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/30 18:30:48 by junmkang          #+#    #+#             */
-/*   Updated: 2020/10/14 00:11:23 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/12/01 20:05:12 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "utils.h"
 
 int		ft_strncmp(const char *str1, const char *str2, size_t n)
 {
