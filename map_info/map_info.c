@@ -6,12 +6,13 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 18:37:00 by junmkang          #+#    #+#             */
-/*   Updated: 2020/12/02 21:01:51 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/12/02 21:56:10 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "map_info.h"
 
+// 길이를 잡는 조건도 추가를 해서 반례를 잡아줘야함
 static int		ft_map_chk(char	*line, t_map *map)
 {
 	// Resolution (해상도)

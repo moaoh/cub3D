@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 19:25:39 by junmkang          #+#    #+#             */
-/*   Updated: 2020/12/02 21:22:29 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/12/02 21:55:51 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ static int	ft_texure_chk(char *str)
 	return (_RIGHT);
 }
 
+// 길이를 잡는 조건도 추가를 해서 반례를 잡아줘야함
 static int	ft_texure(char *s1, char *s2, t_map *map)
 {
 	if (!ft_strncmp(s1, "NO", 2) && ft_texure_chk(s2))
