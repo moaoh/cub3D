@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/30 18:30:48 by junmkang          #+#    #+#             */
-/*   Updated: 2020/12/01 20:05:12 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/12/02 14:16:01 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,5 @@ int		ft_strncmp(const char *str1, const char *str2, size_t n)
 	}
 	if (st1[i] != st2[i] && i != n)
 		return (st1[i] - st2[i]);
-	return (0);
+	return (1);
 }

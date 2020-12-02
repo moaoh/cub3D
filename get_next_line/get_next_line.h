@@ -6,15 +6,14 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/21 12:46:26 by junmkang          #+#    #+#             */
-/*   Updated: 2020/11/30 19:06:43 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/12/02 16:39:12 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #	ifndef GET_NEXT_LINE_H
 #	define GET_NEXT_LINE_H
 
-#	include <stdlib.h>
-#	include <limits.h>
+#	include "../cub3d.h"
 #	include <unistd.h>
 
 #	define _ERROR	-1

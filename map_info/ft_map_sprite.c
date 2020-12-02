@@ -6,10 +6,14 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 19:26:31 by junmkang          #+#    #+#             */
-/*   Updated: 2020/12/01 20:06:37 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/12/02 18:40:32 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "map_info.h"
 
-int		ft_map_sprite(char *line, t_map *map);
+// strcpy()
+int		ft_map_sprite(char *line, t_map *map)
+{
+	return (0);
+}

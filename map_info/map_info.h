@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 19:29:23 by junmkang          #+#    #+#             */
-/*   Updated: 2020/12/01 19:37:54 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/12/02 17:08:17 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,8 @@
 #	define	MAP_INFO_H
 
 #	include "../cub3d.h"
-#	include <unistd.h>
 
-#	define	_ERROR	-1
+int			ft_map_info(char *line, t_map *map);
 
 int			ft_map_resolution(char *line, t_map *map);
 int			ft_map_texure(char *line, t_map *map);
