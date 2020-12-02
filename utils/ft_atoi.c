@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/30 18:38:02 by junmkang          #+#    #+#             */
-/*   Updated: 2020/12/02 14:30:46 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/12/02 20:01:33 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ int		ft_atoi(const char *str)
 
 	num = 1;
 	i = 0;
+	if (!str)
+		return (_WRONG);
 	while (str[i] && (str[i] == 32 || (9 <= str[i] && str[i] <= 13)))
 		i++;
 	if (str[i] == '-' || str[i] == '+')

@@ -6,10 +6,13 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 19:38:55 by junmkang          #+#    #+#             */
-/*   Updated: 2020/12/02 18:41:01 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/12/02 18:43:06 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "map_info.h"
 
-int				ft_map(char *line, t_map map);
+int				ft_map(char *line, t_map map)
+{
+	return (0);
+}

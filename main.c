@@ -16,7 +16,8 @@ int     main(int argc, char **argv)
     }
     printf("%s\n", line);
     free(line);
-    printf("x = %d, y = %d", map.resolution.R_X, map.resolution.R_Y);
+    // printf("x = %d, y = %d", map.resolution.R_X, map.resolution.R_Y);
+    printf("R = %d, G = %d, B = %d", map.f_color.R, map.f_color.G, map.f_color.B);
 
     return (0);
 }
