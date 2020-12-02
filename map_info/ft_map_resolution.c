@@ -6,13 +6,13 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 19:26:50 by junmkang          #+#    #+#             */
-/*   Updated: 2020/12/02 20:23:04 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/12/02 20:54:16 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "map_info.h"
 
-static int			ft_map_chk(char *str)
+static int			ft_resolution_chk(char *str)
 {
 	int		i;
 
@@ -31,10 +31,10 @@ int					ft_map_resolution(char *line, t_map *map)
 	char		**str;
 
 	str = ft_split(line, ' ');
-	if (!(map->resolution.R_X = ft_map_chk(str[1])) || \
-		!(map->resolution.R_Y = ft_map_chk(str[2])))
+	if (!(ft_resolution_chk(str[1])) || \
+		!(ft_resolution_chk(str[2])))
 	{
-		perror("Invalid R_X value.");
+		perror("Invalid resolution value.");
 		exit(0);
 	}
 	else

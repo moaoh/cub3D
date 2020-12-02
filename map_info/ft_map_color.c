@@ -6,13 +6,13 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 19:29:03 by junmkang          #+#    #+#             */
-/*   Updated: 2020/12/02 20:22:55 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/12/02 20:53:52 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "map_info.h"
 
-static char			*ft_map_chk(char *str)
+static char			*ft_color_chk(char *str)
 {
 	int		i;
 
@@ -28,9 +28,9 @@ static char			*ft_map_chk(char *str)
 
 static int			ft_map_inc(char **num, t_map *map)
 {
-	if (!(ft_map_chk(num[0])) || \
-		!(ft_map_chk(num[1])) || \
-		!(ft_map_chk(num[2])))
+	if (!(ft_color_chk(num[0])) || \
+		!(ft_color_chk(num[1])) || \
+		!(ft_color_chk(num[2])))
 	{
 		perror("Invalid color value.");
 		exit(0);
@@ -47,9 +47,9 @@ static int			ft_map_inc(char **num, t_map *map)
 
 static int			ft_map_inf(char **num, t_map *map)
 {
-	if (!(ft_map_chk(num[0])) || \
-		!(ft_map_chk(num[1])) || \
-		!(ft_map_chk(num[2])))
+	if (!(ft_color_chk(num[0])) || \
+		!(ft_color_chk(num[1])) || \
+		!(ft_color_chk(num[2])))
 	{
 		perror("Invalid color value.");
 		exit(0);

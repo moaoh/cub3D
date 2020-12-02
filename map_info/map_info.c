@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 18:37:00 by junmkang          #+#    #+#             */
-/*   Updated: 2020/12/02 19:57:42 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/12/02 21:01:51 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ static int		ft_map_chk(char	*line, t_map *map)
 		ft_map_color(line, map);
 	else if (!ft_strncmp(line, "C ", 2))
 		ft_map_color(line, map);
+	// map 은 마지막에 와야함
 	// map
 	// else
 		// ft_map(line, map);
