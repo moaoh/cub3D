@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 19:26:50 by junmkang          #+#    #+#             */
-/*   Updated: 2020/12/02 20:54:16 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/12/03 15:08:26 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,15 +26,20 @@ static int			ft_resolution_chk(char *str)
 	return (1);
 }
 
-int					ft_map_resolution(char *line, t_map *map)
+int					ft_map_resolution(char *line, t_map *map, int cub_chk)
 {
 	char		**str;
 
 	str = ft_split(line, ' ');
+	if (cub_chk != 1 || ft_strlen(str[0]) != 1 || str[3] != '\0')
+	{
+		perror("Invalid resolution value.");
+		exit(0);
+	}
 	if (!(ft_resolution_chk(str[1])) || \
 		!(ft_resolution_chk(str[2])))
 	{
-		perror("Invalid resolution value.");
+		perror("Invalid resolution value.2");
 		exit(0);
 	}
 	else
