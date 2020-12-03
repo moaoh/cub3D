@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 18:47:35 by junmkang          #+#    #+#             */
-/*   Updated: 2020/12/02 16:59:52 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/12/03 19:18:34 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,5 +63,11 @@ typedef struct				s_cub_info
 	int						f;
 	int						c;
 }							t_cub_info;
+
+typedef struct				s_list
+{
+	void					*content;
+	struct s_list			*next;
+}							t_list;
 
 #	endif

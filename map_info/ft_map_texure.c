@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 19:25:39 by junmkang          #+#    #+#             */
-/*   Updated: 2020/12/03 15:05:13 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/12/03 18:19:06 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int				ft_map_texure(char *line, t_map *map, int cub_chk)
 
 	if (cub_chk != 1)
 	{
-		perror("Invalid texure value.");
+		perror("duplicate texure value.");
 		exit(0);
 	}
 	str = ft_split(line, ' ');

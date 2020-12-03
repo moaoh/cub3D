@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_map.c                                           :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/01 19:38:55 by junmkang          #+#    #+#             */
-/*   Updated: 2020/12/03 21:18:46 by junmkang         ###   ########.fr       */
+/*   Created: 2020/10/08 21:49:26 by junmkang          #+#    #+#             */
+/*   Updated: 2020/12/03 20:02:20 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "map_info.h"
+#include "utils.h"
 
-// 탭인경우 4칸
-int				ft_map(char *line, t_map *map, t_list *lst)
+t_list			*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	char	**get_map_info;
-	int		count;
-	t_list	*new;
+	t_list		*new_lst;
+	t_list		*new_value;
 
-	new = ft_lstnew(line);
-	ft_lstadd_back(&lst, new);
-
-/*
+	new_lst = NULL;
+	if (!lst)
+		return (NULL);
 	while (lst)
 	{
-		printf("%d %s\n",ft_lstsize(lst); lst->content);
+		if (!(new_value = ft_lstnew((*f)(lst->content))))
+		{
+			ft_lstclear(&new_lst, del);
+			return (0);
+		}
+		ft_lstadd_back(&new_lst, new_value);
 		lst = lst->next;
 	}
-*/
-	// *get_map_info = (char *)malloc(sizeof(char) * ft_strlen(line));
-
-	return (0);
+	return (new_lst);
 }

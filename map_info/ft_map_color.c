@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 19:29:03 by junmkang          #+#    #+#             */
-/*   Updated: 2020/12/03 14:59:57 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/12/03 19:03:36 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,11 @@ static char			*ft_color_chk(char *str)
 	int		i;
 
 	i = 0;
+	if (!str)
+	{
+		perror("Invalid color value.");
+		exit(0);
+	}
 	while(str[i])
 	{
 		if (!('0' <= str[i] && str[i] <= '9'))
@@ -71,7 +76,7 @@ int					ft_map_color(char *line, t_map *map, int cub_chk)
 
 	if (cub_chk != 1)
 	{
-		perror("Invalid color value.");
+		perror("duplicate color value.");
 		exit(0);
 	}
 	str = ft_split(line, ' ');
@@ -85,6 +90,5 @@ int					ft_map_color(char *line, t_map *map, int cub_chk)
 		perror("Invalid color value.");
 		exit(0);
 	}
-
 	return (0);
 }

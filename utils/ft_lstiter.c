@@ -1,35 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_map.c                                           :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/01 19:38:55 by junmkang          #+#    #+#             */
-/*   Updated: 2020/12/03 21:18:46 by junmkang         ###   ########.fr       */
+/*   Created: 2020/10/08 19:29:38 by junmkang          #+#    #+#             */
+/*   Updated: 2020/12/03 20:02:16 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "map_info.h"
+#include "utils.h"
 
-// 탭인경우 4칸
-int				ft_map(char *line, t_map *map, t_list *lst)
+void			ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	char	**get_map_info;
-	int		count;
-	t_list	*new;
-
-	new = ft_lstnew(line);
-	ft_lstadd_back(&lst, new);
-
-/*
+	if (!lst)
+		return ;
 	while (lst)
 	{
-		printf("%d %s\n",ft_lstsize(lst); lst->content);
+		f(lst->content);
 		lst = lst->next;
 	}
-*/
-	// *get_map_info = (char *)malloc(sizeof(char) * ft_strlen(line));
-
-	return (0);
 }

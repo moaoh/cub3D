@@ -35,22 +35,31 @@ static void			ft_cub_bzero(t_cub_info *cub_chk)
 
 int					main(int argc, char **argv)
 {
-	int		fd;
-	char	*line;
-	t_map	map;
+	int			fd;
+	char		*line;
+	t_list		lst;
+	t_map		map;
 	t_cub_info	cub_chk;
 
-	ft_file_name_chk(argv[1]);
-	fd = open(argv[1], O_RDONLY);
+	// ft_file_name_chk(argv[1]);
 	ft_cub_bzero(&cub_chk);
+	fd = open("/Users/junmkang/42seoul/1.projects/cub3D/test.cub", O_RDONLY);
+	// fd = open(argv[1], O_RDONLY);
 	while (get_next_line(fd, &line) > 0)
 	{
-		ft_map_info(line, &map, &cub_chk);
+		ft_map_info(line, &map, &cub_chk, &lst);
 		free(line);
 	}
-	printf("%s\n", line);
-	free(line);
-	printf("x = %d, y = %d", map.resolution.R_X, map.resolution.R_Y);
+	printf("%s\n", ((&lst)->content));
+	printf("%p\n", ((&lst)->next)->next);
+	// while (lst.next != '\0')
+	// {
+	// 	printf("%s\n", lst.content);
+	// 	lst = *(lst.next);
+	// }
+	// printf("%s\n", lst.content);
+
+	// printf("x = %d, y = %d", map.resolution.R_X, map.resolution.R_Y);
 	// printf("R = %d, G = %d, B = %d", map.f_color.R, map.f_color.G, map.f_color.B);
 	// printf("NO = %s", map.texure.NO);
 
