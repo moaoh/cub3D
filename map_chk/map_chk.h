@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/04 18:57:40 by junmkang          #+#    #+#             */
-/*   Updated: 2020/12/04 19:10:56 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/12/04 19:21:16 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 
 #	include "../cub3d.h"
 
-int		ft_map_chk(t_map **map);
+int		ft_map_chk(char **map);
 
 #	endif

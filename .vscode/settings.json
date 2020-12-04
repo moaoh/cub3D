@@ -7,6 +7,8 @@
 		"cub3d_struct.h": "c",
 		"stdio.h": "c",
 		"sstream": "c",
-		"value_info.h": "c"
+		"value_info.h": "c",
+		"__tree": "c",
+		"map": "c"
 	}
 }
