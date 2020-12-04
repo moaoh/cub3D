@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 18:47:35 by junmkang          #+#    #+#             */
-/*   Updated: 2020/12/03 19:18:34 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/12/04 15:38:29 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,12 @@ typedef	struct				s_map_color
 	int						B;
 }							t_map_color;
 
+typedef struct				s_map_map
+{
+	char					**map;
+	char					*buff;
+}							t_map_map;
+
 typedef struct				s_map
 {
 	t_map_resolution		resolution;
@@ -49,6 +55,7 @@ typedef struct				s_map
 	t_map_sprite			sprite;
 	t_map_color				f_color;
 	t_map_color				c_color;
+	t_map_map				map;
 }							t_map;
 
 // map chk
@@ -63,11 +70,5 @@ typedef struct				s_cub_info
 	int						f;
 	int						c;
 }							t_cub_info;
-
-typedef struct				s_list
-{
-	void					*content;
-	struct s_list			*next;
-}							t_list;
 
 #	endif

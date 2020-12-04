@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 18:37:00 by junmkang          #+#    #+#             */
-/*   Updated: 2020/12/03 19:54:49 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/12/04 15:11:54 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static int	ft_map_condition_chk(t_cub_info *cub_chk)
 }
 
 // 길이를 잡는 조건도 추가를 해서 반례를 잡아줘야함
-static int	ft_map_chk(char	*line, t_map *map, t_cub_info *cub_chk, t_list *lst)
+static int	ft_map_chk(char	*line, t_map *map, t_cub_info *cub_chk)
 {
 	// Resolution (해상도)
 	if (!ft_strncmp(line, "R ", 2))
@@ -44,18 +44,18 @@ static int	ft_map_chk(char	*line, t_map *map, t_cub_info *cub_chk, t_list *lst)
 		ft_map_color(line, map, (int)++cub_chk->f);
 	else if (!ft_strncmp(line, "C ", 2))
 		ft_map_color(line, map, (int)++cub_chk->c);
-	else if (ft_map_condition_chk(cub_chk))
-		ft_map(line, map, lst);
 	else if (line[0] == '\0')
 		return (_RIGHT);
+	else if (ft_map_condition_chk(cub_chk))
+		ft_map(line, map);
 	else
 		return (_WRONG);
 	return (_RIGHT);
 }
 
-int			ft_map_info(char *line, t_map *map, t_cub_info *cub_chk, t_list *lst)
+int			ft_map_info(char *line, t_map *map, t_cub_info *cub_chk)
 {
-	if (!(ft_map_chk(line, map, cub_chk, lst)))
+	if (!(ft_map_chk(line, map, cub_chk)))
 	{
 		perror("Invalid format");
 		exit(0);
