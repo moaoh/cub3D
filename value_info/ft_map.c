@@ -6,11 +6,11 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 19:38:55 by junmkang          #+#    #+#             */
-/*   Updated: 2020/12/04 17:18:11 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/12/04 19:03:17 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "map_info.h"
+#include "value_info.h"
 
 // 탭인경우 8칸
 

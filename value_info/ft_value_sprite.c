@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_map_sprite.c                                    :+:      :+:    :+:   */
+/*   ft_value_sprite.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 19:26:31 by junmkang          #+#    #+#             */
-/*   Updated: 2020/12/03 18:18:25 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/12/04 19:04:09 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "map_info.h"
+#include "value_info.h"
 
 // strcpy()
 
@@ -24,7 +24,7 @@ static int	ft_sprite_chk(char *str)
 	return (_RIGHT);
 }
 
-int		ft_map_sprite(char *line, t_map *map, int cub_chk)
+int		ft_value_sprite(char *line, t_map *map, int cub_chk)
 {
 	char	**str;
 

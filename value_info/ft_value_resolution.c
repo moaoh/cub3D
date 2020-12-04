@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_map_resolution.c                                :+:      :+:    :+:   */
+/*   ft_value_resolution.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 19:26:50 by junmkang          #+#    #+#             */
-/*   Updated: 2020/12/03 19:04:03 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/12/04 19:04:15 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "map_info.h"
+#include "value_info.h"
 
 static int			ft_resolution_chk(char *str)
 {
@@ -26,7 +26,7 @@ static int			ft_resolution_chk(char *str)
 	return (1);
 }
 
-int					ft_map_resolution(char *line, t_map *map, int cub_chk)
+int					ft_value_resolution(char *line, t_map *map, int cub_chk)
 {
 	char		**str;
 

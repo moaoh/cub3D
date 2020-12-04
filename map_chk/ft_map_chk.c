@@ -1,34 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d.h                                            :+:      :+:    :+:   */
+/*   ft_map_chk.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/30 18:39:36 by junmkang          #+#    #+#             */
-/*   Updated: 2020/12/04 19:08:51 by junmkang         ###   ########.fr       */
+/*   Created: 2020/12/04 18:57:26 by junmkang          #+#    #+#             */
+/*   Updated: 2020/12/04 19:14:48 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#	ifndef CUB3D_H
-#	define CUB3D_H
+#include "map_chk.h"
 
-// header file
-#	include "cub3d_struct.h"
-#	include "value_info/value_info.h"
-#	include "utils/utils.h"
-#	include "get_next_line/get_next_line.h"
-#	include "map_chk/map_chk.h"
+int		ft_map_chk(t_map map)
+{
+	int		i;
+	int		j;
 
-#	include <stdio.h>
-#	include <unistd.h>
-#	include <stdlib.h>
-#	include <string.h>
-#	include <math.h>
-#	include <fcntl.h>
-#	include <limits.h>
-
-#	define	_WRONG	0
-#	define	_RIGHT	1
-
-#	endif
+	i = 0;
+	j = 0;
+}

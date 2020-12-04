@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_map_texure.c                                    :+:      :+:    :+:   */
+/*   ft_value_texure.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 19:25:39 by junmkang          #+#    #+#             */
-/*   Updated: 2020/12/03 18:19:06 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/12/04 19:04:00 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "map_info.h"
+#include "value_info.h"
 
 // strcpy()
 static int		ft_texure_chk(char *str)
@@ -42,7 +42,7 @@ static int		ft_texure(char *s1, char *s2, t_map *map)
 	return (_RIGHT);
 }
 
-int				ft_map_texure(char *line, t_map *map, int cub_chk)
+int				ft_value_texure(char *line, t_map *map, int cub_chk)
 {
 	char	**str;
 
