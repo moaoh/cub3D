@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_value_resolution.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
+/*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 19:26:50 by junmkang          #+#    #+#             */
-/*   Updated: 2020/12/04 19:04:15 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/12/25 17:08:48 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int					ft_value_resolution(char *line, t_map *map, int cub_chk)
 	char		**str;
 
 	str = ft_split(line, ' ');
-	if (cub_chk != 1 || ft_strlen(str[0]) != 1 || str[3] != '\0')
+	if (cub_chk != 1 || ft_strlen(str[0]) != 1 || str[3] != NULL)
 	{
 		if (cub_chk != 1)
 			perror("duplicate resolution value.");

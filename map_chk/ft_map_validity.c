@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map_chk.h                                          :+:      :+:    :+:   */
+/*   ft_map_validity.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/04 18:57:40 by junmkang          #+#    #+#             */
-/*   Updated: 2020/12/26 01:55:53 by junmkang         ###   ########.fr       */
+/*   Created: 2020/12/26 01:42:46 by junmkang          #+#    #+#             */
+/*   Updated: 2020/12/26 02:06:25 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#	ifndef MAP_CHK_H
-#	define MAP_CHK_H
+#include "map_chk.h"
 
-#	include "../cub3d.h"
+// 유효성 검사 파트.
+int		ft_map_validity(char **chk_map, int i, int j)
+{
+	int		nx[4] = {0, 1, 0, -1};
+	int		ny[4] = {1, 0, -1, 0};
+	int		k;
 
-int		ft_map_chk(t_map *map);
-
-int		ft_map_value_chk(char c, char *dir);
-int		ft_map_validity(char **chk_map, int i, int j);
-
-#	endif
+	k = 4;
+	while(k)
+	{
+		k--;
+	}
+	return (0);
+}

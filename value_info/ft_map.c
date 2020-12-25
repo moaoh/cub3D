@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_map.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
+/*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 19:38:55 by junmkang          #+#    #+#             */
-/*   Updated: 2020/12/04 20:52:52 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/12/25 17:05:21 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 // 탭인경우 4칸
 
-// tap 처리.
 /*
+// tap 처리.
 static int			ft_chk_malloc(char *line)
 {
 	int			i;

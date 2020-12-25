@@ -40,21 +40,16 @@ int					main(int argc, char **argv)
 	t_map		map;
 	t_cub_info	cub_chk;
 
-	// ft_file_name_chk(argv[1]);
+	ft_file_name_chk(argv[1]);
 	ft_cub_bzero(&cub_chk);
-	fd = open("/Users/junmkang/42seoul/1.projects/cub3D/test.cub", O_RDONLY);
-	// fd = open(argv[1], O_RDONLY);
+	// fd = open("/Users/junmkang/42seoul/1.projects/cub3D/test.cub", O_RDONLY);
+	fd = open(argv[1], O_RDONLY);
 	while (get_next_line(fd, &line) > 0)
 	{
 		ft_value_info(line, &map, &cub_chk);
 		free(line);
 	}
-	map.map.map = ft_split(map.map.buff, '\n');
-	if (ft_map_chk(map.map.map))
-	{
-		perror("Invalid Map");
-		exit(0);
-	}
+	ft_map_chk(&map);
 
 	return (0);
 }

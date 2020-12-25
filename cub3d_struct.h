@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d_struct.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
+/*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 18:47:35 by junmkang          #+#    #+#             */
-/*   Updated: 2020/12/04 15:38:29 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/12/26 01:48:31 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ typedef struct				s_map
 	t_map_color				f_color;
 	t_map_color				c_color;
 	t_map_map				map;
+	char					dir;
 }							t_map;
 
 // map chk
