@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/26 01:05:50 by junmkang          #+#    #+#             */
-/*   Updated: 2020/12/26 02:28:12 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/12/27 00:52:50 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ static int		ft_chk_map_user(char c)
 	return (0);
 }
 
-static int		ft_chk_map_null(char c)
+int				ft_chk_map_null(char c)
 {
-	if ((0 <= c && c <= 9) || c == ' ')
+	if (c == ' ')
 		return (1);
 	return (0);
 }

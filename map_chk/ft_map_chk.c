@@ -6,14 +6,33 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/04 18:57:26 by junmkang          #+#    #+#             */
-/*   Updated: 2020/12/26 02:09:52 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/12/27 03:23:29 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "map_chk.h"
 
+static int		ft_map_y_count(char *s, char c)
+{
+	int				i;
+	int				count;
+	int				x;
+
+	count = 0;
+	i = 0;
+	x = 0;
+	while (s[i])
+	{
+		if (s[i] != c && (s[i + 1] == c || s[i + 1] == '\0'))
+			count++;
+		i++;
+	}
+	return (count);
+}
+
 // map 유효성 검사 
-static int		ft_chk_validation(char **chk_map, char *dir)
+
+static int		ft_chk_validation(char **chk_map, char *dir, int y_size)
 {
 	int		i;
 	int		j;
@@ -27,7 +46,8 @@ static int		ft_chk_validation(char **chk_map, char *dir)
 		while(j < len && chk_map[i][j])
 		{
 			ft_map_value_chk(chk_map[i][j], dir);
-			// ft_map_validity(chk_map, i, j);
+			// 다음 해야할 부분.
+			ft_map_validity(chk_map, i, j, y_size);
 			j++;
 		}
 		i++;
@@ -37,15 +57,11 @@ static int		ft_chk_validation(char **chk_map, char *dir)
 
 int				ft_map_chk(t_map *map)
 {
-	char	c;
-	char	temp;
-	int		i;
-	int		j;
+	int		y_size;
 
-	i = 0;
-	j = 0;
 	// map->dir = ft_strdup("", 1);
+	y_size = ft_map_y_count(map->map.buff, '\n');
 	map->map.map = ft_split(map->map.buff, '\n');
-	ft_chk_validation(map->map.map, &map->dir);
+	ft_chk_validation(map->map.map, &map->dir, y_size);
 	return (0);
 }
