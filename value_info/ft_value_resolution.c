@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 19:26:50 by junmkang          #+#    #+#             */
-/*   Updated: 2020/12/25 17:08:48 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/12/27 23:56:35 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static int			ft_resolution_chk(char *str)
 	int		i;
 
 	i = 0;
-	while(str[i])
+	while (str[i])
 	{
 		if (!('0' <= str[i] && str[i] <= '9'))
 			return (_WRONG);

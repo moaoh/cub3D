@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/04 18:57:26 by junmkang          #+#    #+#             */
-/*   Updated: 2020/12/27 03:23:29 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/12/28 00:21:07 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ static int		ft_chk_validation(char **chk_map, char *dir, int y_size)
 		while(j < len && chk_map[i][j])
 		{
 			ft_map_value_chk(chk_map[i][j], dir);
-			// 다음 해야할 부분.
 			ft_map_validity(chk_map, i, j, y_size);
 			j++;
 		}

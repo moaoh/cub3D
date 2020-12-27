@@ -1,24 +1,36 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/12/27 23:36:58 by junmkang          #+#    #+#             */
+/*   Updated: 2020/12/27 23:53:47 by junmkang         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "cub3d.h"
 
 // map 유효성 검사.
 // map에 해당하는 값들을 담기.
 
-static int		ft_file_name_chk(char *s)
+static int			ft_file_name_chk(char *s)
 {
-	char	**str;
+	char			**str;
 
-    if (!s)
-    {
-        perror("Invalid filename");
-        exit(0);
-    }
-    str = ft_split(s, '.');
+	if (!s)
+	{
+		perror("Invalid filename");
+		exit(0);
+	}
+	str = ft_split(s, '.');
 	if (!str[1] || (ft_strncmp(str[1], "cub", 3)) || (ft_strlen(str[1]) != 3))
-    {
-        perror("Invalid filename");
-        exit(0);
-    }
-    return (_RIGHT);
+	{
+		perror("Invalid filename");
+		exit(0);
+	}
+	return (_RIGHT);
 }
 
 static void			ft_cub_bzero(t_cub_info *cub_chk)
@@ -35,10 +47,10 @@ static void			ft_cub_bzero(t_cub_info *cub_chk)
 
 int					main(int argc, char **argv)
 {
-	int			fd;
-	char		*line;
-	t_map		map;
-	t_cub_info	cub_chk;
+	int				fd;
+	char			*line;
+	t_map			map;
+	t_cub_info		cub_chk;
 
 	ft_file_name_chk(argv[1]);
 	ft_cub_bzero(&cub_chk);
@@ -50,6 +62,7 @@ int					main(int argc, char **argv)
 		free(line);
 	}
 	ft_map_chk(&map);
-
+	// map이 newline으로 나누어져 있는경우 어떻게 진행을 해야하는가.
+	// 그냥 옳은것으로 판단하는게 훨씬 편안.
 	return (0);
 }

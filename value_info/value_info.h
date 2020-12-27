@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   value_info.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
+/*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 19:29:23 by junmkang          #+#    #+#             */
-/*   Updated: 2020/12/04 19:05:47 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/12/28 01:45:48 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#	ifndef	VALUE_INFO_H
-#	define	VALUE_INFO_H
+#	ifndef VALUE_INFO_H
+#	define VALUE_INFO_H
 
 #	include "../cub3d.h"
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_value_color.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
+/*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 19:29:03 by junmkang          #+#    #+#             */
-/*   Updated: 2020/12/04 19:06:54 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/12/27 23:58:47 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static char			*ft_color_chk(char *str)
 		perror("Invalid color value.");
 		exit(0);
 	}
-	while(str[i])
+	while (str[i])
 	{
 		if (!('0' <= str[i] && str[i] <= '9'))
 			return (_WRONG);
@@ -46,7 +46,6 @@ static int			ft_value_inc(char **num, t_map *map)
 		map->c_color.G = ft_atoi(num[1]);
 		map->c_color.B = ft_atoi(num[2]);
 	}
-
 	return (_RIGHT);
 }
 
@@ -65,7 +64,6 @@ static int			ft_value_inf(char **num, t_map *map)
 		map->f_color.G = ft_atoi(num[1]);
 		map->f_color.B = ft_atoi(num[2]);
 	}
-
 	return (_RIGHT);
 }
 

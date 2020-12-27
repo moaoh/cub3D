@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 18:47:35 by junmkang          #+#    #+#             */
-/*   Updated: 2020/12/26 01:48:31 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/12/28 00:04:26 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 // map
 typedef struct				s_map_resolution
 {
-    int						R_X;
-    int						R_Y;
+	int						R_X;
+	int						R_Y;
 }							t_map_resolution;
 
 typedef struct				s_map_texure
@@ -59,7 +59,9 @@ typedef struct				s_map
 	char					dir;
 }							t_map;
 
-// map chk
+/*
+** map chk
+*/
 typedef struct				s_cub_info
 {
 	int						r;
