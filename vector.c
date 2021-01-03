@@ -1,18 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d.c                                            :+:      :+:    :+:   */
+/*   vector.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/27 23:48:12 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/01 19:04:57 by junmkang         ###   ########.fr       */
+/*   Created: 2021/01/02 17:15:08 by junmkang          #+#    #+#             */
+/*   Updated: 2021/01/02 17:25:31 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-// 실질적으로 값을 돌리는 장소
-int		cub3d();
+t_vec		vec_new(double x, double y)
+{
+	t_vec	result;
+	
+	result.x = x;
+	result.y = y;
+	return (result);
+}
 
-로데브
+t_vec		vec_add(t_vec a, t_vec b)
+{
+	a.x += b.x;
+	a.y += b.y;
+	return (a);
+}
+
+t_vec		vec_sub(t_vec a, t_vec b)
+{
+	a.x += b.x;
+	a.y += b.y;
+	return (a);
+}
+
+t_vec		vec_mul(t_vec a, double b)
+{
+	a.x *= b;
+	a.y *= b;
+	return (a);
+}

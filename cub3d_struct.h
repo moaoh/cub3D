@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 18:47:35 by junmkang          #+#    #+#             */
-/*   Updated: 2020/12/28 00:04:26 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/02 17:19:17 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,10 @@
 
 #	include "cub3d.h"
 
-// map
+/*
+** map
+*/
+
 typedef struct				s_map_resolution
 {
 	int						R_X;
@@ -62,6 +65,7 @@ typedef struct				s_map
 /*
 ** map chk
 */
+
 typedef struct				s_cub_info
 {
 	int						r;
@@ -73,5 +77,15 @@ typedef struct				s_cub_info
 	int						f;
 	int						c;
 }							t_cub_info;
+
+/*
+** vector
+*/
+
+typedef struct				s_vec
+{
+	double					x;
+	double					y;
+}							t_vec;
 
 #	endif
