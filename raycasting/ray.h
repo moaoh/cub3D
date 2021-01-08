@@ -1,43 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vector.c                                           :+:      :+:    :+:   */
+/*   ray.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/02 17:15:08 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/02 17:25:31 by junmkang         ###   ########.fr       */
+/*   Created: 2021/01/08 23:36:11 by junmkang          #+#    #+#             */
+/*   Updated: 2021/01/08 23:37:37 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#	ifndef RAY_H
+#	define RAY_H
 
-t_vec		vec_new(double x, double y)
-{
-	t_vec	result;
-	
-	result.x = x;
-	result.y = y;
-	return (result);
-}
+#	include "../cub3d.h"
 
-t_vec		vec_add(t_vec a, t_vec b)
-{
-	a.x += b.x;
-	a.y += b.y;
-	return (a);
-}
+int		cub3d(t_map map);
 
-t_vec		vec_sub(t_vec a, t_vec b)
-{
-	a.x += b.x;
-	a.y += b.y;
-	return (a);
-}
-
-t_vec		vec_mul(t_vec a, double b)
-{
-	a.x *= b;
-	a.y *= b;
-	return (a);
-}
+#	endif

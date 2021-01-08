@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map_chk.h                                          :+:      :+:    :+:   */
+/*   cub3d.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/04 18:57:40 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/08 23:29:42 by junmkang         ###   ########.fr       */
+/*   Created: 2020/12/27 23:48:12 by junmkang          #+#    #+#             */
+/*   Updated: 2021/01/08 23:40:06 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#	ifndef MAP_CHK_H
-#	define MAP_CHK_H
+#include "ray.h"
 
-#	include "../cub3d.h"
+// 실질적으로 값을 돌리는 장소
+int		cub3d(t_map map)
+{
+	
+	return (0);
+}
 
-int		ft_chk_map_null(char c);
-
-int		*ft_map_value_chk(char c, int i, int j, t_map_user *user);
-int		ft_map_validity(char **chk_map, int i, int j, int y_size);
-
-int		ft_map_chk(t_map *map);
-
-#	endif
+// 로데브

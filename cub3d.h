@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 18:39:36 by junmkang          #+#    #+#             */
-/*   Updated: 2020/12/31 02:14:37 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/08 23:38:05 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,12 @@
 
 // header file
 
-/*
-**test
-*/
-
 #	include "cub3d_struct.h"
 #	include "value_info/value_info.h"
 #	include "utils/utils.h"
 #	include "get_next_line/get_next_line.h"
 #	include "map_chk/map_chk.h"
+#	include "raycasting/ray.h"
 
 #	include <stdio.h>
 #	include <unistd.h>

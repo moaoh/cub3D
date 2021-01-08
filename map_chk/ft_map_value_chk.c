@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/26 01:05:50 by junmkang          #+#    #+#             */
-/*   Updated: 2020/12/27 00:52:50 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/08 23:28:29 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,16 @@ int				ft_chk_map_null(char c)
 }
 
 // 옳바른 값인지 확인하는 작업.
-int				ft_map_value_chk(char c, char *dir)
+int				*ft_map_value_chk(char c, int i, int j, t_map_user *user)
 {
 		if (ft_chk_map_user(c))
 		{
-			if (!ft_chk_map_user(*dir))
-				*dir = c;
+			if (!ft_chk_map_user(user->dir))
+			{
+				user->dir = c;
+				user->y = i;
+				user->x = j;
+			}
 			else
 			{
 				perror("Multiple Direction Values.");

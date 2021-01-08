@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/04 18:57:26 by junmkang          #+#    #+#             */
-/*   Updated: 2020/12/28 00:21:07 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/08 23:29:10 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static int		ft_map_y_count(char *s, char c)
 
 // map 유효성 검사 
 
-static int		ft_chk_validation(char **chk_map, char *dir, int y_size)
+static int		ft_chk_validation(char **chk_map, t_map_user *user, int y_size)
 {
 	int		i;
 	int		j;
@@ -45,7 +45,7 @@ static int		ft_chk_validation(char **chk_map, char *dir, int y_size)
 		len = ft_strlen(chk_map[i]);
 		while(j < len && chk_map[i][j])
 		{
-			ft_map_value_chk(chk_map[i][j], dir);
+			ft_map_value_chk(chk_map[i][j], i, j, user);
 			ft_map_validity(chk_map, i, j, y_size);
 			j++;
 		}
@@ -61,6 +61,6 @@ int				ft_map_chk(t_map *map)
 	// map->dir = ft_strdup("", 1);
 	y_size = ft_map_y_count(map->map.buff, '\n');
 	map->map.map = ft_split(map->map.buff, '\n');
-	ft_chk_validation(map->map.map, &map->dir, y_size);
+	ft_chk_validation(map->map.map, &map->user, y_size);
 	return (0);
 }
