@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/04 18:57:26 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/08 23:29:10 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/09 12:54:56 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,20 +30,18 @@ static int		ft_map_y_count(char *s, char c)
 	return (count);
 }
 
-// map 유효성 검사 
-
 static int		ft_chk_validation(char **chk_map, t_map_user *user, int y_size)
 {
 	int		i;
 	int		j;
 	int		len;
-	
+
 	i = 0;
-	while(chk_map[i])
+	while (chk_map[i])
 	{
 		j = 0;
 		len = ft_strlen(chk_map[i]);
-		while(j < len && chk_map[i][j])
+		while (j < len && chk_map[i][j])
 		{
 			ft_map_value_chk(chk_map[i][j], i, j, user);
 			ft_map_validity(chk_map, i, j, y_size);

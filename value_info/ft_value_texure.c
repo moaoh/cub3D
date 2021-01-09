@@ -6,13 +6,11 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 19:25:39 by junmkang          #+#    #+#             */
-/*   Updated: 2020/12/28 01:44:19 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/09 12:58:33 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "value_info.h"
-
-//strcpy()
 
 static int		ft_texure_chk(char *str)
 {
@@ -23,8 +21,6 @@ static int		ft_texure_chk(char *str)
 	}
 	return (_RIGHT);
 }
-
-//길이를 잡는 조건도 추가를 해서 반례를 잡아줘야함
 
 static int		ft_texure(char *s1, char *s2, t_map *map)
 {

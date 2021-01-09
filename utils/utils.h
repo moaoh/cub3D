@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   utils.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
+/*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 20:26:17 by junmkang          #+#    #+#             */
-/*   Updated: 2020/12/04 15:11:28 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/09 12:56:51 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#	ifndef	UTILS_H
-#	define	UTILS_H
+#	ifndef UTILS_H
+#	define UTILS_H
 
 #	include "../cub3d.h"
 #	include <unistd.h>

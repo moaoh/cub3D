@@ -6,13 +6,11 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 19:26:31 by junmkang          #+#    #+#             */
-/*   Updated: 2020/12/27 23:57:58 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/09 12:58:21 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "value_info.h"
-
-// strcpy()
 
 static int	ft_sprite_chk(char *str)
 {
