@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/11 03:34:18 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/11 06:00:53 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/11 07:57:33 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,12 @@ int			main_ray_loop(t_ray_info *ray_info)
 	while(x < ray_info->screen_X)
 	{
 		info.cameraX = 2 * x / (double)ray_info->screen_X - 1;
-		info.ray.Y = ray_info->playerposition_Y + ray_info->dir_Y + info.cameraX * ray_info->plane_Y;
-		info.ray.X = ray_info->playerposition_X + ray_info->dir_X + info.cameraX * ray_info->plane_X;
+		info.ray.Y = ray_info->dir_Y + info.cameraX * ray_info->plane_Y;
+		info.ray.X = ray_info->dir_X + info.cameraX * ray_info->plane_X;
+
 		info.map.Y = (int)ray_info->playerposition_Y;
 		info.map.X = (int)ray_info->playerposition_X;
+		
 		info.deltaDist.Y = fabs(1 / info.ray.Y);
 		info.deltaDist.X = fabs(1 / info.ray.X);
 
