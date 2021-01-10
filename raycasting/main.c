@@ -123,7 +123,7 @@ int main_loop(t_info *info)
         // abs함수는 정수 절대값
         // fabs함수는 실수 절대값
         double deltaDistX = fabs(1 / rayDirectionX);
-        // deltaDistY는 첫 번째 y면에서 그 다음 y면까지의 광선의 이동거리.
+        // deltaDistY는 첫 번째 y면에서 그 다음 y면까지의 광선의 이동거리. 
         // 이 경우 y는 1만큼 이동.
         double deltaDistY = fabs(1 / rayDirectionY);
 

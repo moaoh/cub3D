@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 13:01:48 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/11 03:59:22 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/11 05:48:57 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,32 +28,55 @@ typedef struct		s_ray_info
 	void			*mlx;
 	void			*win;
 	char			**map;
+    double    		moveSpeed;
+    double    		rotSpeed;
 }					t_ray_info;
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-typedef struct		s_pos
-{
-	int				y;
-	int				x;
-}					t_pos;
+/*
+** loop
+*/
 
-typedef struct		s_dir
+typedef	struct			s_loop_ray
 {
-	int				y;
-	int				x;
-}					t_dir;
+	double				X;
+	double				Y;
+}						t_loop_ray;
 
-typedef struct		s_plane
+typedef	struct			s_loop_sideDist
 {
-	int				y;
-	int				x;
-}					t_plane;
+	double				X;
+	double				Y;
+}						t_loop_sideDist;
 
-typedef	struct		s_ray
+typedef struct			s_loop_map
 {
-	t_pos			pos;
-	t_dir			dir;
-	t_plane			plane;
-}					t_ray;
+	int					Y;
+	int					X;	
+}						t_loop_map;
+
+typedef struct			s_loop_deltaDist
+{
+	double				Y;
+	double				X;
+}						t_loop_deltaDist;
+
+typedef struct			s_loop_step
+{
+	int					Y;
+	int					X;
+}						t_loop_step;
+
+typedef struct			s_loop_info
+{
+	double				cameraX;
+	t_loop_ray			ray;
+	t_loop_sideDist		sideDist;
+	t_loop_map			map;
+	t_loop_deltaDist	deltaDist;
+	t_loop_step			step;
+	int					side;
+	double				perpWallDist;
+	int					lineHeight;
+}						t_loop_info;
 
 #	endif
