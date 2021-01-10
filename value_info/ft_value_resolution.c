@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 19:26:50 by junmkang          #+#    #+#             */
-/*   Updated: 2020/12/27 23:56:35 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/10 01:25:24 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ static int			ft_resolution_chk(char *str)
 	return (1);
 }
 
+// 해상도의 최대범위를 정해서 막는 파트를 따로 만들어줘야함.
 int					ft_value_resolution(char *line, t_map *map, int cub_chk)
 {
 	char		**str;

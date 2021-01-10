@@ -1,23 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d.c                                            :+:      :+:    :+:   */
+/*   ray_struct.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/27 23:48:12 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/09 13:01:22 by junmkang         ###   ########.fr       */
+/*   Created: 2021/01/09 13:01:48 by junmkang          #+#    #+#             */
+/*   Updated: 2021/01/09 13:14:23 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ray.h"
+#	ifndef RAY_STRUCT_H
+#	define RAY_STRUCT_H
 
-// 실질적으로 값을 돌리는 장소
-int		cub3d(t_map map)
+#	include "ray.h"
+
+typedef struct		s_pos
 {
-	
-	
-	return (0);
-}
+	int				y;
+	int				x;
+}					t_pos;
 
-// 로데브
+typedef struct		s_dir
+{
+	int				y;
+	int				x;
+}					t_dir;
+
+typedef struct		s_plane
+{
+	int				y;
+	int				x;
+}					t_plane;
+
+typedef	struct		s_ray
+{
+	t_pos			pos;
+	t_dir			dir;
+	t_plane			plane;
+}					t_ray;
+
+#	endif
