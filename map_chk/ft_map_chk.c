@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/04 18:57:26 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/09 12:54:56 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/11 03:32:03 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static int		ft_map_y_count(char *s, char c)
 	return (count);
 }
 
-static int		ft_chk_validation(char **chk_map, t_map_user *user, int y_size)
+static int		ft_chk_validation(char **chk_map, t_map_player *player, int y_size)
 {
 	int		i;
 	int		j;
@@ -43,7 +43,7 @@ static int		ft_chk_validation(char **chk_map, t_map_user *user, int y_size)
 		len = ft_strlen(chk_map[i]);
 		while (j < len && chk_map[i][j])
 		{
-			ft_map_value_chk(chk_map[i][j], i, j, user);
+			ft_map_value_chk(chk_map[i][j], i, j, player);
 			ft_map_validity(chk_map, i, j, y_size);
 			j++;
 		}
@@ -59,6 +59,6 @@ int				ft_map_chk(t_map *map)
 	// map->dir = ft_strdup("", 1);
 	y_size = ft_map_y_count(map->map.buff, '\n');
 	map->map.map = ft_split(map->map.buff, '\n');
-	ft_chk_validation(map->map.map, &map->user, y_size);
+	ft_chk_validation(map->map.map, &map->player, y_size);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/26 01:05:50 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/09 12:55:55 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/11 03:32:47 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ static int		ft_chk_map_num(char c)
 	return (0);
 }
 
-static int		ft_chk_map_user(char c)
+static int		ft_chk_map_player(char c)
 {
-	if (c == 'N' || c == 'S' || c == 'W' || c == 'E')
+	if (c == 'E' || c == 'W' || c == 'N' || c == 'S')
 		return (1);
 	return (0);
 }
@@ -33,15 +33,15 @@ int				ft_chk_map_null(char c)
 	return (0);
 }
 
-int				*ft_map_value_chk(char c, int i, int j, t_map_user *user)
+int				*ft_map_value_chk(char c, int i, int j, t_map_player *player)
 {
-	if (ft_chk_map_user(c))
+	if (ft_chk_map_player(c))
 	{
-		if (!ft_chk_map_user(user->dir))
+		if (!ft_chk_map_player(player->dir))
 		{
-			user->dir = c;
-			user->y = i;
-			user->x = j;
+			player->dir = c;
+			player->y = i;
+			player->x = j;
 		}
 		else
 		{
@@ -49,7 +49,7 @@ int				*ft_map_value_chk(char c, int i, int j, t_map_user *user)
 			exit(0);
 		}
 	}
-	else if (!ft_chk_map_num(c) && !ft_chk_map_user(c) && !ft_chk_map_null(c))
+	else if (!ft_chk_map_num(c) && !ft_chk_map_player(c) && !ft_chk_map_null(c))
 	{
 		perror("Invalid map value.");
 		exit(0);

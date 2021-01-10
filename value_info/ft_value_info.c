@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 18:37:00 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/09 12:57:56 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/11 03:56:43 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static int	ft_map_condition_chk(t_cub_info *cub_chk)
 static int	ft_value_chk(char *line, t_map *map, t_cub_info *cub_chk)
 {
 	if (!ft_strncmp(line, "R ", 2))
-		ft_value_resolution(line, map, (int)++cub_chk->r);
+		ft_value_screen(line, map, (int)++cub_chk->r);
 	else if (!ft_strncmp(line, "NO ", 3))
 		ft_value_texure(line, map, (int)++cub_chk->no);
 	else if (!ft_strncmp(line, "SO ", 3))

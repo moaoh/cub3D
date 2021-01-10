@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 18:47:35 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/08 23:24:17 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/11 03:56:33 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@
 ** map
 */
 
-typedef struct				s_map_resolution
+typedef struct				s_map_screen
 {
-	int						R_X;
-	int						R_Y;
-}							t_map_resolution;
+	int						X;
+	int						Y;
+}							t_map_screen;
 
 typedef struct				s_map_texure
 {
@@ -51,22 +51,22 @@ typedef struct				s_map_map
 	char					*buff;
 }							t_map_map;
 
-typedef struct				s_map_user
+typedef struct				s_map_player
 {
 	char					dir;
 	int						y;
 	int						x;
-}							t_map_user;
+}							t_map_player;
 
 typedef struct				s_map
 {
-	t_map_resolution		resolution;
+	t_map_screen			screen;
 	t_map_texure			texure;
 	t_map_sprite			sprite;
 	t_map_color				f_color;
 	t_map_color				c_color;
 	t_map_map				map;
-	t_map_user				user;
+	t_map_player			player;
 }							t_map;
 
 /*

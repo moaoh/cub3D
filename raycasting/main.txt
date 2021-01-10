@@ -1,10 +1,6 @@
 // 파일명 main.c로 해둠.
 
 # include "ray.h"
-# include <math.h>
-# include <string.h>
-# include <stdio.h>
-# include <stdlib.h>
 # include "mlx.h"
 
 // WASD
@@ -99,7 +95,7 @@ int main_loop(t_info *info)
             광선의 시작점은 playerPositionX, Y임.
             directionVectorX, Y는 플레이어의 초기 '방향벡터'.
             planeX와 planeY는 위에서 말했듯 카메라 평면.
-            아래 for문은 ray의 위치(position) 및 방향(direction) 계산.
+            아래 for 문은 ray의 위치(position) 및 방향(direction) 계산.
         */
 
         // cameraX 는 for문의 x값이 카메라 평면 상에 있을 때의 x좌표.

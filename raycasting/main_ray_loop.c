@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ray.h                                              :+:      :+:    :+:   */
+/*   main_ray_loop.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/08 23:36:11 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/11 03:42:39 by junmkang         ###   ########.fr       */
+/*   Created: 2021/01/11 03:34:18 by junmkang          #+#    #+#             */
+/*   Updated: 2021/01/11 04:00:49 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#	ifndef RAY_H
-#	define RAY_H
+#include "ray.h"
 
-#	include "../cub3d.h"
-#	include "ray_struct.h"
+int			main_ray_loop(t_ray_info *info)
+{
+	int		i;
 
-int		cub3d(t_map map);
-int		main_ray_loop(t_ray_info *info);
-
-#	endif
+	i = 0;
+	while(i < info->screen_X)
+	{
+		
+	}
+	
+	return (0);
+}

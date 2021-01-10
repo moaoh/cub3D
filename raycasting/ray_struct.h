@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 13:01:48 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/09 13:14:23 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/11 03:59:22 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,22 @@
 
 #	include "ray.h"
 
+typedef struct		s_ray_info
+{
+	int				screen_Y;
+	int				screen_X;
+	double			playerposition_Y;
+	double			playerposition_X;
+	double			dir_Y;
+	double			dir_X;
+	double			plane_Y;
+	double			plane_X;
+	void			*mlx;
+	void			*win;
+	char			**map;
+}					t_ray_info;
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 typedef struct		s_pos
 {
 	int				y;
