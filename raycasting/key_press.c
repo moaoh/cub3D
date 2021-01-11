@@ -6,11 +6,16 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/12 00:27:16 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/12 02:44:54 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/12 07:50:24 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ray.h"
+
+// int		key_press(int key, t_ray_info *info)
+// {
+// 	printf("key : %d\n", key);
+// }
 
 // 추가적인 공부가 필요함 
 int key_press(int key, t_ray_info *info)

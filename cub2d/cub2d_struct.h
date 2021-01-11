@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/12 07:08:18 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/12 07:20:27 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/12 07:48:43 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ typedef struct	s_cub2d_info
 	void		*mlx;
 	void		*win;
 	t_img		img;
-	int			**map;
+	char		**map;
 }				t_cub2d_info;
 
 #	endif

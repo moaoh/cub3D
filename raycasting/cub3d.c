@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/27 23:48:12 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/12 02:44:22 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/12 07:50:17 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,11 +73,6 @@ static void			ray_putin_info(t_ray_info *info, t_map *map)
 	info->moveSpeed = 0.05;
 	info->rotSpeed = 0.05;
 }
-
-// int		key_press(int key, t_ray_info *info)
-// {
-// 	printf("key : %d\n", key);
-// }
 
 int					cub3d(t_map map)
 {
