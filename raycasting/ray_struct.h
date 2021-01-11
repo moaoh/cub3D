@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 13:01:48 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/11 05:48:57 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/11 08:31:50 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #	define RAY_STRUCT_H
 
 #	include "ray.h"
+#	include "../cub3d.h"
 
 typedef struct		s_ray_info
 {

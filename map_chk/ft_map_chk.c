@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/04 18:57:26 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/11 03:32:03 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/11 09:33:42 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,5 +60,10 @@ int				ft_map_chk(t_map *map)
 	y_size = ft_map_y_count(map->map.buff, '\n');
 	map->map.map = ft_split(map->map.buff, '\n');
 	ft_chk_validation(map->map.map, &map->player, y_size);
+	if (!map->player.dir)
+	{
+		perror("have no dir.");
+		exit(0);
+	}
 	return (0);
 }

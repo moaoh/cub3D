@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_ray_loop.c                                    :+:      :+:    :+:   */
+/*   main_loop.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/11 03:34:18 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/11 07:57:33 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/11 08:25:48 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void verLine (t_ray_info *info, int x, int y1, int y2, int color)
     }
 }
 
-int			main_ray_loop(t_ray_info *ray_info)
+int			main_loop(t_ray_info *ray_info)
 {
 	int		x;
 	t_loop_info		info;

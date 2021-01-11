@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 23:36:11 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/11 03:42:39 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/11 08:35:39 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #	include "ray_struct.h"
 
 int		cub3d(t_map map);
-int		main_ray_loop(t_ray_info *info);
+int		main_loop(t_ray_info *info);
+int		key_press(int key, t_ray_info *info);
 
 #	endif
