@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ray.h                                              :+:      :+:    :+:   */
+/*   cub2d.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/08 23:36:11 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/12 03:22:46 by junmkang         ###   ########.fr       */
+/*   Created: 2021/01/12 06:55:49 by junmkang          #+#    #+#             */
+/*   Updated: 2021/01/12 07:32:02 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#	ifndef RAY_H
-#	define RAY_H
+#include "cub2d.h"
 
-#	include "../cub3d.h"
-#	include "ray_struct.h"
-#	include "key_press.h"
+static void cub2d_info(t_cub2d_info *info, t_map *map)
+{
+	info->map = map->map.map;
+	// info->img.img = 
+	// info->img.data = 
+}
 
-int		cub3d(t_map map);
-int		main_loop(t_ray_info *info);
-int		key_press(int key, t_ray_info *info);
+int cub2d(t_map map)
+{
+	t_cub2d_info info;
 
-#	endif
+	cub2d_info(&info, &map);
+	info.mlx = mlx_init();
+	info.win = mlx_new_window(info.mlx, map.screen.X, map.screen.Y, "cub2d");
+
+	return (0);
+}

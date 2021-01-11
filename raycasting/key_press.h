@@ -1,24 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ray.h                                              :+:      :+:    :+:   */
+/*   key_press.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/08 23:36:11 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/12 03:22:46 by junmkang         ###   ########.fr       */
+/*   Created: 2021/01/12 03:20:48 by junmkang          #+#    #+#             */
+/*   Updated: 2021/01/12 03:23:09 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#	ifndef RAY_H
-#	define RAY_H
+#	ifndef KEY_PRESS_H
+#	define KEY_PRESS_H
 
-#	include "../cub3d.h"
-#	include "ray_struct.h"
-#	include "key_press.h"
+/*
+** event --------------------------------------------------
+*/
 
-int		cub3d(t_map map);
-int		main_loop(t_ray_info *info);
-int		key_press(int key, t_ray_info *info);
+#	define KeyPress 2
+#	define KeyRelease 3
+#	define ButtonPress 4
+#	define ButtonRelease 5
+
+/*
+** WASD ---------------------------------------------------
+*/
+
+#	define KEY_W 13
+#	define KEY_A 0
+#	define KEY_S 1
+#	define KEY_D 2
+
+# define K_ESC 53
 
 #	endif

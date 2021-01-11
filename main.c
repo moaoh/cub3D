@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/27 23:36:58 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/11 09:32:16 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/12 07:32:09 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ int					main(int argc, char **argv)
 	// map이 newline으로 나누어져 있는경우 어떻게 진행을 해야하는가.
 	// 그냥 옳은것으로 판단하는게 훨씬 편안.
 	cub3d(map);
+	// cub2d(map);
 
 	return (0);
 }

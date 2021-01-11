@@ -1,43 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vector.c                                           :+:      :+:    :+:   */
+/*   cub2d_struct.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/02 17:15:08 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/08 23:39:28 by junmkang         ###   ########.fr       */
+/*   Created: 2021/01/12 07:08:18 by junmkang          #+#    #+#             */
+/*   Updated: 2021/01/12 07:20:27 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ray.h"
+#	ifndef CUB2D_STRUCT_H
+#	define CUB2D_STRUCT_H
 
-t_vec		vec_new(double x, double y)
-{
-	t_vec	result;
-	
-	result.x = x;
-	result.y = y;
-	return (result);
-}
+#	include "cub2d.h"
+#	include "../cub3d.h"
 
-t_vec		vec_add(t_vec a, t_vec b)
-{
-	a.x += b.x;
-	a.y += b.y;
-	return (a);
-}
 
-t_vec		vec_sub(t_vec a, t_vec b)
+typedef struct	s_img
 {
-	a.x += b.x;
-	a.y += b.y;
-	return (a);
-}
+	void		*img;
+	int			*data;
+	int			size_l;
+	int			bpp;
+	int			endian;
+}				t_img;
 
-t_vec		vec_mul(t_vec a, double b)
+typedef struct	s_cub2d_info
 {
-	a.x *= b;
-	a.y *= b;
-	return (a);
-}
+	void		*mlx;
+	void		*win;
+	t_img		img;
+	int			**map;
+}				t_cub2d_info;
+
+#	endif

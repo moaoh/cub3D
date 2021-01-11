@@ -70,5 +70,6 @@
 		"utility": "c",
 		"vector": "c",
 		"*.txt": "c"
-	}
+	},
+	"C_Cpp.dimInactiveRegions": false
 }

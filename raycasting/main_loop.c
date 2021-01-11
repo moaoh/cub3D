@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/11 03:34:18 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/12 03:00:06 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/12 03:25:11 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,6 +99,8 @@ int			main_loop(t_ray_info *ray_info)
         if (drawEnd >= ray_info->screen_Y)
             drawEnd = ray_info->screen_Y - 1;
 
+// ----------------------------------------------------------------------------
+
         int color;
         if (ray_info->map[info.map.Y][info.map.X] == 1)
             color = 0xFF0000;
@@ -122,6 +124,8 @@ int			main_loop(t_ray_info *ray_info)
         */
         verLine(ray_info, x, drawStart, drawEnd, color);
 	}
-	
+
+// ----------------------------------------------------------------------------
+
 	return (0);
 }

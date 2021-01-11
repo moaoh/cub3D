@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 13:01:48 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/12 00:37:19 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/12 03:18:52 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,10 @@
 
 #	include "ray.h"
 #	include "../cub3d.h"
+
+/*
+** cub3d -----------------------------------------------
+*/
 
 typedef struct		s_ray_info
 {
@@ -34,7 +38,7 @@ typedef struct		s_ray_info
 }					t_ray_info;
 
 /*
-** loop
+** loop -------------------------------------------------
 */
 
 typedef	struct			s_loop_ray

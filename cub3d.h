@@ -6,14 +6,16 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 18:39:36 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/11 08:31:18 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/12 07:01:31 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #	ifndef CUB3D_H
 #	define CUB3D_H
 
-// header file
+/*
+** header file --------------------------------------------
+*/
 
 #	include "cub3d_struct.h"
 #	include "value_info/value_info.h"
@@ -23,6 +25,7 @@
 #	include "raycasting/ray.h"
 #	include "mlx/minilibx_mms_20200219/mlx.h"
 #	include "mlx/minilibx_opengl_20191021/mlx.h"
+#	include "cub2d/cub2d.h"
 
 #	include <stdio.h>
 #	include <unistd.h>
