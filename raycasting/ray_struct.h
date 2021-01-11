@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 13:01:48 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/11 08:31:50 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/12 00:37:19 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ typedef struct		s_ray_info
 {
 	int				screen_Y;
 	int				screen_X;
-	double			playerposition_Y;
-	double			playerposition_X;
+	double			pos_Y;
+	double			pos_X;
 	double			dir_Y;
 	double			dir_X;
 	double			plane_Y;

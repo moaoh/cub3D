@@ -279,69 +279,69 @@ int main_loop(t_info *info)
     } 
 }
 
-// int key_press(int key, t_info *info)
-// {
-// 	printf("key : %d\n", key);
-//     // WS
-//     if (key == KEY_W)
-//     {
-//         if (!worldMap[(int)(info->playerPositionX + info->directionVectorX * info->moveSpeed)][(int)(info->playerPositionY)])
-//             info->playerPositionX += info->directionVectorX * info->moveSpeed;
-//         if (!worldMap[(int)(info->playerPositionX)][(int)(info->playerPositionY + info->directionVectorY * info->moveSpeed)])
-//             info->playerPositionY += info->directionVectorY * info->moveSpeed;
-//     }
-
-//     if (key == KEY_S)
-//     {
-//         /*  
-//             S키를 누르면 뒤로 이동한다.
-//             이때, 이동하고자 하는 위치는 맵 상에서 무조건 0이어야 한다.
-//             왜냐하면 맵 위에서 1~4가 의미하는 바는 통과할 수 없는 장애물이기 때문이다.
-//             만약 [2][2]맵이 있다고 할 때,
-//             위치의 오른쪽 위 지점에서 오른쪽 위를 바라보고 s키를 누르면
-//             왼쪽 아래 지점으로 이동해야 한다.
-//             이를 위해서는 x를 한칸 왼쪽으로 이동시키고,
-//             y를 한칸 아래로 이동시키면 된다.
-//             아래는 다음을 구체적으로 구현한 것이다.
-//         */
-//         if (!worldMap[(int)(info->playerPositionX - info->directionVectorX * info->moveSpeed)][(int)(info->playerPositionY)])
-//             info->playerPositionX -= info->directionVectorX * info->moveSpeed;
-//         if (!worldMap[(int)(info->playerPositionX)][(int)(info->playerPositionY - info->directionVectorY * info->moveSpeed)])
-//             info->playerPositionY -= info->directionVectorY * info->moveSpeed;
-//     }
-
-//     // AD
-//     if (key == KEY_A)
-//     {
-//         double oldDirectionX = info->directionVectorX;
-//         info->directionVectorX = info->directionVectorX * cos(info->rotSpeed) - info->directionVectorY * sin(info->rotSpeed);
-//         info->directionVectorY = oldDirectionX * sin(info->rotSpeed) + info->directionVectorY * cos(info->rotSpeed);
-//         double oldPlaneX = info->planeX;
-//         info->planeX = info->planeX * cos(info->rotSpeed) - info->planeY * sin(info->rotSpeed);
-//         info->planeY = oldPlaneX * sin(info->rotSpeed) + info->planeY * cos(info->rotSpeed);
-//     }
-
-//     // https://github.com/ChoiKanghun/images/blob/master/1024_1.jpg?raw=true 
-//     // 위 이미지를 브라우저에 검색하자. 핵심이 되는 공식이다. 이 공식에 대한 자세한 설명은
-//     // https://github.com/minckim0/cub3d_lect 해당 깃 레포 내 pdf 62~66 페이지 참고.
-//     if (key == KEY_D)
-//     {
-//         double oldDirectionX = info->directionVectorX;
-//         info->directionVectorX = info->directionVectorX * cos(-info->rotSpeed) - info->directionVectorY * sin(-info->rotSpeed);
-//         info->directionVectorY = oldDirectionX * sin(-info->rotSpeed) + info->directionVectorY * cos(-info->rotSpeed);
-//         double oldPlaneX = info->planeX;
-//         info->planeX = info->planeX * cos(-info->rotSpeed) - info->planeY * sin(-info->rotSpeed);
-//         info->planeY = oldPlaneX * sin(-info->rotSpeed) + info->planeY * cos(-info->rotSpeed);
-//     }
-//     if (key == K_ESC)
-//         exit(0);
-//     return (0);
-// }
-
 int key_press(int key, t_info *info)
 {
 	printf("key : %d\n", key);
+    // WS
+    if (key == KEY_W)
+    {
+        if (!worldMap[(int)(info->playerPositionX + info->directionVectorX * info->moveSpeed)][(int)(info->playerPositionY)])
+            info->playerPositionX += info->directionVectorX * info->moveSpeed;
+        if (!worldMap[(int)(info->playerPositionX)][(int)(info->playerPositionY + info->directionVectorY * info->moveSpeed)])
+            info->playerPositionY += info->directionVectorY * info->moveSpeed;
+    }
+
+    if (key == KEY_S)
+    {
+        /*  
+            S키를 누르면 뒤로 이동한다.
+            이때, 이동하고자 하는 위치는 맵 상에서 무조건 0이어야 한다.
+            왜냐하면 맵 위에서 1~4가 의미하는 바는 통과할 수 없는 장애물이기 때문이다.
+            만약 [2][2]맵이 있다고 할 때,
+            위치의 오른쪽 위 지점에서 오른쪽 위를 바라보고 s키를 누르면
+            왼쪽 아래 지점으로 이동해야 한다.
+            이를 위해서는 x를 한칸 왼쪽으로 이동시키고,
+            y를 한칸 아래로 이동시키면 된다.
+            아래는 다음을 구체적으로 구현한 것이다.
+        */
+        if (!worldMap[(int)(info->playerPositionX - info->directionVectorX * info->moveSpeed)][(int)(info->playerPositionY)])
+            info->playerPositionX -= info->directionVectorX * info->moveSpeed;
+        if (!worldMap[(int)(info->playerPositionX)][(int)(info->playerPositionY - info->directionVectorY * info->moveSpeed)])
+            info->playerPositionY -= info->directionVectorY * info->moveSpeed;
+    }
+
+    // AD
+    if (key == KEY_A)
+    {
+        double oldDirectionX = info->directionVectorX;
+        info->directionVectorX = info->directionVectorX * cos(info->rotSpeed) - info->directionVectorY * sin(info->rotSpeed);
+        info->directionVectorY = oldDirectionX * sin(info->rotSpeed) + info->directionVectorY * cos(info->rotSpeed);
+        double oldPlaneX = info->planeX;
+        info->planeX = info->planeX * cos(info->rotSpeed) - info->planeY * sin(info->rotSpeed);
+        info->planeY = oldPlaneX * sin(info->rotSpeed) + info->planeY * cos(info->rotSpeed);
+    }
+
+    // https://github.com/ChoiKanghun/images/blob/master/1024_1.jpg?raw=true 
+    // 위 이미지를 브라우저에 검색하자. 핵심이 되는 공식이다. 이 공식에 대한 자세한 설명은
+    // https://github.com/minckim0/cub3d_lect 해당 깃 레포 내 pdf 62~66 페이지 참고.
+    if (key == KEY_D)
+    {
+        double oldDirectionX = info->directionVectorX;
+        info->directionVectorX = info->directionVectorX * cos(-info->rotSpeed) - info->directionVectorY * sin(-info->rotSpeed);
+        info->directionVectorY = oldDirectionX * sin(-info->rotSpeed) + info->directionVectorY * cos(-info->rotSpeed);
+        double oldPlaneX = info->planeX;
+        info->planeX = info->planeX * cos(-info->rotSpeed) - info->planeY * sin(-info->rotSpeed);
+        info->planeY = oldPlaneX * sin(-info->rotSpeed) + info->planeY * cos(-info->rotSpeed);
+    }
+    if (key == K_ESC)
+        exit(0);
+    return (0);
 }
+
+// int key_press(int key, t_info *info)
+// {
+// 	printf("key : %d\n", key);
+// }
 
 int main()
 {

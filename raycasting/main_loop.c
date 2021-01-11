@@ -6,11 +6,14 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/11 03:34:18 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/11 08:25:48 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/12 03:00:06 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ray.h"
+
+#define texWidth 64
+#define texHeight 64
 
 void verLine (t_ray_info *info, int x, int y1, int y2, int color)
 {
@@ -36,8 +39,8 @@ int			main_loop(t_ray_info *ray_info)
 		info.ray.Y = ray_info->dir_Y + info.cameraX * ray_info->plane_Y;
 		info.ray.X = ray_info->dir_X + info.cameraX * ray_info->plane_X;
 
-		info.map.Y = (int)ray_info->playerposition_Y;
-		info.map.X = (int)ray_info->playerposition_X;
+		info.map.Y = (int)ray_info->pos_Y;
+		info.map.X = (int)ray_info->pos_X;
 		
 		info.deltaDist.Y = fabs(1 / info.ray.Y);
 		info.deltaDist.X = fabs(1 / info.ray.X);
@@ -45,22 +48,22 @@ int			main_loop(t_ray_info *ray_info)
 		if (info.ray.X < 0)
 		{
 			info.step.X = -1;
-			info.sideDist.X = (ray_info->playerposition_X - info.map.X) * info.deltaDist.X;
+			info.sideDist.X = (ray_info->pos_X - info.map.X) * info.deltaDist.X;
 		}
 		else
 		{
 			info.step.X = 1;
-			info.sideDist.X = (info.map.X + 1.0 - ray_info->playerposition_X) * info.deltaDist.X;
+			info.sideDist.X = (info.map.X + 1.0 - ray_info->pos_X) * info.deltaDist.X;
 		}
 		if (info.ray.Y < 0)
 		{
 			info.step.Y = -1;
-			info.sideDist.Y = (ray_info->playerposition_Y - info.map.Y) * info.deltaDist.Y;
+			info.sideDist.Y = (ray_info->pos_Y - info.map.Y) * info.deltaDist.Y;
 		}
 		else
 		{
 			info.step.Y = 1;
-			info.sideDist.Y = (info.map.Y + 1.0 - ray_info->playerposition_Y) * info.deltaDist.Y;
+			info.sideDist.Y = (info.map.Y + 1.0 - ray_info->pos_Y) * info.deltaDist.Y;
 		}
 		
 		while (1)
@@ -82,9 +85,9 @@ int			main_loop(t_ray_info *ray_info)
 		}
 
 		if (info.side == 0)
-			info.perpWallDist = (info.map.X - ray_info->playerposition_X + (1 - info.step.X) / 2) / info.ray.X;
+			info.perpWallDist = (info.map.X - ray_info->pos_X + (1 - info.step.X) / 2) / info.ray.X;
 		else
-			info.perpWallDist = (info.map.Y - ray_info->playerposition_Y + (1 - info.step.Y) / 2) / info.ray.Y;
+			info.perpWallDist = (info.map.Y - ray_info->pos_Y + (1 - info.step.Y) / 2) / info.ray.Y;
 		
 		info.lineHeight = ((int)ray_info->screen_Y / info.perpWallDist);
 		x++;
