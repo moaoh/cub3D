@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/12 03:20:48 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/12 03:23:09 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/12 08:03:01 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,6 @@
 #	define KEY_S 1
 #	define KEY_D 2
 
-# define K_ESC 53
+# 	define KEY_ESC 53
 
 #	endif

@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/12 00:27:16 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/12 07:50:24 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/12 08:03:47 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ int key_press(int key, t_ray_info *info)
 	printf("key : %d\n", key);
 	if (key == KEY_W)
 	{
-		printf("key : %d\n", key);
 		if (!info->map[(int)(info->pos_Y + info->dir_Y * info->moveSpeed)][(int)(info->pos_X)])
 			info->pos_Y += info->dir_Y * info->moveSpeed;
 		if (!info->map[(int)(info->pos_Y)][(int)(info->pos_X + info->dir_X * info->moveSpeed)])
@@ -57,6 +56,8 @@ int key_press(int key, t_ray_info *info)
 		info->plane_Y = oldPlaneX * sin(-info->rotSpeed) + info->plane_Y * cos(-info->rotSpeed);
 		info->plane_X = info->plane_X * cos(-info->rotSpeed) - info->plane_Y * sin(-info->rotSpeed);
 	}
+	if (key == KEY_ESC)
+		exit(0);
     
     return (0);
 }
