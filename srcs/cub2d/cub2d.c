@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/12 06:55:49 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/12 07:32:02 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/14 06:37:26 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 static void cub2d_info(t_cub2d_info *info, t_map *map)
 {
 	info->map = map->map.map;
-	// info->img.img = 
-	// info->img.data = 
 }
 
 int cub2d(t_map map)

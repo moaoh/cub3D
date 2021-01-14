@@ -6,25 +6,22 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/11 03:34:18 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/12 03:25:11 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/14 05:35:39 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ray.h"
 
-#define texWidth 64
-#define texHeight 64
-
 void verLine (t_ray_info *info, int x, int y1, int y2, int color)
 {
-    int temp;
+	int temp;
 
-    temp = y1;
-    while (temp <= y2)
-    {
-        mlx_pixel_put(info->mlx, info->win, x, temp, color);
-        temp++;
-    }
+	temp = y1;
+	while (temp <= y2)
+	{
+		mlx_pixel_put(info->mlx, info->win, x, temp, color);
+		temp++;
+	}
 }
 
 int			main_loop(t_ray_info *ray_info)
@@ -122,7 +119,9 @@ int			main_loop(t_ray_info *ray_info)
             (x, drawStart) ~ (x, drawEnd)까지 color색이 되고
             x가 점점 증가하면 화면의 왼쪽 끝부터 오른쪽 끝까지 쭉 무언가가 그려지는 것을 상상해보자.
         */
-        verLine(ray_info, x, drawStart, drawEnd, color);
+		verLine(ray_info, x, 0, drawStart - 1, 0xFFFFFF);
+		verLine(ray_info, x, drawStart, drawEnd, color);
+		verLine(ray_info, x, drawEnd, ray_info->screen_Y - 1, 0xFFFFFF);
 	}
 
 // ----------------------------------------------------------------------------

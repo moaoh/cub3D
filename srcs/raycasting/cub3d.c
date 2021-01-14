@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/27 23:48:12 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/12 07:50:17 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/14 06:15:45 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ static void			ray_putin_info(t_ray_info *info, t_map *map)
 	player_plane(info, map->player.dir);
 	info->map = map->map.map;
 
-	info->moveSpeed = 0.05;
+	info->moveSpeed = 20;
 	info->rotSpeed = 0.05;
 }
 
