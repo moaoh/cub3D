@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 13:01:48 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/12 03:18:52 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/15 03:06:30 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,12 @@ typedef struct		s_ray_info
 	void			*mlx;
 	void			*win;
 	char			**map;
-    double    		moveSpeed;
-    double    		rotSpeed;
+
+	double			moveSpeed;
+	double			rotSpeed;
+	
+	double			oldDirX;
+	double			oldPlaneX;
 }					t_ray_info;
 
 /*

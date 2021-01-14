@@ -1,7 +1,7 @@
 // 파일명 main.c로 해둠.
 
-# include "ray.h"
 # include "mlx.h"
+# include "../srcs/cub3d.h"
 
 // WASD
 # define KEY_W 13
@@ -304,10 +304,10 @@ int key_press(int key, t_info *info)
             y를 한칸 아래로 이동시키면 된다.
             아래는 다음을 구체적으로 구현한 것이다.
         */
-        if (!worldMap[(int)(info->playerPositionX - info->directionVectorX * info->moveSpeed)][(int)(info->playerPositionY)])
-            info->playerPositionX -= info->directionVectorX * info->moveSpeed;
-        if (!worldMap[(int)(info->playerPositionX)][(int)(info->playerPositionY - info->directionVectorY * info->moveSpeed)])
-            info->playerPositionY -= info->directionVectorY * info->moveSpeed;
+			if (!worldMap[(int)(info->playerPositionX - info->directionVectorX * info->moveSpeed)][(int)(info->playerPositionY)])
+				info->playerPositionX -= info->directionVectorX * info->moveSpeed;
+			if (!worldMap[(int)(info->playerPositionX)][(int)(info->playerPositionY - info->directionVectorY * info->moveSpeed)])
+				info->playerPositionY -= info->directionVectorY * info->moveSpeed;
     }
 
     // AD
@@ -349,14 +349,14 @@ int main()
     info.mlx = mlx_init();
 
     // info는 아래 필드 모두를 가지고 있다.
-    // info.playerPositionX = 12;
-    // info.playerPositionY = 5;
-    // info.directionVectorX = -1;
-    // info.directionVectorY = 0;
-    // info.planeX = 0;
-    // info.planeY = 0.66;
-    // info.moveSpeed = 0.05;
-    // info.rotSpeed = 0.05;
+    info.playerPositionX = 12;
+    info.playerPositionY = 5;
+    info.directionVectorX = -1;
+    info.directionVectorY = 0;
+    info.planeX = 0;
+    info.planeY = 0.66;
+    info.moveSpeed = 0.05;
+    info.rotSpeed = 0.05;
 
     // 창을 띄움.
     info.win = mlx_new_window(info.mlx, screenWidth, screenHeight, "mlx");
