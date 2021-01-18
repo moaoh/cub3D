@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 18:39:36 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/15 00:22:05 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/18 20:35:08 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,6 @@
 #	include "map_chk/map_chk.h"
 #	include "ray/ray.h"
 #	include "../mlx/minilibx_mms_20200219/mlx.h"
-#	include "../mlx/minilibx_opengl_20191021/mlx.h"
-#	include "cub2d/cub2d.h"
 
 #	include <stdio.h>
 #	include <unistd.h>

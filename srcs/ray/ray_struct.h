@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 13:01:48 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/15 03:06:30 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/18 08:05:38 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,5 +87,18 @@ typedef struct			s_loop_info
 	double				perpWallDist;
 	int					lineHeight;
 }						t_loop_info;
+
+/*
+** img ----------------------------------------------------
+*/
+
+typedef struct			s_img
+{
+	void				*img;
+	int					*data;
+	int					size_l;
+	int					bpp;
+	int					endian;
+}						t_img;
 
 #	endif

@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/27 23:48:12 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/15 02:54:43 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/18 04:31:45 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ static void			ray_putin_info(t_ray_info *info, t_map *map)
 int					cub3d(t_map map)
 {
 	t_ray_info	info;
+	t_img		img;
 
 	ray_putin_info(&info, &map);
 	info.mlx = mlx_init();
