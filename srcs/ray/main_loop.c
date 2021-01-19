@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/11 03:34:18 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/16 19:08:53 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/19 07:04:20 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,12 +91,12 @@ int			main_loop(t_ray_info *ray_info)
 		info.lineHeight = ((int)ray_info->screen_Y / info.perpWallDist);
 		x++;
 
-		int drawStart = (-info.lineHeight / 2) + (ray_info->screen_Y / 2);
-        if (drawStart < 0)
-            drawStart = 0;
-        int drawEnd = (info.lineHeight / 2) + (ray_info->screen_Y / 2);
-        if (drawEnd >= ray_info->screen_Y)
-            drawEnd = ray_info->screen_Y - 1;
+		info.drawStart = (-info.lineHeight / 2) + (ray_info->screen_Y / 2);
+        if (info.drawStart < 0)
+            info.drawStart = 0;
+        info.drawEnd = (info.lineHeight / 2) + (ray_info->screen_Y / 2);
+        if (info.drawEnd >= ray_info->screen_Y)
+            info.drawEnd = ray_info->screen_Y - 1;
 
 // ----------------------------------------------------------------------------
 
@@ -121,9 +121,9 @@ int			main_loop(t_ray_info *ray_info)
             (x, drawStart) ~ (x, drawEnd)까지 color색이 되고
             x가 점점 증가하면 화면의 왼쪽 끝부터 오른쪽 끝까지 쭉 무언가가 그려지는 것을 상상해보자.
         */
-		verLine(ray_info, x, 0, drawStart - 1, 0xFFFFFF);
-		verLine(ray_info, x, drawStart, drawEnd, color);
-		verLine(ray_info, x, drawEnd, ray_info->screen_Y - 1, 0xFFFFFF);
+		verLine(ray_info, x, 0, info.drawStart - 1, 0xFFFFFF);
+		verLine(ray_info, x, info.drawStart, info.drawEnd, color);
+		verLine(ray_info, x, info.drawEnd, ray_info->screen_Y - 1, 0xFFFFFF);
 	}
 
 // ----------------------------------------------------------------------------

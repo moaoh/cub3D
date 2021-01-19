@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 13:01:48 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/18 08:05:38 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/19 06:51:37 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,8 @@ typedef struct			s_loop_info
 	int					side;
 	double				perpWallDist;
 	int					lineHeight;
+	int					drawStart;
+	int					drawEnd;
 }						t_loop_info;
 
 /*
