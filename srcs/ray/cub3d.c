@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/27 23:48:12 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/18 04:31:45 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/20 15:34:02 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,8 +83,13 @@ int					cub3d(t_map map)
 	info.mlx = mlx_init();
 
 	info.win = mlx_new_window(info.mlx, map.screen.X, map.screen.Y, "cub3d");
+
+	img.img = mlx_new_image(info.mlx, map.screen.X, map.screen.Y);
+	img.data = mlx_get_data_addr(img.img, &img.bpp, &img.size_l, &img.endian);
+	
 	mlx_loop_hook(info.mlx, &main_loop, &info);
 
+	mlx_put_image_to_window(info.mlx, info.win, img.img, 0, 0);
 	mlx_hook(info.win, 2, 0, &key_press, &info);
 	mlx_loop(info.mlx);
 	

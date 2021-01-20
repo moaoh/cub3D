@@ -6,11 +6,28 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/11 03:34:18 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/19 07:04:20 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/20 21:12:17 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ray.h"
+
+void  my_mlx_pixel_put(t_img *img, int y, int x, int color)
+{
+	img->data[y * (img->size_l / 4) + x * (img->bpp / 32)] = color;
+}
+
+void img_change(t_img *img, int x, int start, int end, int color)
+{
+	int temp;
+
+	temp = start;
+	while (temp <= end)
+	{
+		my_mlx_pixel_put(img, x, temp, color);
+		temp++;
+	}
+}
 
 void verLine (t_ray_info *info, int x, int y1, int y2, int color)
 {
@@ -24,7 +41,7 @@ void verLine (t_ray_info *info, int x, int y1, int y2, int color)
 	}
 }
 
-int			main_loop(t_ray_info *ray_info)
+int			main_loop(t_ray_info *ray_info, t_map *map, t_img *img)
 {
 	int		x;
 	t_loop_info		info;
@@ -37,7 +54,6 @@ int			main_loop(t_ray_info *ray_info)
 		info.ray.Y = ray_info->dir_Y + info.cameraX * ray_info->plane_Y;
 		info.ray.X = ray_info->dir_X + info.cameraX * ray_info->plane_X;
 
-		// printf("pos = %lf\n", ray_info->pos_Y);
 		info.map.Y = (int)ray_info->pos_Y;
 		info.map.X = (int)ray_info->pos_X;
 		
@@ -101,29 +117,27 @@ int			main_loop(t_ray_info *ray_info)
 // ----------------------------------------------------------------------------
 
         int color;
+		
+		// 벽.
         if (ray_info->map[info.map.Y][info.map.X] == 1)
             color = 0xFF0000;
+		// splite
         else if (ray_info->map[info.map.Y][info.map.X] == 2)
             color = 0x00FF00;
-        else if (ray_info->map[info.map.Y][info.map.X] == 3)
-            color = 0x0000FF;
-        else if (ray_info->map[info.map.Y][info.map.X] == 4)
-            color = 0xFFFFFF;
         else
             color = 0x123145;
 
         // x, y side의 밝기를 달리해줌.
         if (info.side == 1)
             color = color / 2;
-        /* 
-            verLine 함수는 세로 줄을 긋는다.
-            이 함수는 x좌표에서 drawStart~drawEnd까지 color 색으로 픽셀을 그린다.
-            (x, drawStart) ~ (x, drawEnd)까지 color색이 되고
-            x가 점점 증가하면 화면의 왼쪽 끝부터 오른쪽 끝까지 쭉 무언가가 그려지는 것을 상상해보자.
-        */
-		verLine(ray_info, x, 0, info.drawStart - 1, 0xFFFFFF);
-		verLine(ray_info, x, info.drawStart, info.drawEnd, color);
-		verLine(ray_info, x, info.drawEnd, ray_info->screen_Y - 1, 0xFFFFFF);
+		
+		img_change(img, x, 0, info.drawStart - 1, 0xFFFFFF);
+		img_change(img, x, info.drawStart, info.drawEnd, color);
+		img_change(img, x, info.drawEnd, ray_info->screen_Y - 1, 0xFFFFFF);
+		// printf("%d %d %d\n", x, info.drawStart, info.drawEnd);
+		// verLine(ray_info, x, 0, info.drawStart - 1, 0xFFFFFF);
+		// verLine(ray_info, x, info.drawStart, info.drawEnd, color);
+		// verLine(ray_info, x, info.drawEnd, ray_info->screen_Y - 1, 0xFFFFFF);
 	}
 
 // ----------------------------------------------------------------------------
