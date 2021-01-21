@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/11 03:34:18 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/22 00:54:18 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/22 03:10:06 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void  my_mlx_pixel_put(t_img img, int y, int x, int color)
 {
 	// printf("2test\n");
 	// printf("size_l = %d\n", img.size_l);
-	img.data[y * (img.size_l / 4) + x * (img.bpp / 32)] = color;
+	img.data[y * (img.size_l / 4) + x] = color;
 }
 
 void img_change(t_ray_info *ray_info, int x, int start, int end, int color)
@@ -28,8 +28,8 @@ void img_change(t_ray_info *ray_info, int x, int start, int end, int color)
 	while (temp <= end)
 	{
 		// printf("%d %d %d %d\n", x, ray_info->screen_Y, temp, ray_info->screen_X);
-		// if (x >= 0 && x < ray_info->screen_Y && \
-		// 	temp >= 0 && temp < ray_info->screen_X)
+		// if (x >= 0 && x < ray_info->screen_X && \
+		// 	temp >= 0 && temp < ray_info->screen_Y)
 		// {
 			my_mlx_pixel_put(ray_info->img, temp, x, color);
 		// }
@@ -132,7 +132,7 @@ int			main_loop(t_ray_info *ray_info)
 		img_change(ray_info, x, info.drawStart, info.drawEnd, color);
 		img_change(ray_info, x, info.drawEnd, ray_info->screen_Y - 1, 0xFFFFFF);
 
-		mlx_put_image_to_window(ray_info->mlx, ray_info->win, ray_info->img.img, 0, 0);
+		// mlx_put_image_to_window(ray_info->mlx, ray_info->win, ray_info->img.img, 0, 0);
 		// printf("%d %d %d\n", x, info.drawStart, info.drawEnd);
 	}
 
