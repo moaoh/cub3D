@@ -6,46 +6,43 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/11 03:34:18 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/20 21:12:17 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/22 00:54:18 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ray.h"
 
-void  my_mlx_pixel_put(t_img *img, int y, int x, int color)
+void  my_mlx_pixel_put(t_img img, int y, int x, int color)
 {
-	img->data[y * (img->size_l / 4) + x * (img->bpp / 32)] = color;
+	// printf("2test\n");
+	// printf("size_l = %d\n", img.size_l);
+	img.data[y * (img.size_l / 4) + x * (img.bpp / 32)] = color;
 }
 
-void img_change(t_img *img, int x, int start, int end, int color)
+void img_change(t_ray_info *ray_info, int x, int start, int end, int color)
 {
 	int temp;
 
+	
 	temp = start;
 	while (temp <= end)
 	{
-		my_mlx_pixel_put(img, x, temp, color);
+		// printf("%d %d %d %d\n", x, ray_info->screen_Y, temp, ray_info->screen_X);
+		// if (x >= 0 && x < ray_info->screen_Y && \
+		// 	temp >= 0 && temp < ray_info->screen_X)
+		// {
+			my_mlx_pixel_put(ray_info->img, temp, x, color);
+		// }
 		temp++;
 	}
 }
 
-void verLine (t_ray_info *info, int x, int y1, int y2, int color)
-{
-	int temp;
-
-	temp = y1;
-	while (temp <= y2)
-	{
-		mlx_pixel_put(info->mlx, info->win, x, temp, color);
-		temp++;
-	}
-}
-
-int			main_loop(t_ray_info *ray_info, t_map *map, t_img *img)
+int			main_loop(t_ray_info *ray_info)
 {
 	int		x;
 	t_loop_info		info;
 
+	// printf("%s\n", map->texure.EA);
 	x = 0;
 	while(x < ray_info->screen_X)
 	{
@@ -130,14 +127,13 @@ int			main_loop(t_ray_info *ray_info, t_map *map, t_img *img)
         // x, y side의 밝기를 달리해줌.
         if (info.side == 1)
             color = color / 2;
-		
-		img_change(img, x, 0, info.drawStart - 1, 0xFFFFFF);
-		img_change(img, x, info.drawStart, info.drawEnd, color);
-		img_change(img, x, info.drawEnd, ray_info->screen_Y - 1, 0xFFFFFF);
+
+		img_change(ray_info, x, 0, info.drawStart - 1, 0xFFFFFF);
+		img_change(ray_info, x, info.drawStart, info.drawEnd, color);
+		img_change(ray_info, x, info.drawEnd, ray_info->screen_Y - 1, 0xFFFFFF);
+
+		mlx_put_image_to_window(ray_info->mlx, ray_info->win, ray_info->img.img, 0, 0);
 		// printf("%d %d %d\n", x, info.drawStart, info.drawEnd);
-		// verLine(ray_info, x, 0, info.drawStart - 1, 0xFFFFFF);
-		// verLine(ray_info, x, info.drawStart, info.drawEnd, color);
-		// verLine(ray_info, x, info.drawEnd, ray_info->screen_Y - 1, 0xFFFFFF);
 	}
 
 // ----------------------------------------------------------------------------
