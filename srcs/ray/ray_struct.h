@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 13:01:48 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/21 18:58:45 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/23 01:58:30 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 ** img ----------------------------------------------------
 */
 
+
+
 typedef struct			s_img
 {
 	void				*img;
@@ -28,6 +30,11 @@ typedef struct			s_img
 	int					bpp;
 	int					endian;
 }						t_img;
+
+// typedef struct			s_imgs
+// {
+	
+// }						t_imgs;
 
 /*
 ** cub3d_info -----------------------------------------------
@@ -114,6 +121,7 @@ typedef struct			s_loop_info
 	int					lineHeight;
 	int					drawStart;
 	int					drawEnd;
+	int					color;
 }						t_loop_info;
 
 #	endif
