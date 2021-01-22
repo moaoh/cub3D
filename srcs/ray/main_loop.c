@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/11 03:34:18 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/22 03:10:06 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/22 20:45:45 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ int			main_loop(t_ray_info *ray_info)
 	int		x;
 	t_loop_info		info;
 
-	// printf("%s\n", map->texure.EA);
 	x = 0;
 	while(x < ray_info->screen_X)
 	{
@@ -128,15 +127,16 @@ int			main_loop(t_ray_info *ray_info)
         if (info.side == 1)
             color = color / 2;
 
-		img_change(ray_info, x, 0, info.drawStart - 1, 0xFFFFFF);
+		img_change(ray_info, x, 0, info.drawStart - 1, 0x1DA06A);
 		img_change(ray_info, x, info.drawStart, info.drawEnd, color);
-		img_change(ray_info, x, info.drawEnd, ray_info->screen_Y - 1, 0xFFFFFF);
+		img_change(ray_info, x, info.drawEnd, ray_info->screen_Y - 1, 0xFF6633);
 
-		// mlx_put_image_to_window(ray_info->mlx, ray_info->win, ray_info->img.img, 0, 0);
 		// printf("%d %d %d\n", x, info.drawStart, info.drawEnd);
 	}
+	mlx_sync(MLX_SYNC_IMAGE_WRITABLE, ray_info->img.img);
+	mlx_put_image_to_window(ray_info->mlx, ray_info->win, ray_info->img.img, 0, 0);
+	mlx_sync(MLX_SYNC_WIN_CMD_COMPLETED, ray_info->win);
 
 // ----------------------------------------------------------------------------
-
 	return (0);
 }

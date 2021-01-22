@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 18:37:00 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/11 03:56:43 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/22 20:36:11 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int			ft_value_info(char *line, t_map *map, t_cub_info *cub_chk)
 {
 	if (!(ft_value_chk(line, map, cub_chk)))
 	{
-		perror("Invalid format");
+		perror("Invalid format.");
 		exit(0);
 	}
 	return (_RIGHT);
