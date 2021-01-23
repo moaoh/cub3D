@@ -19,15 +19,18 @@ int	main(void)
 
 	info.win = mlx_new_window(info.mlx, 1000, 800, "main");
 
-	img.img = mlx_new_image(info.mlx, 1000, 800);
 	img2.img = mlx_new_image(info.mlx, 1000, 800);
 
-	img.img = mlx_png_file_to_image(info.mlx, "../texture/minecraft.xpm", &img_width, &img_height);
+	img.img = mlx_xpm_file_to_image(info.mlx, "../texture/wall_e.xpm", &img_width, &img_height);
+	if (!img.img)
+		return (0);
+	// img.img = mlx_png_file_to_image(info.mlx, "../texture/minecraft.png", &img_width, &img_height);
+	// printf("test = %d %d\n", img_width, img_height);
 	
 	img.data = (int *)mlx_get_data_addr(img.img, &img.bpp, &img.size_l, &img.endian);
 	img2.data = (int *)mlx_get_data_addr(img2.img, &img2.bpp, &img2.size_l, &img2.endian);
+	// printf("test\n");
 
-	printf("size_l = %d\n %d\n %d\n", img.size_l, img_width, img_height);
 	// printf("size_l = %d\n %d\n %d\n", img.size_l, img_width, img_height);
 	for(int i = 0; i < img_height; i++)
 	{

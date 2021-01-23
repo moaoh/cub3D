@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/12 00:27:16 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/23 00:24:47 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/23 09:03:15 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,9 @@ int key_press(int key, t_ray_info *info)
 {
 	if (key == KEY_W)
 	{
+		// if (info->map[(int)(info->pos_Y + info->dir_Y * info->moveSpeed)][(int)(info->pos_X)] == 1 || \
+		// 	info->map[(int)(info->pos_Y)][(int)(info->pos_X + info->dir_X * info->moveSpeed)] == 1)
+		// 		return (0);
 		if (info->map[(int)(info->pos_Y + info->dir_Y * info->moveSpeed)][(int)(info->pos_X)])
 			info->pos_Y += info->dir_Y * info->moveSpeed;
 		if(info->map[(int)(info->pos_Y)][(int)(info->pos_X + info->dir_X * info->moveSpeed)])
@@ -29,6 +32,9 @@ int key_press(int key, t_ray_info *info)
 	}
 	if (key == KEY_S)
 	{
+		// if (info->map[(int)(info->pos_Y - info->dir_Y * info->moveSpeed)][(int)(info->pos_X)] == 1 || \
+		// 	info->map[(int)(info->pos_Y)][(int)(info->pos_X - info->dir_X * info->moveSpeed)] == 1)
+		// 		return (0);
 		if (info->map[(int)(info->pos_Y - info->dir_Y * info->moveSpeed)][(int)(info->pos_X)])
 			info->pos_Y -= info->dir_Y * info->moveSpeed;
 		if (info->map[(int)(info->pos_Y)][(int)(info->pos_X - info->dir_X * info->moveSpeed)])

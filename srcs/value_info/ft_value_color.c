@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 19:29:03 by junmkang          #+#    #+#             */
-/*   Updated: 2020/12/27 23:58:47 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/23 10:22:49 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,7 @@ static char			*ft_color_chk(char *str)
 
 	i = 0;
 	if (!str)
-	{
-		perror("Invalid color value.");
-		exit(0);
-	}
+		ft_error("Invalid color value.");
 	while (str[i])
 	{
 		if (!('0' <= str[i] && str[i] <= '9'))
@@ -36,10 +33,7 @@ static int			ft_value_inc(char **num, t_map *map)
 	if (!(ft_color_chk(num[0])) || \
 		!(ft_color_chk(num[1])) || \
 		!(ft_color_chk(num[2])))
-	{
-		perror("Invalid color value.");
-		exit(0);
-	}
+		ft_error("Invalid color value.");
 	else
 	{
 		map->c_color.R = ft_atoi(num[0]);
@@ -54,10 +48,7 @@ static int			ft_value_inf(char **num, t_map *map)
 	if (!(ft_color_chk(num[0])) || \
 		!(ft_color_chk(num[1])) || \
 		!(ft_color_chk(num[2])))
-	{
-		perror("Invalid color value.");
-		exit(0);
-	}
+		ft_error("Invalid color value.");
 	else
 	{
 		map->f_color.R = ft_atoi(num[0]);
@@ -73,10 +64,7 @@ int					ft_value_color(char *line, t_map *map, int cub_chk)
 	char	**num;
 
 	if (cub_chk != 1)
-	{
-		perror("duplicate color value.");
-		exit(0);
-	}
+		ft_error("duplicate color value.");
 	str = ft_split(line, ' ');
 	num = ft_split(str[1], ',');
 	if (!(ft_strncmp(str[0], "F", 1)))
@@ -84,9 +72,6 @@ int					ft_value_color(char *line, t_map *map, int cub_chk)
 	else if (!(ft_strncmp(str[0], "C", 1)))
 		ft_value_inc(num, map);
 	else
-	{
-		perror("Invalid color value.");
-		exit(0);
-	}
+		ft_error("Invalid color value.");
 	return (0);
 }

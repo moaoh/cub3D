@@ -6,30 +6,27 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/27 23:36:58 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/12 07:49:33 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/23 11:13:37 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-// map 유효성 검사.
-// map에 해당하는 값들을 담기.
+void				ft_error(char *s)
+{
+	perror(s);
+	exit(0);
+}
 
 static int			ft_file_name_chk(char *s)
 {
 	char			**str;
 
 	if (!s)
-	{
-		perror("Invalid filename");
-		exit(0);
-	}
+		ft_error("Invalid filename");
 	str = ft_split(s, '.');
 	if (!str[1] || (ft_strncmp(str[1], "cub", 3)) || (ft_strlen(str[1]) != 3))
-	{
-		perror("Invalid filename");
-		exit(0);
-	}
+		ft_error("Invalid filename");
 	return (_RIGHT);
 }
 

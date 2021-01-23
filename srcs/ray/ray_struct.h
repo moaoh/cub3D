@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 13:01:48 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/23 01:58:30 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/23 10:05:03 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,18 @@ typedef struct			s_img
 	int					size_l;
 	int					bpp;
 	int					endian;
+	int					width;
+	int					height;
 }						t_img;
 
-// typedef struct			s_imgs
-// {
-	
-// }						t_imgs;
+typedef struct			s_imgs
+{
+	t_img				main_img;
+	t_img				NO_img;
+	t_img				SO_img;
+	t_img				WE_img;
+	t_img				EA_img;
+}						t_imgs;
 
 /*
 ** cub3d_info -----------------------------------------------
@@ -42,10 +48,10 @@ typedef struct			s_img
 
 typedef struct		s_ray_texture
 {
-	char			*NO;
-	char			*SO;
-	char			*WE;
 	char			*EA;
+	char			*WE;
+	char			*SO;
+	char			*NO;
 }					t_ray_texture;
 
 
@@ -69,7 +75,7 @@ typedef struct		s_ray_info
 	double			oldDirX;
 	double			oldPlaneX;
 
-	t_img			img;
+	t_imgs			imgs;
 	t_ray_texture	texture;
 
 }					t_ray_info;

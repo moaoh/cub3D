@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/26 01:42:46 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/09 12:52:51 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/23 10:21:00 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,7 @@ int				ft_map_validity(char **chk_map, int i, int j, int y_size)
 			x = j + nx[k];
 			if (y < 0 || x < 0 || x >= ft_strlen(chk_map[i]) || y >= y_size || \
 				!chk_map[y][x] || chk_map[y][x] == ' ')
-			{
-				perror("Invalid map format.");
-				exit(0);
-			}
+				ft_error("Invalid map format.");
 			k--;
 		}
 	}

@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 19:26:50 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/11 03:57:34 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/23 10:24:51 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,17 +35,13 @@ int					ft_value_screen(char *line, t_map *map, int cub_chk)
 	if (cub_chk != 1 || ft_strlen(str[0]) != 1 || str[3] != NULL)
 	{
 		if (cub_chk != 1)
-			perror("duplicate screen value.");
+			ft_error("duplicate screen value.");
 		else
-			perror("Invalid screen value.");
-		exit(0);
+			ft_error("Invalid screen value.");
 	}
 	if (!(ft_screen_chk(str[1])) || \
 		!(ft_screen_chk(str[2])))
-	{
-		perror("Invalid screen value.2");
-		exit(0);
-	}
+		ft_error("Invalid screen value.2");
 	else
 	{
 		map->screen.X = ft_atoi(str[1]);

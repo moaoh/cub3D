@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 18:39:36 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/18 20:35:08 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/23 10:19:01 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@
 #	include <math.h>
 #	include <fcntl.h>
 #	include <limits.h>
+
+void	ft_error(char *s);
 
 #	define	_WRONG	0
 #	define	_RIGHT	1

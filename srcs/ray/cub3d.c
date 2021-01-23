@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/27 23:48:12 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/22 19:36:12 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/23 11:24:40 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,11 +72,20 @@ static void			ray_putin_info(t_ray_info *info, t_map *map)
 
 	info->texture.EA = map->texure.EA;
 	info->texture.WE = map->texure.WE;
-	info->texture.NO = map->texure.NO;
 	info->texture.SO = map->texure.SO;
+	info->texture.NO = map->texure.NO;
 
 	info->moveSpeed = 0.05;
 	info->rotSpeed = 0.05;
+}
+
+static void			ft_imgs_info(t_ray_info *info, t_map map)
+{
+	info->imgs.main_img.img = mlx_new_image(info->mlx, map.screen.X, map.screen.Y);
+	info->imgs.main_img.data = 
+	(int *)mlx_get_data_addr(info->imgs.main_img.img, &info->imgs.main_img.bpp, \
+							&info->imgs.main_img.size_l, &info->imgs.main_img.endian);
+	ft_img_texture_info(info);
 }
 
 int					cub3d(t_map map)
@@ -84,13 +93,10 @@ int					cub3d(t_map map)
 	t_ray_info	info;
 
 	ray_putin_info(&info, &map);
+	
 	info.mlx = mlx_init();
-
 	info.win = mlx_new_window(info.mlx, map.screen.X, map.screen.Y, "cub3d");
-
-	info.img.img = mlx_new_image(info.mlx, map.screen.X, map.screen.Y);
-	info.img.data = (int *)mlx_get_data_addr(info.img.img, &info.img.bpp, &info.img.size_l, &info.img.endian);
-
+	ft_imgs_info(&info, map);
 	mlx_loop_hook(info.mlx, &main_loop, &info);
 	
 	mlx_hook(info.win, 2, 0, &key_press, &info);
