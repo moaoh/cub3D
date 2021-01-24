@@ -37,6 +37,7 @@ int	main(void)
 		for(int j = 0; j < img_width; j++)
 		{
 			// img.data[i * img.size_l + j * (img.bpp / 8)] = 0xFFFFFF;
+			printf("%d\n", i * (img.size_l / 4) + j);
 			my_mlx_pixel_put(&img2, i, j, img.data[i * (img.size_l / 4) + j * (img.bpp / 32)]);
 			// img2.data[i * img_width + j] = 0xFFFFFF;
 			// img2.data[i * img_width + j]= img.data[i * img_width + j];

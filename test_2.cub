@@ -1,8 +1,8 @@
 R 1000 800
-NO ./path_to_the_north_texture
-SO ./path_to_the_south_texture
-WE ./path_to_the_west_texture
-EA ./path_to_the_east_texture
+NO ./texture/wall_n.xpm
+SO ./texture/wall_s.xpm
+WE ./texture/wall_w.xpm
+EA ./texture/wall_e.xpm
 
 S ./path_to_the_sprite_texture
 F 220,100,0
