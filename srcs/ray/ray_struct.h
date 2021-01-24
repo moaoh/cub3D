@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 13:01:48 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/25 06:01:44 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/25 07:58:12 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@
 /*
 ** img ----------------------------------------------------
 */
-
-
 
 typedef struct			s_img
 {
@@ -43,7 +41,21 @@ typedef struct			s_imgs
 }						t_imgs;
 
 /*
-** cub3d_info -----------------------------------------------
+** t_img_calc ---------------------------------------------
+*/
+
+typedef struct			s_img_calc
+{
+	double				obj_x;
+	double				obj_y;
+	int					img_x;
+	int					img_y;
+	int					tex_point;
+	int					color;
+}						t_img_calc;
+
+/*
+** cub3d_info ---------------------------------------------
 */
 
 typedef struct		s_ray_texture
@@ -75,13 +87,14 @@ typedef struct		s_ray_info
 	double			oldDirX;
 	double			oldPlaneX;
 
+	int				img_x;
 	t_imgs			imgs;
 	t_ray_texture	texture;
 
 }					t_ray_info;
 
 /*
-** loop -------------------------------------------------
+** loop ---------------------------------------------------
 */
 
 typedef	struct			s_loop_ray
