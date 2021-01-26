@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 13:01:48 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/25 07:58:12 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/25 10:26:22 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ typedef struct			s_img_calc
 	double				obj_y;
 	int					img_x;
 	int					img_y;
-	int					tex_point;
 	int					color;
 }						t_img_calc;
 

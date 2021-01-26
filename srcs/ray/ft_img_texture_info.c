@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/23 09:57:14 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/23 11:20:35 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/25 10:17:38 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ static void			ft_img_texture_chk(t_ray_info *ray_info)
 static void			ft_img_texture_putin(t_ray_info *ray_info, \
 											char *texture, t_img *img)
 {
-	// img.img = mlx_xpm_file_to_image(info.mlx, "../texture/wall_e.xpm", &img_width, &img_height);
 	img->img = mlx_xpm_file_to_image(ray_info->mlx, texture, &img->width, &img->height);
 	img->data = \
 	(int *)mlx_get_data_addr(img->img, &img->bpp, &img->size_l, &img->endian);
