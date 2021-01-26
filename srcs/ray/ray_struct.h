@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 13:01:48 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/25 10:26:22 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/27 07:42:58 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ typedef struct			s_img
 	int					endian;
 	int					width;
 	int					height;
+	char				type;
 }						t_img;
 
 typedef struct			s_imgs

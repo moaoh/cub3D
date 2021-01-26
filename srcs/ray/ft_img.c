@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/20 06:01:10 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/27 07:40:19 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/27 07:47:16 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,10 @@ void			ft_texture_mapping(t_ray_info *ray_info, t_loop_info *info, t_img *img, t
 	else
 		calc->obj_x = ray_info->pos_Y + info->perpWallDist * info->ray.Y;
 	calc->img_x = (int)(img->width * (calc->obj_x - floor(calc->obj_x)));
+
+	// s or w
+	if (img->type == 'E' || img->type == 'N')
+		calc->img_x = img->width - calc->img_x - 1;
 
 	calc->obj_y = 0;
 	if (info->drawStart == 0)

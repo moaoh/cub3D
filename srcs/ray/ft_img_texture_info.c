@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/23 09:57:14 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/27 07:21:54 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/27 07:45:37 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,20 @@ static void			ft_img_texture_putin(t_ray_info *ray_info, \
 	(int *)mlx_get_data_addr(img->img, &img->bpp, &img->size_l, &img->endian);
 }
 
+static void			ft_img_texture_type(t_ray_info *ray_info)
+{
+	ray_info->imgs.EA_img.type = 'E';
+	ray_info->imgs.WE_img.type = 'W';
+	ray_info->imgs.SO_img.type = 'S';
+	ray_info->imgs.NO_img.type = 'N';
+}
+
 void				ft_img_texture_info(t_ray_info *ray_info)
 {
 	ft_img_texture_putin(ray_info, ray_info->texture.EA, &ray_info->imgs.EA_img);
 	ft_img_texture_putin(ray_info, ray_info->texture.WE, &ray_info->imgs.WE_img);
 	ft_img_texture_putin(ray_info, ray_info->texture.SO, &ray_info->imgs.SO_img);
 	ft_img_texture_putin(ray_info, ray_info->texture.NO, &ray_info->imgs.NO_img);
+	ft_img_texture_type(ray_info);
 	ft_img_texture_chk(ray_info);
 }
