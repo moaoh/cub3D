@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 23:36:11 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/25 08:02:52 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/27 10:30:23 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,14 @@
 
 #	include "../cub3d.h"
 #	include "ray_struct.h"
-#	include "key_press.h"
+#	include "press.h"
 
 int		cub3d(t_map map);
 int		main_loop(t_ray_info *ray_info);
 int		key_press(int key, t_ray_info *info);
+int		button_press(int key, t_ray_info *info);
+
+void	ft_max_screen_chk(t_ray_info *info, t_map *map);
 
 // img ----------------------------------------------------
 

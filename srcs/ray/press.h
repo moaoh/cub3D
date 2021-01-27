@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   key_press.h                                        :+:      :+:    :+:   */
+/*   ft_press.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/12 03:20:48 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/12 08:03:01 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/27 10:28:23 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#	ifndef KEY_PRESS_H
-#	define KEY_PRESS_H
+#	ifndef PRESS_H
+#	define PRESS_H
 
 /*
 ** event --------------------------------------------------
 */
 
-#	define KeyPress 2
-#	define KeyRelease 3
-#	define ButtonPress 4
-#	define ButtonRelease 5
+#	define _KeyPress 2
+#	define _KeyRelease 3
+#	define _ButtonPress 4
+#	define _ButtonRelease 5
 
 /*
 ** WASD ---------------------------------------------------

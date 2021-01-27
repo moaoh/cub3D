@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/25 07:29:08 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/27 07:20:47 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/27 16:17:45 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,19 +42,19 @@ t_img	ft_map_wall(t_ray_info *ray_info, t_loop_info *info, int x)
 	}
 }
 
-void	ft_map_splite(t_ray_info *ray_info, t_loop_info *info, int x)
+t_img	ft_map_splite(t_ray_info *ray_info, t_loop_info *info, int x)
 {
-	info->color = 0x00FF00;
+	return (ray_info->imgs.S_img);
 }
 
-t_img ft_img_map_chk(t_ray_info *ray_info, t_loop_info *info, int x)
+t_img	ft_img_map_chk(t_ray_info *ray_info, t_loop_info *info, int x)
 {
 	// 벽.
 	if (ray_info->map[info->map.Y][info->map.X] == '1')
 		return (ft_map_wall(ray_info, info, x));	
 	// splite
-	// else if (ray_info->map[info->map.Y][info->map.X] == '2')
-	// 	ft_map_splite(ray_info, info, x);
-	// else
-	// 	info->color = 0x123145;
+	else if (ray_info->map[info->map.Y][info->map.X] == '2')
+		ft_map_splite(ray_info, info, x);
+	else
+		ft_error("lt is not img.");
 }

@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 13:01:48 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/27 07:42:58 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/27 16:17:23 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ typedef struct			s_imgs
 	t_img				SO_img;
 	t_img				WE_img;
 	t_img				EA_img;
+	t_img				S_img;
 }						t_imgs;
 
 /*
@@ -64,6 +65,7 @@ typedef struct		s_ray_texture
 	char			*WE;
 	char			*SO;
 	char			*NO;
+	char			*S;
 }					t_ray_texture;
 
 

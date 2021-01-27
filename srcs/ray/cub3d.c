@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/27 23:48:12 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/23 11:24:40 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/27 16:16:56 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ static void			ray_putin_info(t_ray_info *info, t_map *map)
 	info->texture.WE = map->texure.WE;
 	info->texture.SO = map->texure.SO;
 	info->texture.NO = map->texure.NO;
+	info->texture.S = map->sprite.S;
 
 	info->moveSpeed = 0.05;
 	info->rotSpeed = 0.05;
@@ -95,11 +96,13 @@ int					cub3d(t_map map)
 	ray_putin_info(&info, &map);
 	
 	info.mlx = mlx_init();
+	ft_max_screen_chk(&info, &map);
 	info.win = mlx_new_window(info.mlx, map.screen.X, map.screen.Y, "cub3d");
 	ft_imgs_info(&info, map);
 	mlx_loop_hook(info.mlx, &main_loop, &info);
 	
-	mlx_hook(info.win, 2, 0, &key_press, &info);
+	mlx_hook(info.win, _ButtonPress, 0, &button_press, &info);
+	mlx_hook(info.win, _KeyPress, 0, &key_press, &info);
 	mlx_loop(info.mlx);
 	
 	return (0);
