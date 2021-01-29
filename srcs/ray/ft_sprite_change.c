@@ -1,25 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map_chk.h                                          :+:      :+:    :+:   */
+/*   ft_splite_change.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/04 18:57:40 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/29 12:49:48 by junmkang         ###   ########.fr       */
+/*   Created: 2021/01/29 12:48:20 by junmkang          #+#    #+#             */
+/*   Updated: 2021/01/30 04:38:10 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#	ifndef MAP_CHK_H
-#	define MAP_CHK_H
+#include "ray.h"
 
-#	include "../cub3d.h"
-
-int		ft_chk_map_null(char c);
-
-int		*ft_map_value_chk(char c, int i, int j, t_map_player *player);
-int		ft_map_validity(char **chk_map, int i, int j, int y_size);
-
-int		ft_map_chk(t_map *map);
-
-#	endif
+void		ft_sprite_change(t_ray_info *ray_info, t_loop_info *info, t_img *img, int start, int end)
+{
+}

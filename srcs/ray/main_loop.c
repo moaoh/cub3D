@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/11 03:34:18 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/27 07:25:43 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/29 08:56:04 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,8 @@ static void		ft_loop_chk_dda(t_ray_info *ray_info, t_loop_info *info)
 			info->map.X += info->step.X;
 			info->side = 1;
 		}
-		if (ray_info->map[info->map.Y][info->map.X] == '1')
+		if (ray_info->map[info->map.Y][info->map.X] == '1' || \
+			ray_info->map[info->map.Y][info->map.X] == '2')
 			break ;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 13:01:48 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/27 16:17:23 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/30 04:49:02 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,7 @@ typedef struct			s_img
 
 typedef struct			s_imgs
 {
-	t_img				main_img;
-	t_img				NO_img;
-	t_img				SO_img;
-	t_img				WE_img;
-	t_img				EA_img;
-	t_img				S_img;
+	t_img				img[5];
 }						t_imgs;
 
 /*

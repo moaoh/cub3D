@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/27 23:48:12 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/27 16:16:56 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/30 04:51:25 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ static void			ft_imgs_info(t_ray_info *info, t_map map)
 	info->imgs.main_img.img = mlx_new_image(info->mlx, map.screen.X, map.screen.Y);
 	info->imgs.main_img.data = 
 	(int *)mlx_get_data_addr(info->imgs.main_img.img, &info->imgs.main_img.bpp, \
-							&info->imgs.main_img.size_l, &info->imgs.main_img.endian);
+						&info->imgs.main_img.size_l, &info->imgs.main_img.endian);
 	ft_img_texture_info(info);
 }
 
