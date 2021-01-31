@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/20 06:01:10 by junmkang          #+#    #+#             */
-/*   Updated: 2021/02/01 01:58:19 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/01 03:42:36 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_img(t_ray_info *ray_info, t_loop_info *info, int x)
 	ray_info->img_x = x;
 	img = ft_img_map_chk(ray_info, info);
 	// 기존 함수들 생성.
-	ft_wall_change(ray_info, info, img, 0, info->drawStart - 1);
-	ft_wall_change(ray_info, info, img, info->drawStart, info->drawEnd);
-	ft_wall_change(ray_info, info, img, info->drawEnd, ray_info->screen_Y - 1);
+	ft_wall_change(ray_info, info, 0, info->drawStart - 1);
+	ft_wall_change(ray_info, info, info->drawStart, info->drawEnd);
+	ft_wall_change(ray_info, info, info->drawEnd, ray_info->screen_Y - 1);
 }

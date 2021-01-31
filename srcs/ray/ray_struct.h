@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 13:01:48 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/31 20:57:55 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/01 03:49:40 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,16 @@
 
 #	include "ray.h"
 #	include "../cub3d.h"
+
+/*
+** sprite -------------------------------------------------
+*/
+
+typedef struct			s_sprite
+{
+	// 위치저장.
+	int					*sprite_dir;
+}						t_sprite;
 
 /*
 ** img ----------------------------------------------------
@@ -31,19 +41,6 @@ typedef struct			s_img
 	int					height;
 	char				type;
 }						t_img;
-
-/*
-** t_img_calc ---------------------------------------------
-*/
-
-typedef struct			s_img_calc
-{
-	double				obj_x;
-	double				obj_y;
-	int					img_x;
-	int					img_y;
-	int					color;
-}						t_img_calc;
 
 /*
 ** cub3d_info ---------------------------------------------
@@ -86,6 +83,19 @@ typedef struct		s_ray_info
 	t_img			img[10];
 	int				save_bool;
 }					t_ray_info;
+
+/*
+** t_img_calc ---------------------------------------------
+*/
+
+typedef struct			s_img_calc
+{
+	double				obj_x;
+	double				obj_y;
+	int					img_x;
+	int					img_y;
+	int					color;
+}						t_img_calc;
 
 /*
 ** loop ---------------------------------------------------
@@ -135,6 +145,7 @@ typedef struct			s_loop_info
 	int					drawStart;
 	int					drawEnd;
 	int					color;
+	t_img_calc			calc;
 }						t_loop_info;
 
 #	endif

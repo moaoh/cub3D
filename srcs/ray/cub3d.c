@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/27 23:48:12 by junmkang          #+#    #+#             */
-/*   Updated: 2021/02/01 02:17:49 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/01 03:49:55 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ static void			ray_putin_info(t_ray_info *info, t_map *map)
 	player_dir(info, map->player.dir);
 	player_plane(info, map->player.dir);
 	info->map = map->map.map;
+	
 	info->c_color.R = map->c_color.R;
 	info->c_color.G = map->c_color.G;
 	info->c_color.B = map->c_color.B;

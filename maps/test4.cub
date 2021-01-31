@@ -1,4 +1,4 @@
-R 2000 2000
+R 1500 800
 NO ./texture/pics/bluestone.png
 SO ./texture/pics/colorstone.png
 WE ./texture/pics/greystone.png
