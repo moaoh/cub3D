@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/11 03:34:18 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/29 08:56:04 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/31 23:59:03 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,9 +105,11 @@ int				main_loop(t_ray_info *ray_info)
 		ft_loop_dda(ray_info, &info, &x);
 		ft_img(ray_info, &info, x);
 	}
-	mlx_sync(MLX_SYNC_IMAGE_WRITABLE, ray_info->imgs.main_img.img);
+	mlx_sync(MLX_SYNC_IMAGE_WRITABLE, ray_info->img[0].img);
+	if (ray_info->save_bool)
+		save_screen(ray_info, &info);
 	mlx_put_image_to_window(ray_info->mlx, ray_info->win, \
-							ray_info->imgs.main_img.img, 0, 0);
+							ray_info->img[0].img, 0, 0);
 	mlx_sync(MLX_SYNC_WIN_CMD_COMPLETED, ray_info->win);
 	return (0);
 }

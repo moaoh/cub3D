@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/23 09:57:14 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/29 11:52:46 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/30 04:56:36 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 static void			ft_img_texture_chk(t_ray_info *ray_info)
 {
-	if (!ray_info->imgs.EA_img.img)
+	if (!ray_info->img[1].img)
 		ft_error("The EA file does not exist.");
-	if (!ray_info->imgs.WE_img.img)
+	if (!ray_info->img[2].img)
 		ft_error("The WE file does not exist.");
-	if (!ray_info->imgs.SO_img.img)
+	if (!ray_info->img[3].img)
 		ft_error("The SO file does not exist.");
-	if (!ray_info->imgs.NO_img.img)
+	if (!ray_info->img[4].img)
 		ft_error("The NO file does not exist.");
-	if (!ray_info->imgs.S_img.img)
+	if (!ray_info->img[5].img)
 		ft_error("The SP file does not exist.");
 }
 
@@ -37,20 +37,20 @@ static void			ft_img_texture_putin(t_ray_info *ray_info, \
 
 static void			ft_img_texture_type(t_ray_info *ray_info)
 {
-	ray_info->imgs.EA_img.type = 'E';
-	ray_info->imgs.WE_img.type = 'W';
-	ray_info->imgs.SO_img.type = 'S';
-	ray_info->imgs.NO_img.type = 'N';
-	ray_info->imgs.S_img.type = '2';
+	ray_info->img[1].type = 'E';
+	ray_info->img[2].type = 'W';
+	ray_info->img[3].type = 'S';
+	ray_info->img[4].type = 'N';
+	ray_info->img[5].type = '2';
 }
 
 void				ft_img_texture_info(t_ray_info *ray_info)
 {
-	ft_img_texture_putin(ray_info, ray_info->texture.EA, &ray_info->imgs.EA_img);
-	ft_img_texture_putin(ray_info, ray_info->texture.WE, &ray_info->imgs.WE_img);
-	ft_img_texture_putin(ray_info, ray_info->texture.SO, &ray_info->imgs.SO_img);
-	ft_img_texture_putin(ray_info, ray_info->texture.NO, &ray_info->imgs.NO_img);
-	ft_img_texture_putin(ray_info, ray_info->texture.S, &ray_info->imgs.S_img);
+	ft_img_texture_putin(ray_info, ray_info->texture.EA, &ray_info->img[1]);
+	ft_img_texture_putin(ray_info, ray_info->texture.WE, &ray_info->img[2]);
+	ft_img_texture_putin(ray_info, ray_info->texture.SO, &ray_info->img[3]);
+	ft_img_texture_putin(ray_info, ray_info->texture.NO, &ray_info->img[4]);
+	ft_img_texture_putin(ray_info, ray_info->texture.S, &ray_info->img[5]);
 	ft_img_texture_type(ray_info);
 	ft_img_texture_chk(ray_info);
 }

@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/12 00:27:16 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/29 12:50:32 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/31 18:00:21 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ int key_press(int key, t_ray_info *info)
 
 int		button_press(int key, t_ray_info *info)
 {
-	exit(0);
+	printf("key : %d\n", key);
+	// exit(0);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 13:01:48 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/30 04:49:02 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/31 20:57:55 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,6 @@ typedef struct			s_img
 	int					height;
 	char				type;
 }						t_img;
-
-typedef struct			s_imgs
-{
-	t_img				img[5];
-}						t_imgs;
 
 /*
 ** t_img_calc ---------------------------------------------
@@ -77,6 +72,8 @@ typedef struct		s_ray_info
 	void			*mlx;
 	void			*win;
 	char			**map;
+	t_map_color		f_color;
+	t_map_color		c_color;
 
 	double			moveSpeed;
 	double			rotSpeed;
@@ -85,9 +82,9 @@ typedef struct		s_ray_info
 	double			oldPlaneX;
 
 	int				img_x;
-	t_imgs			imgs;
 	t_ray_texture	texture;
-
+	t_img			img[10];
+	int				save_bool;
 }					t_ray_info;
 
 /*

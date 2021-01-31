@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/27 23:48:12 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/30 04:51:25 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/31 16:28:30 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,8 @@ static void			player_plane(t_ray_info *info, char dir)
 
 static void			ray_putin_info(t_ray_info *info, t_map *map)
 {
+	info->save_bool = map->save_bool;
+
 	info->screen_Y = map->screen.Y;
 	info->screen_X = map->screen.X;
 	info->pos_Y = map->player.y;
@@ -69,6 +71,13 @@ static void			ray_putin_info(t_ray_info *info, t_map *map)
 	player_dir(info, map->player.dir);
 	player_plane(info, map->player.dir);
 	info->map = map->map.map;
+	info->c_color.R = map->c_color.R;
+	info->c_color.G = map->c_color.G;
+	info->c_color.B = map->c_color.B;
+	info->f_color.R = map->f_color.R;
+	info->f_color.G = map->f_color.G;
+	info->f_color.B = map->f_color.B;
+	
 
 	info->texture.EA = map->texure.EA;
 	info->texture.WE = map->texure.WE;
@@ -82,10 +91,10 @@ static void			ray_putin_info(t_ray_info *info, t_map *map)
 
 static void			ft_imgs_info(t_ray_info *info, t_map map)
 {
-	info->imgs.main_img.img = mlx_new_image(info->mlx, map.screen.X, map.screen.Y);
-	info->imgs.main_img.data = 
-	(int *)mlx_get_data_addr(info->imgs.main_img.img, &info->imgs.main_img.bpp, \
-						&info->imgs.main_img.size_l, &info->imgs.main_img.endian);
+	info->img[0].img = mlx_new_image(info->mlx, map.screen.X, map.screen.Y);
+	info->img[0].data = 
+	(int *)mlx_get_data_addr(info->img[0].img, &info->img[0].bpp, \
+						&info->img[0].size_l, &info->img[0].endian);
 	ft_img_texture_info(info);
 }
 

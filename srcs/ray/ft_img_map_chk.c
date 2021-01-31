@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/25 07:29:08 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/30 04:38:05 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/01/30 04:58:23 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ t_img	ft_map_wall(t_ray_info *ray_info, t_loop_info *info)
 	{
 		// 동 e
 		if (ray_info->pos_X < info->map.X)
-			return (ray_info->imgs.EA_img);
+			return (ray_info->img[1]);
 		// 서 w
 		else
-			return (ray_info->imgs.WE_img);
+			return (ray_info->img[2]);
 	}
 	// 남북
 	// s = y ++
@@ -35,16 +35,16 @@ t_img	ft_map_wall(t_ray_info *ray_info, t_loop_info *info)
 	{
 		// 남 s
 		if (ray_info->pos_Y < info->map.Y)
-			return (ray_info->imgs.SO_img);
+			return (ray_info->img[3]);
 		// 북 n
 		else
-			return (ray_info->imgs.NO_img);
+			return (ray_info->img[4]);
 	}
 }
 
 t_img	ft_map_sprite(t_ray_info *ray_info, t_loop_info *info)
 {
-	return (ray_info->imgs.S_img);
+	return (ray_info->img[5]);
 }
 
 t_img	ft_img_map_chk(t_ray_info *ray_info, t_loop_info *info)
