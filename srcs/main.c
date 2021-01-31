@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/27 23:36:58 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/30 08:29:33 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/01 02:06:44 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,9 @@ static void			ft_info_chk(char **argv, t_map *map, t_cub_info *cub_chk)
 		save_screen_chk(argv[2], map);
 	ft_file_name_chk(argv[1]);
 	ft_cub_bzero(cub_chk);
-	// fd = open("/Users/junmkang/42seoul/1.projects/cub3D/test.cub", O_RDONLY);
 	fd = open(argv[1], O_RDONLY);
+	if (fd < 0)
+		ft_error("not file.");
 	while (get_next_line(fd, &line) > 0)
 	{
 		ft_value_info(line, map, cub_chk);

@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/25 07:29:08 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/30 04:58:23 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/01 01:56:13 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 // 유저의 현재위치와 바라보고있는 방향을 기준으로 판단.
 // 방향에 따라 알맞는 img 반환.
-t_img	ft_map_wall(t_ray_info *ray_info, t_loop_info *info)
+t_img	*ft_map_wall(t_ray_info *ray_info, t_loop_info *info)
 {
 	// 동서
 	// w = x --
@@ -23,10 +23,10 @@ t_img	ft_map_wall(t_ray_info *ray_info, t_loop_info *info)
 	{
 		// 동 e
 		if (ray_info->pos_X < info->map.X)
-			return (ray_info->img[1]);
+			return (&ray_info->img[1]);
 		// 서 w
 		else
-			return (ray_info->img[2]);
+			return (&ray_info->img[2]);
 	}
 	// 남북
 	// s = y ++
@@ -35,19 +35,19 @@ t_img	ft_map_wall(t_ray_info *ray_info, t_loop_info *info)
 	{
 		// 남 s
 		if (ray_info->pos_Y < info->map.Y)
-			return (ray_info->img[3]);
+			return (&ray_info->img[3]);
 		// 북 n
 		else
-			return (ray_info->img[4]);
+			return (&ray_info->img[4]);
 	}
 }
 
-t_img	ft_map_sprite(t_ray_info *ray_info, t_loop_info *info)
+t_img	*ft_map_sprite(t_ray_info *ray_info, t_loop_info *info)
 {
-	return (ray_info->img[5]);
+	return (&ray_info->img[5]);
 }
 
-t_img	ft_img_map_chk(t_ray_info *ray_info, t_loop_info *info)
+t_img	*ft_img_map_chk(t_ray_info *ray_info, t_loop_info *info)
 {
 	// 벽.
 	// sprite
@@ -61,4 +61,5 @@ t_img	ft_img_map_chk(t_ray_info *ray_info, t_loop_info *info)
 	}
 	else
 		ft_error("lt is not img.");
+	return (0);
 }

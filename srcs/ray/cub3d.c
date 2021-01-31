@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/27 23:48:12 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/31 16:28:30 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/01 02:17:49 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,8 @@ static void			ray_putin_info(t_ray_info *info, t_map *map)
 
 	info->screen_Y = map->screen.Y;
 	info->screen_X = map->screen.X;
-	info->pos_Y = map->player.y;
-	info->pos_X = map->player.x;
+	info->pos_Y = map->player.y + 0.5;
+	info->pos_X = map->player.x + 0.5;
 	player_dir(info, map->player.dir);
 	player_plane(info, map->player.dir);
 	info->map = map->map.map;
@@ -110,8 +110,8 @@ int					cub3d(t_map map)
 	ft_imgs_info(&info, map);
 	mlx_loop_hook(info.mlx, &main_loop, &info);
 	
-	mlx_hook(info.win, _ButtonPress, 0, &button_press, &info);
 	mlx_hook(info.win, _KeyPress, 0, &key_press, &info);
+	mlx_hook(info.win, _DestroyNotify, 0, &screen_close, &info);
 	mlx_loop(info.mlx);
 	
 	return (0);
