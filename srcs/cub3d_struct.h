@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 18:47:35 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/30 08:32:54 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/03 05:59:27 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,17 @@
 #	define CUB3D_STRUCT_H
 
 #	include "cub3d.h"
+
+/*
+** sprite_count -------------------------------------------
+*/
+
+typedef struct				s_sprite_pos
+{
+	double					y;
+	double					x;
+	char					type;
+}							t_sprite_pos;
 
 /*
 ** map ----------------------------------------------------
@@ -67,6 +78,8 @@ typedef struct				s_map
 	t_map_color				c_color;
 	t_map_map				map;
 	t_map_player			player;
+	t_sprite_pos			*SP_pos;
+	int						SP_count;
 	int						save_bool;
 }							t_map;
 

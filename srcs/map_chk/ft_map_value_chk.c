@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/26 01:05:50 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/23 10:25:34 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/03 05:21:50 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,9 @@ int				*ft_map_value_chk(char c, int i, int j, t_map_player *player)
 			ft_error("Multiple Direction Values.");
 	}
 	else if (!ft_chk_map_num(c) && !ft_chk_map_player(c) && !ft_chk_map_null(c))
+	{
+		printf("map value = %c\n", c);
 		ft_error("Invalid map value.");
+	}
 	return (0);
 }

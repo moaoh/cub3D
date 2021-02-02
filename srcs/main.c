@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/27 23:36:58 by junmkang          #+#    #+#             */
-/*   Updated: 2021/02/01 22:47:24 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/03 06:08:02 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,6 @@ int					main(int argc, char **argv)
 	ft_info_chk(argv, &map, &cub_chk);
 	cub3d(map);
 	// cub2d(map);
-
+	
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/20 06:01:10 by junmkang          #+#    #+#             */
-/*   Updated: 2021/02/01 03:42:36 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/03 05:09:09 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 
 void			ft_my_mlx_pixel_put(t_img img, int y, int x, int color)
 {
-	// if (img.type != '2' && color != 0)
-		img.data[y * (img.size_l / 4) + x] = color;
+	img.data[y * (img.size_l / 4) + x] = color;
 }
 
 void	ft_img(t_ray_info *ray_info, t_loop_info *info, int x)
