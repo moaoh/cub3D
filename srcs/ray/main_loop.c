@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/11 03:34:18 by junmkang          #+#    #+#             */
-/*   Updated: 2021/02/02 02:37:57 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/02 21:03:13 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,10 +66,7 @@ static void		ft_loop_chk_dda(t_ray_info *ray_info, t_loop_info *info)
 			info->sideDist.X += info->deltaDist.X;
 			info->map.X += info->step.X;
 			info->side = 1;
-		}
-		// // sprite 위치 저장.
-		// if (ray_info->map[info->map.Y][info->map.X] == '2')
-			
+		}		
 		if (ray_info->map[info->map.Y][info->map.X] == '1' || \
 			ray_info->map[info->map.Y][info->map.X] == '2')
 			break ;

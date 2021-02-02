@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/12 03:20:48 by junmkang          #+#    #+#             */
-/*   Updated: 2021/02/01 02:11:06 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/02 22:47:34 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,9 @@
 #	define KEY_A 0
 #	define KEY_S 1
 #	define KEY_D 2
+
+#	define KEY_left 123
+#	define KEY_right 124
 
 # 	define KEY_ESC 53
 

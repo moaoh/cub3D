@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/12 00:27:16 by junmkang          #+#    #+#             */
-/*   Updated: 2021/02/01 02:14:45 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/03 03:11:40 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,26 @@ int key_press(int key, t_ray_info *info)
 	}
 	if (key == KEY_A)
 	{
+		if (info->map[(int)(info->pos_Y + info->dir_X * info->moveSpeed)][(int)(info->pos_X)] == '1' || \
+			info->map[(int)(info->pos_Y)][(int)(info->pos_X - info->dir_Y * info->moveSpeed)] == '1')
+				return (0);
+		if (info->map[(int)(info->pos_Y + info->dir_X * info->moveSpeed)][(int)(info->pos_X)])
+			info->pos_Y += info->dir_X * info->moveSpeed;
+		if (info->map[(int)(info->pos_Y)][(int)(info->pos_X - info->dir_Y * info->moveSpeed)])
+			info->pos_X -= info->dir_Y * info->moveSpeed;
+	}
+	if (key == KEY_D)
+	{
+		if (info->map[(int)(info->pos_Y - info->dir_X * info->moveSpeed)][(int)(info->pos_X)] == '1' || \
+			info->map[(int)(info->pos_Y)][(int)(info->pos_X + info->dir_Y * info->moveSpeed)] == '1')
+				return (0);
+		if (info->map[(int)(info->pos_Y - info->dir_X * info->moveSpeed)][(int)(info->pos_X)])
+			info->pos_Y -= info->dir_X * info->moveSpeed;
+		if (info->map[(int)(info->pos_Y)][(int)(info->pos_X + info->dir_Y * info->moveSpeed)])
+			info->pos_X += info->dir_Y * info->moveSpeed;
+	}
+	if (key == KEY_left)
+	{
 		info->oldDirX = info->dir_X;
 		info->dir_Y = info->oldDirX * sin(info->rotSpeed) + info->dir_Y * cos(info->rotSpeed);
 		info->dir_X = info->dir_X * cos(info->rotSpeed) - info->dir_Y * sin(info->rotSpeed);
@@ -44,7 +64,7 @@ int key_press(int key, t_ray_info *info)
 		info->plane_Y = info->oldPlaneX * sin(info->rotSpeed) + info->plane_Y * cos(info->rotSpeed);
 		info->plane_X = info->plane_X * cos(info->rotSpeed) - info->plane_Y * sin(info->rotSpeed);
 	}
-	if (key == KEY_D)
+	if (key == KEY_right)
 	{
 		info->oldDirX = info->dir_X;
 		info->dir_Y = info->oldDirX * sin(-info->rotSpeed) + info->dir_Y * cos(-info->rotSpeed);
