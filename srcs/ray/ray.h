@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 23:36:11 by junmkang          #+#    #+#             */
-/*   Updated: 2021/02/01 03:42:51 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/03 03:43:06 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,15 @@ int		screen_close(void);
 
 void	ft_max_screen_chk(t_ray_info *info, t_map *map);
 
-// img ----------------------------------------------------
+/*
+** main_loop ----------------------------------------------
+*/
+
+void	ft_loop_sprite(t_ray_info *ray_info, t_loop_info *info, int *x);
+
+/*
+** img ----------------------------------------------------
+*/
 
 t_img	*ft_img_map_chk(t_ray_info *ray_info, t_loop_info *info);
 

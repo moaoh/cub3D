@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/25 07:29:08 by junmkang          #+#    #+#             */
-/*   Updated: 2021/02/01 01:56:13 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/03 04:31:51 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,9 @@ t_img	*ft_img_map_chk(t_ray_info *ray_info, t_loop_info *info)
 		return (ft_map_sprite(ray_info, info));
 	}
 	else
+	{
+		printf("map_num = %d\n", ray_info->map[info->map.Y][info->map.X]);
 		ft_error("lt is not img.");
+	}
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 13:01:48 by junmkang          #+#    #+#             */
-/*   Updated: 2021/02/01 03:49:40 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/03 04:53:35 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,18 @@
 ** sprite -------------------------------------------------
 */
 
+typedef struct			s_sprite_pos
+{
+	double				*y;
+	double				*x;
+}						t_sprite_pos;
+
+
 typedef struct			s_sprite
 {
-	// 위치저장.
-	int					*sprite_dir;
+	t_sprite_pos		SP_pos;
+	double				*SP_dist;
+	int					chk_SP;
 }						t_sprite;
 
 /*
@@ -146,6 +154,7 @@ typedef struct			s_loop_info
 	int					drawEnd;
 	int					color;
 	t_img_calc			calc;
+	t_sprite			SP;
 }						t_loop_info;
 
 #	endif

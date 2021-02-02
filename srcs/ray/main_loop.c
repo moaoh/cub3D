@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/11 03:34:18 by junmkang          #+#    #+#             */
-/*   Updated: 2021/02/02 21:03:13 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/03 04:54:36 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,9 @@ static void		ft_loop_wall_dir(t_ray_info *ray_info, t_loop_info *info)
 
 static void		ft_loop_chk_dda(t_ray_info *ray_info, t_loop_info *info)
 {
+	int			tmp;
+
+	tmp = 0;
 	while (1)
 	{
 		if (info->sideDist.Y < info->sideDist.X)
@@ -66,7 +69,13 @@ static void		ft_loop_chk_dda(t_ray_info *ray_info, t_loop_info *info)
 			info->sideDist.X += info->deltaDist.X;
 			info->map.X += info->step.X;
 			info->side = 1;
-		}		
+		}
+		if (ray_info->map[info->map.Y][info->map.X] == '2')
+		{
+			info->SP.SP_pos.y[tmp] = info->map.Y;
+			info->SP.SP_pos.x[tmp] = info->map.X;
+			tmp++;
+		}
 		if (ray_info->map[info->map.Y][info->map.X] == '1' || \
 			ray_info->map[info->map.Y][info->map.X] == '2')
 			break ;
@@ -89,6 +98,8 @@ static void		ft_loop_dda(t_ray_info *ray_info, t_loop_info *info, int *x)
 	info->drawEnd = (info->lineHeight / 2) + (ray_info->screen_Y / 2);
 	if (info->drawEnd >= ray_info->screen_Y)
 		info->drawEnd = ray_info->screen_Y - 1;
+
+	info->SP.SP_dist[(*x)] = info->perpWallDist;
 }
 
 int				main_loop(t_ray_info *ray_info)
@@ -97,12 +108,14 @@ int				main_loop(t_ray_info *ray_info)
 	t_loop_info	info;
 
 	x = 0;
+	info.SP.SP_dist = malloc(sizeof(double) * ray_info->screen_Y * 2);
 	while (x < ray_info->screen_X)
 	{
 		ft_loop_info(ray_info, &info, x);
 		ft_loop_wall_dir(ray_info, &info);
 		ft_loop_chk_dda(ray_info, &info);
 		ft_loop_dda(ray_info, &info, &x);
+		ft_loop_sprite(ray_info, &info, &x);
 		ft_img(ray_info, &info, x);
 	}
 	mlx_sync(MLX_SYNC_IMAGE_WRITABLE, ray_info->img[0].img);

@@ -1,17 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_splite_change.c                                 :+:      :+:    :+:   */
+/*   ft_loop_sprite.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/29 12:48:20 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/30 04:38:10 by junmkang         ###   ########.fr       */
+/*   Created: 2021/02/03 03:36:35 by junmkang          #+#    #+#             */
+/*   Updated: 2021/02/03 04:52:45 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ray.h"
 
-void		ft_sprite_change(t_ray_info *ray_info, t_loop_info *info, t_img *img, int start, int end)
+void	ft_loop_sprite(t_ray_info *ray_info, t_loop_info *info, int *x)
 {
+
 }

@@ -6,13 +6,13 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/12 00:27:16 by junmkang          #+#    #+#             */
-/*   Updated: 2021/02/03 03:11:40 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/03 03:14:05 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ray.h"
 
-// 추가적인 공부가 필요함 
+// 추가적인 공부가 필요함
 int key_press(int key, t_ray_info *info)
 {
 	if (key == KEY_W)
@@ -74,7 +74,10 @@ int key_press(int key, t_ray_info *info)
 		info->plane_X = info->plane_X * cos(-info->rotSpeed) - info->plane_Y * sin(-info->rotSpeed);
 	}
 	if (key == KEY_ESC)
+	{
+		printf("bye :D\n");	
 		exit(0);
+	}
     
     return (0);
 }
