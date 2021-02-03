@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 09:26:14 by junmkang          #+#    #+#             */
-/*   Updated: 2021/02/04 07:13:31 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/04 07:14:55 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,7 @@ void	ft_sprite_change(t_ray_info *ray_info, t_loop_info *info, t_sprite_info *sp
 	int		color;
 	t_img	*img;
 
-	img = &ray_info->img[5];
-	// img = ft_img_map_chk(ray_info, info);
+	img = ft_map_sprite(ray_info);
 	i = 0;
 	// while (i <= end)
 	// {

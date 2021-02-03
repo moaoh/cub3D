@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/25 07:29:08 by junmkang          #+#    #+#             */
-/*   Updated: 2021/02/04 06:32:42 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/04 07:16:14 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,24 +45,4 @@ t_img	*ft_map_wall(t_ray_info *ray_info, t_loop_info *info)
 t_img	*ft_map_sprite(t_ray_info *ray_info)
 {
 	return (&ray_info->img[5]);
-}
-
-t_img	*ft_img_map_chk(t_ray_info *ray_info, t_loop_info *info)
-{
-	// 벽.
-	// sprite
-	if (ray_info->map[info->map.Y][info->map.X] == '1')
-	{
-		return (ft_map_wall(ray_info, info));
-	}
-	else if (ray_info->map[info->map.Y][info->map.X] == '2')
-	{
-		return (ft_map_sprite(ray_info));
-	}
-	else
-	{
-		printf("map_num = %d\n", ray_info->map[info->map.Y][info->map.X]);
-		ft_error("lt is not img.");
-	}
-	return (0);
 }

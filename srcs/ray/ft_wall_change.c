@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 11:35:55 by junmkang          #+#    #+#             */
-/*   Updated: 2021/02/04 06:28:41 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/04 07:15:55 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void			ft_wall_change(t_ray_info *ray_info, t_loop_info *info, int start, int en
 	int			temp;
 	t_img		*img;
 
-	img = ft_img_map_chk(ray_info, info);
+	img = ft_map_wall(ray_info, info);
 	ft_wall_mapping(ray_info, info, img, &info->calc);
 	temp = start;
 	while (temp <= end)
