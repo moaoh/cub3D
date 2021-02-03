@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/12 00:27:16 by junmkang          #+#    #+#             */
-/*   Updated: 2021/02/03 03:14:05 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/04 03:47:38 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,20 +58,20 @@ int key_press(int key, t_ray_info *info)
 	if (key == KEY_left)
 	{
 		info->oldDirX = info->dir_X;
-		info->dir_Y = info->oldDirX * sin(info->rotSpeed) + info->dir_Y * cos(info->rotSpeed);
 		info->dir_X = info->dir_X * cos(info->rotSpeed) - info->dir_Y * sin(info->rotSpeed);
+		info->dir_Y = info->oldDirX * sin(info->rotSpeed) + info->dir_Y * cos(info->rotSpeed);
 		info->oldPlaneX = info->plane_X;
-		info->plane_Y = info->oldPlaneX * sin(info->rotSpeed) + info->plane_Y * cos(info->rotSpeed);
 		info->plane_X = info->plane_X * cos(info->rotSpeed) - info->plane_Y * sin(info->rotSpeed);
+		info->plane_Y = info->oldPlaneX * sin(info->rotSpeed) + info->plane_Y * cos(info->rotSpeed);
 	}
 	if (key == KEY_right)
 	{
 		info->oldDirX = info->dir_X;
-		info->dir_Y = info->oldDirX * sin(-info->rotSpeed) + info->dir_Y * cos(-info->rotSpeed);
 		info->dir_X = info->dir_X * cos(-info->rotSpeed) - info->dir_Y * sin(-info->rotSpeed);
+		info->dir_Y = info->oldDirX * sin(-info->rotSpeed) + info->dir_Y * cos(-info->rotSpeed);
 		info->oldPlaneX = info->plane_X;
-		info->plane_Y = info->oldPlaneX * sin(-info->rotSpeed) + info->plane_Y * cos(-info->rotSpeed);
 		info->plane_X = info->plane_X * cos(-info->rotSpeed) - info->plane_Y * sin(-info->rotSpeed);
+		info->plane_Y = info->oldPlaneX * sin(-info->rotSpeed) + info->plane_Y * cos(-info->rotSpeed);
 	}
 	if (key == KEY_ESC)
 	{

@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/04 18:57:26 by junmkang          #+#    #+#             */
-/*   Updated: 2021/02/03 06:05:44 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/04 03:32:18 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ static int		ft_chk_validation(t_map *map, char **chk_map, t_map_player *player, 
 			if (chk_map[i][j] == '2')
 			{
 				map->SP_pos[sp_num].y = i + 0.5;
-				map->SP_pos[sp_num].x = j + 0.5;
+				map->SP_pos[sp_num].x = j + 0.2;
 				map->SP_pos[sp_num].type = chk_map[i][j];
 				sp_num--;
 			}
