@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/30 06:55:13 by junmkang          #+#    #+#             */
-/*   Updated: 2021/02/02 02:19:39 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/03 09:03:20 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ size_t	put_data_fd(int fd, size_t data, size_t size)
 **			arr
 */
 
-void		save_screen(t_ray_info *ray_info, t_loop_info *info)
+void		save_screen(t_ray_info *ray_info)
 {
 	int		bitmap_sizeline;
 	int		fd;

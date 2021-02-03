@@ -6,13 +6,13 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/11 03:34:18 by junmkang          #+#    #+#             */
-/*   Updated: 2021/02/03 05:24:49 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/03 09:18:32 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ray.h"
 
-static void		ft_loop_info(t_ray_info *ray_info, t_loop_info *info, int x)
+static void			ft_loop_info(t_ray_info *ray_info, t_loop_info *info, int x)
 {
 	info->cameraX = 2 * x / (double)ray_info->screen_X - 1;
 	info->ray.Y = ray_info->dir_Y + info->cameraX * ray_info->plane_Y;
@@ -23,7 +23,7 @@ static void		ft_loop_info(t_ray_info *ray_info, t_loop_info *info, int x)
 	info->deltaDist.X = fabs(1 / info->ray.X);
 }
 
-static void		ft_loop_wall_dir(t_ray_info *ray_info, t_loop_info *info)
+static void			ft_loop_wall_dir(t_ray_info *ray_info, t_loop_info *info)
 {
 	if (info->ray.Y < 0)
 	{
@@ -51,9 +51,9 @@ static void		ft_loop_wall_dir(t_ray_info *ray_info, t_loop_info *info)
 	}
 }
 
-static void		ft_loop_chk_dda(t_ray_info *ray_info, t_loop_info *info)
+static void			ft_loop_chk_dda(t_ray_info *ray_info, t_loop_info *info)
 {
-	int			tmp;
+	int				tmp;
 
 	tmp = 0;
 	while (1)
@@ -76,7 +76,7 @@ static void		ft_loop_chk_dda(t_ray_info *ray_info, t_loop_info *info)
 	}
 }
 
-static void		ft_loop_dda(t_ray_info *ray_info, t_loop_info *info, int *x)
+static void			ft_loop_dda(t_ray_info *ray_info, t_loop_info *info, int *x)
 {
 	if (info->side == 0)
 		info->perpWallDist = \
@@ -93,28 +93,28 @@ static void		ft_loop_dda(t_ray_info *ray_info, t_loop_info *info, int *x)
 	if (info->drawEnd >= ray_info->screen_Y)
 		info->drawEnd = ray_info->screen_Y - 1;
 
-	info->SP.SP_dist[(*x)] = info->perpWallDist;
+	ray_info->SP_dist[(*x)] = info->perpWallDist;
 }
 
-int				main_loop(t_ray_info *ray_info)
+int					main_loop(t_ray_info *ray_info)
 {
-	int			x;
-	t_loop_info	info;
+	int				x;
+	t_loop_info		info;
+	t_sprite_info	sp;
 
 	x = 0;
-	info.SP.SP_dist = malloc(sizeof(double) * ray_info->screen_Y * 2);
 	while (x < ray_info->screen_X)
 	{
 		ft_loop_info(ray_info, &info, x);
 		ft_loop_wall_dir(ray_info, &info);
 		ft_loop_chk_dda(ray_info, &info);
 		ft_loop_dda(ray_info, &info, &x);
-		ft_loop_sprite(ray_info, &info, &x);
-		ft_img(ray_info, &info, x);
+		ft_loop_sprite(ray_info, &sp);
+		ft_img(ray_info, &info, &sp, x);
 	}
 	mlx_sync(MLX_SYNC_IMAGE_WRITABLE, ray_info->img[0].img);
 	if (ray_info->save_bool)
-		save_screen(ray_info, &info);
+		save_screen(ray_info);
 	mlx_put_image_to_window(ray_info->mlx, ray_info->win, \
 							ray_info->img[0].img, 0, 0);
 	mlx_sync(MLX_SYNC_WIN_CMD_COMPLETED, ray_info->win);

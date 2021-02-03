@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/25 07:29:08 by junmkang          #+#    #+#             */
-/*   Updated: 2021/02/03 04:31:51 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/03 09:23:29 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ t_img	*ft_map_wall(t_ray_info *ray_info, t_loop_info *info)
 	}
 }
 
-t_img	*ft_map_sprite(t_ray_info *ray_info, t_loop_info *info)
+t_img	*ft_map_sprite(t_ray_info *ray_info)
 {
 	return (&ray_info->img[5]);
 }
@@ -57,7 +57,7 @@ t_img	*ft_img_map_chk(t_ray_info *ray_info, t_loop_info *info)
 	}
 	else if (ray_info->map[info->map.Y][info->map.X] == '2')
 	{
-		return (ft_map_sprite(ray_info, info));
+		return (ft_map_sprite(ray_info));
 	}
 	else
 	{

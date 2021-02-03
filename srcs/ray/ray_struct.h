@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 13:01:48 by junmkang          #+#    #+#             */
-/*   Updated: 2021/02/03 05:24:14 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/03 08:01:23 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,40 @@
 ** sprite -------------------------------------------------
 */
 
-typedef struct			s_sprite
+typedef struct 			s_sprite_info
 {
-	double				*SP_dist;
-	int					chk_SP;
-}						t_sprite;
+	double				spriteY;
+	double				spriteX;
+	double				invDet;
+	double				transformY;
+	double				transformX;
+	int					spriteScreenX;
+	int					vMoveScreen;
+	int					spriteHeight;
+	int					drawStartY;
+	int					drawEndY;
+	int					spriteWidth;
+	int					drawStartX;
+	int					drawEndX;
+}						t_sprite_info;
+
+typedef struct			s_dist_sprite
+{
+	double				SP_dist;
+}						t_dist_sprite;
+
+
+typedef struct 			s_sprite_pwd
+{
+	int					*spriteOrder;
+	double				*spriteDistance;
+}						t_sprite_pwd;
+
+typedef struct			s_pair
+{
+	double				first;
+	int					second;
+}						t_pair;
 
 /*
 ** img ----------------------------------------------------
@@ -82,6 +111,11 @@ typedef struct		s_ray_info
 	t_ray_texture	texture;
 	t_img			img[10];
 	int				save_bool;
+	
+	t_sprite_pos	*SP_pos;
+	t_sprite_pwd	SP_pwd;
+	int				SP_count;
+	double			*SP_dist;
 }					t_ray_info;
 
 /*
@@ -146,7 +180,6 @@ typedef struct			s_loop_info
 	int					drawEnd;
 	int					color;
 	t_img_calc			calc;
-	t_sprite			SP;
 }						t_loop_info;
 
 #	endif
