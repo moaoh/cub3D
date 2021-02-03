@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 03:36:35 by junmkang          #+#    #+#             */
-/*   Updated: 2021/02/04 05:09:38 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/04 07:10:47 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void		sortsprites(int *order, double *dist, int sp_count)
 	free(sprites);
 }
 
-void		ft_loop_sprite(t_ray_info *ray_info, t_sprite_info *sp)
+void		ft_loop_sprite(t_ray_info *ray_info, t_loop_info *info, t_sprite_info *sp)
 {
 	int		sp_i;
 
@@ -86,8 +86,8 @@ void		ft_loop_sprite(t_ray_info *ray_info, t_sprite_info *sp)
 		// printf("%d : %lf\n", sp_i, ray_info->SP_pwd.spriteDistance[sp_i]);
 		// 카메라를 기준으로 스프라이트.
 		// 플레이어의 위치값을 기준으로 sprite가 정해지기때문에 이동하지않는 이상 값은 변하지않아야한다.
-		sp->spriteY = ray_info->SP_pos[ray_info->SP_pwd.spriteOrder[sp_i]].y - ray_info->pos_X;
-		sp->spriteX = ray_info->SP_pos[ray_info->SP_pwd.spriteOrder[sp_i]].x - ray_info->pos_Y;
+		sp->spriteX = ray_info->SP_pos[ray_info->SP_pwd.spriteOrder[sp_i]].x - ray_info->pos_X;
+		sp->spriteY = ray_info->SP_pos[ray_info->SP_pwd.spriteOrder[sp_i]].y - ray_info->pos_Y;
 		// printf("%lf %lf\n", ray_info->pos_Y, ray_info->pos_X);
 		// printf("%lf %lf\n", ray_info->SP_pos[ray_info->SP_pwd.spriteOrder[sp_i]].y, ray_info->SP_pos[ray_info->SP_pwd.spriteOrder[sp_i]].x);
 		// printf("%lf %lf\n", sp->spriteY, sp->spriteX);
@@ -104,11 +104,11 @@ void		ft_loop_sprite(t_ray_info *ray_info, t_sprite_info *sp)
 		// 	printf("%lf %lf %lf %lf\n", ray_info->plane_Y, sp->spriteX, ray_info->plane_X, sp->spriteY); 
 		// printf("%lf %lf\n", sp->transformY, sp->transformX);
 		
-		sp->spriteScreenX = (int)((ray_info->screen_X / 2) * (1 + sp->transformY / sp->transformX)); // 문제가 생긴다면 이부분을 다시확인.
+		sp->spriteScreenX = (int)((ray_info->screen_X / 2) * (1 + sp->transformX / sp->transformY)); // 문제가 생긴다면 이부분을 다시확인.
 		
-		sp->vMoveScreen = (int)(vMove / sp->transformX); // 문제가 생긴다면 이부분을 다시확인.
+		sp->vMoveScreen = (int)(vMove / sp->transformY); // 문제가 생긴다면 이부분을 다시확인.
 
-		sp->spriteHeight = (int)fabs(ray_info->screen_Y / sp->transformY / vDiv); // 문제가 생긴다면 이부분을 다시확인.
+		sp->spriteHeight = (int)fabs((ray_info->screen_Y / sp->transformY) / vDiv); // 문제가 생긴다면 이부분을 다시확인.
 		// printf("%d\n", sp->spriteHeight);
 		// printf("%d %lf %f\n", ray_info->screen_Y, sp->transformY, fabs((ray_info->screen_Y / sp->transformY)));
 		
@@ -126,8 +126,9 @@ void		ft_loop_sprite(t_ray_info *ray_info, t_sprite_info *sp)
 		if(sp->drawEndX >= ray_info->screen_X) sp->drawEndX = ray_info->screen_X - 1;
 
 		// printf("%d %d\n", sp->drawStartX, sp->drawEndX);
-		printf("%d %d %d %d\n", sp->drawStartX, sp->drawEndX, sp->drawStartY, sp->drawEndY);
-		
+		// printf("%d %d %d %d\n", sp->drawStartX, sp->drawEndX, sp->drawStartY, sp->drawEndY);
+		ft_sprite(ray_info, info, sp);
+
 		sp_i++;
 	}
 }

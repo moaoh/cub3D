@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 11:35:55 by junmkang          #+#    #+#             */
-/*   Updated: 2021/02/02 21:06:53 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/04 06:28:41 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 static void		ft_wall_mapping(t_ray_info *ray_info, t_loop_info *info, t_img *img, t_img_calc *calc)
 {
 	if (info->side == 0)
-		calc->obj_x = ray_info->pos_X + info->perpWallDist * info->ray.X;
-	else
 		calc->obj_x = ray_info->pos_Y + info->perpWallDist * info->ray.Y;
+	else
+		calc->obj_x = ray_info->pos_X + info->perpWallDist * info->ray.X;
 	calc->img_x = (int)(img->width * (calc->obj_x - floor(calc->obj_x)));
 
 	// e or n
