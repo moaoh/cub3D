@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 23:36:11 by junmkang          #+#    #+#             */
-/*   Updated: 2021/02/04 07:17:59 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/04 07:36:01 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,44 +21,79 @@
 #	define vDiv 1
 #	define vMove 0.0
 
-int		cub3d(t_map map);
-int		main_loop(t_ray_info *ray_info);
-int		key_press(int key, t_ray_info *info);
-int		screen_close(void);
+/*
+** cub3d --------------------------------------------------
+*/
 
-void	ft_max_screen_chk(t_ray_info *info, t_map *map);
+int			cub3d(t_map map);
+
+/*
+** ft_img_texture_info ----------------------------------------------
+*/
+
+void		ft_img_texture_info(t_ray_info *ray_info);
+
+/*
+** ft_press ---------------------------------------------------------
+*/
+
+int			key_press(int key, t_ray_info *info);
+int			screen_close(void);
+
+/*
+** ft_max_screen_chk ------------------------------------------------
+*/
+
+void		ft_max_screen_chk(t_ray_info *info, t_map *map);
 
 /*
 ** ray_putin_info -----------------------------------------
 */
 
-void			player_dir(t_ray_info *info, char dir);
-void			player_plane(t_ray_info *info, char dir);
-void			ray_map_info(t_ray_info *info, t_map *map);
-void			ray_sp_info(t_ray_info *info, t_map *map);
-void			ray_cub_info(t_ray_info *info, t_map *map);
+void		player_dir(t_ray_info *info, char dir);
+void		player_plane(t_ray_info *info, char dir);
+void		ray_map_info(t_ray_info *info, t_map *map);
+void		ray_sp_info(t_ray_info *info, t_map *map);
+void		ray_cub_info(t_ray_info *info, t_map *map);
 
 /*
 ** main_loop ----------------------------------------------
 */
 
-void	ft_loop_sprite(t_ray_info *ray_info, t_loop_info *info, t_sprite_info *sp);
+int		main_loop(t_ray_info *ray_info);
 
 /*
-** img ----------------------------------------------------
+** ft_loop_sprite ----------------------------------------------
 */
 
-void	ft_my_mlx_pixel_put(t_img img, int y, int x, int color);
+void	ft_loop_sprite(t_ray_info *ray_info, t_sprite_info *sp);
+
+/*
+** change ----------------------------------------------------
+*/
+
 void	ft_wall_change(t_ray_info *ray_info, t_loop_info *info, int start, int end);
-void	ft_sprite_change(t_ray_info *ray_info, t_loop_info *info, t_sprite_info *sp);
+void	ft_sprite_change(t_ray_info *ray_info, t_sprite_info *sp);
 
-void	ft_img(t_ray_info *ray_info, t_loop_info *info, t_sprite_info *sp, int x);
-void	ft_img_texture_info(t_ray_info *ray_info);
-
-void	ft_wall(t_ray_info *ray_info, t_loop_info *info, int *x);
-void	ft_sprite(t_ray_info *ray_info, t_loop_info *info, t_sprite_info *sp);
+/*
+** ft_img_map_chk ---------------------------------------------------
+*/
 
 t_img	*ft_map_wall(t_ray_info *ray_info, t_loop_info *info);
 t_img	*ft_map_sprite(t_ray_info *ray_info);
+
+/*
+** ft_loop_wall ----------------------------------------------------
+*/
+
+void	ft_loop_wall(t_ray_info *ray_info, t_loop_info *info);
+
+/*
+** ft_img -----------------------------------------------------------
+*/
+
+void	ft_my_mlx_pixel_put(t_img img, int y, int x, int color);
+void	ft_wall(t_ray_info *ray_info, t_loop_info *info, int *x);
+void	ft_sprite(t_ray_info *ray_info, t_sprite_info *sp);
 
 #	endif

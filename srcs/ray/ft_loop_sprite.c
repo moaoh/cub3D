@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 03:36:35 by junmkang          #+#    #+#             */
-/*   Updated: 2021/02/04 07:10:47 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/04 07:25:35 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void		sortsprites(int *order, double *dist, int sp_count)
 	free(sprites);
 }
 
-void		ft_loop_sprite(t_ray_info *ray_info, t_loop_info *info, t_sprite_info *sp)
+void		ft_loop_sprite(t_ray_info *ray_info, t_sprite_info *sp)
 {
 	int		sp_i;
 
@@ -127,7 +127,7 @@ void		ft_loop_sprite(t_ray_info *ray_info, t_loop_info *info, t_sprite_info *sp)
 
 		// printf("%d %d\n", sp->drawStartX, sp->drawEndX);
 		// printf("%d %d %d %d\n", sp->drawStartX, sp->drawEndX, sp->drawStartY, sp->drawEndY);
-		ft_sprite(ray_info, info, sp);
+		ft_sprite(ray_info, sp);
 
 		sp_i++;
 	}

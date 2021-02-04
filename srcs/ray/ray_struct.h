@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 13:01:48 by junmkang          #+#    #+#             */
-/*   Updated: 2021/02/03 08:01:23 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/04 07:37:36 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,9 @@ typedef struct 			s_sprite_info
 	int					spriteWidth;
 	int					drawStartX;
 	int					drawEndX;
+	int					texX;
+	int					texY;
+	int					d;
 }						t_sprite_info;
 
 typedef struct			s_dist_sprite
