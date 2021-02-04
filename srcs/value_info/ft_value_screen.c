@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 19:26:50 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/27 08:07:27 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/05 03:45:08 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ static int			ft_screen_chk(char *str)
 	return (1);
 }
 
-// 해상도의 최대범위를 정해서 막는 파트를 따로 만들어줘야함.
 int					ft_value_screen(char *line, t_map *map, int cub_chk)
 {
 	char		**str;
@@ -47,5 +46,6 @@ int					ft_value_screen(char *line, t_map *map, int cub_chk)
 		map->screen.X = ft_atoi(str[1]);
 		map->screen.Y = ft_atoi(str[2]);
 	}
+	free(str);
 	return (0);
 }

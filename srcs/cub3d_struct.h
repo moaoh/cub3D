@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 18:47:35 by junmkang          #+#    #+#             */
-/*   Updated: 2021/02/03 05:59:27 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/05 02:57:06 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,13 @@ typedef struct				s_map_screen
 	int						Y;
 }							t_map_screen;
 
-typedef struct				s_map_texure
+typedef struct				s_map_texture
 {
 	char					*NO;
 	char					*SO;
 	char					*WE;
 	char					*EA;
-}							t_map_texure;
+}							t_map_texture;
 
 typedef struct				s_map_sprite
 {
@@ -72,7 +72,7 @@ typedef struct				s_map_player
 typedef struct				s_map
 {
 	t_map_screen			screen;
-	t_map_texure			texure;
+	t_map_texture			texture;
 	t_map_sprite			sprite;
 	t_map_color				f_color;
 	t_map_color				c_color;

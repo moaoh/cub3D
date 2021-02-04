@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/27 23:36:58 by junmkang          #+#    #+#             */
-/*   Updated: 2021/02/03 08:58:00 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/05 02:53:17 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ int					main(int argc, char **argv)
 	if (argc != 2 && argc != 3)
 		ft_error("Invalid input value.");
 	ft_info_chk(argv, &map, &cub_chk);
-	cub3d(map);
+	cub3d(&map);
 	// cub2d(map);
 	
 	return (0);

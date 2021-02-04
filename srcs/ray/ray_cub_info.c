@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 06:10:59 by junmkang          #+#    #+#             */
-/*   Updated: 2021/02/03 21:28:52 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/05 03:04:51 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,11 +71,13 @@ void			ray_map_info(t_ray_info *info, t_map *map)
 	info->f_color.G = map->f_color.G;
 	info->f_color.B = map->f_color.B;
 	
-	info->texture.EA = map->texure.EA;
-	info->texture.WE = map->texure.WE;
-	info->texture.SO = map->texure.SO;
-	info->texture.NO = map->texure.NO;
+	info->texture.EA = map->texture.EA;
+	info->texture.WE = map->texture.WE;
+	info->texture.SO = map->texture.SO;
+	info->texture.NO = map->texture.NO;
 	info->texture.S = map->sprite.S;
+
+	// free(map->map.map);
 }
 
 void			ray_sp_info(t_ray_info *info, t_map *map)

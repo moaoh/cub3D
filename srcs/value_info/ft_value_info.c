@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 18:37:00 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/23 10:25:05 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/05 02:59:58 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,13 @@ static int	ft_value_chk(char *line, t_map *map, t_cub_info *cub_chk)
 	if (!ft_strncmp(line, "R ", 2))
 		ft_value_screen(line, map, (int)++cub_chk->r);
 	else if (!ft_strncmp(line, "NO ", 3))
-		ft_value_texure(line, map, (int)++cub_chk->no);
+		ft_value_texture(line, map, (int)++cub_chk->no);
 	else if (!ft_strncmp(line, "SO ", 3))
-		ft_value_texure(line, map, (int)++cub_chk->so);
+		ft_value_texture(line, map, (int)++cub_chk->so);
 	else if (!ft_strncmp(line, "WE ", 3))
-		ft_value_texure(line, map, (int)++cub_chk->we);
+		ft_value_texture(line, map, (int)++cub_chk->we);
 	else if (!ft_strncmp(line, "EA ", 3))
-		ft_value_texure(line, map, (int)++cub_chk->ea);
+		ft_value_texture(line, map, (int)++cub_chk->ea);
 	else if (!ft_strncmp(line, "S ", 2))
 		ft_value_sprite(line, map, (int)++cub_chk->s);
 	else if (!ft_strncmp(line, "F ", 2))
