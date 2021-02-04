@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/04 18:57:26 by junmkang          #+#    #+#             */
-/*   Updated: 2021/02/05 03:03:32 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/05 07:53:56 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,9 @@ static int		ft_map_y_count(char *s, char c)
 {
 	int				i;
 	int				count;
-	int				x;
 
-	count = 0;
 	i = 0;
-	x = 0;
+	count = 0;
 	while (s[i])
 	{
 		if (s[i] != c && (s[i + 1] == c || s[i + 1] == '\0'))

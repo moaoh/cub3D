@@ -6,11 +6,23 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 18:37:00 by junmkang          #+#    #+#             */
-/*   Updated: 2021/02/05 02:59:58 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/05 07:54:53 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "value_info.h"
+
+void		ft_value_free(char **str)
+{
+	int		i;
+
+	i = 0;
+	while(str[i])
+	{
+		free(str[i]);
+		i++;
+	}
+}
 
 static int	ft_map_condition_chk(t_cub_info *cub_chk)
 {

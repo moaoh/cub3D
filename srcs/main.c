@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/27 23:36:58 by junmkang          #+#    #+#             */
-/*   Updated: 2021/02/05 02:53:17 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/05 07:42:04 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void				ft_error(char *s)
 	exit(0);
 }
 
-static int			ft_file_name_chk(char *s)
+static void			ft_file_name_chk(char *s)
 {
 	char			**str;
 
@@ -27,7 +27,7 @@ static int			ft_file_name_chk(char *s)
 	str = ft_split(s, '.');
 	if (!str[1] || (ft_strncmp(str[1], "cub", 3)) || (ft_strlen(str[1]) != 3))
 		ft_error("Invalid filename");
-	return (_RIGHT);
+	ft_value_free(str);
 }
 
 static void			ft_cub_bzero(t_cub_info *cub_chk)
@@ -62,18 +62,16 @@ static void			ft_info_chk(char **argv, t_map *map, t_cub_info *cub_chk)
 	ft_map_chk(map);
 }
 
-// map이 newline으로 나누어져 있는경우 어떻게 진행을 해야하는가.
-// 그냥 옳은것으로 판단하는게 훨씬 편안.
 int					main(int argc, char **argv)
 {
 	t_map			map;
 	t_cub_info		cub_chk;
 
+	map.map.buff = 0;
+	map.save_bool = 0;
 	if (argc != 2 && argc != 3)
 		ft_error("Invalid input value.");
 	ft_info_chk(argv, &map, &cub_chk);
 	cub3d(&map);
-	// cub2d(map);
-	
 	return (0);
 }

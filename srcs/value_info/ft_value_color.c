@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 19:29:03 by junmkang          #+#    #+#             */
-/*   Updated: 2021/02/05 03:09:10 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/05 07:25:57 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ int					ft_value_color(char *line, t_map *map, int cub_chk)
 		ft_value_inc(num, map);
 	else
 		ft_error("Invalid color value.");
-	free(str);
-	free(num);
+	ft_value_free(str);
+	ft_value_free(num);
 	return (0);
 }

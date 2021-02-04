@@ -5,6 +5,7 @@ WE ./texture/pics/greystone.png
 EA ./texture/pics/mossy.png
 
 S ./texture/pics/barrel.png
+
 F 225,0,0
 C 0,255,0
 

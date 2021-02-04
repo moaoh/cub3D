@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 19:26:50 by junmkang          #+#    #+#             */
-/*   Updated: 2021/02/05 03:45:08 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/05 07:26:46 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,6 @@ int					ft_value_screen(char *line, t_map *map, int cub_chk)
 		map->screen.X = ft_atoi(str[1]);
 		map->screen.Y = ft_atoi(str[2]);
 	}
-	free(str);
+	ft_value_free(str);
 	return (0);
 }

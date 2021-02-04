@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/04 07:20:49 by junmkang          #+#    #+#             */
-/*   Updated: 2021/02/05 00:04:48 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/05 06:50:16 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,9 @@ static void			ft_loop_wall_dda(t_ray_info *ray_info, t_loop_info *info, int *x)
 	else
 		info->perpWallDist = \
 		(info->map.Y - ray_info->pos_Y + (1 - info->step.Y) / 2) / info->ray.Y;
-	info->lineHeight = ((int)ray_info->screen_Y / info->perpWallDist);
+	info->lineHeight = (int)(ray_info->screen_Y / info->perpWallDist);
+	if (info->lineHeight < 0)
+		info->lineHeight = INT_MAX;
 
 	info->drawStart = (-info->lineHeight / 2) + (ray_info->screen_Y / 2);
 	if (info->drawStart < 0)

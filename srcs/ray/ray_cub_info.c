@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 06:10:59 by junmkang          #+#    #+#             */
-/*   Updated: 2021/02/05 03:04:51 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/05 08:22:39 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,8 +76,6 @@ void			ray_map_info(t_ray_info *info, t_map *map)
 	info->texture.SO = map->texture.SO;
 	info->texture.NO = map->texture.NO;
 	info->texture.S = map->sprite.S;
-
-	// free(map->map.map);
 }
 
 void			ray_sp_info(t_ray_info *info, t_map *map)

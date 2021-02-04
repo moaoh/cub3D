@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 19:25:39 by junmkang          #+#    #+#             */
-/*   Updated: 2021/02/05 02:58:43 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/05 07:19:55 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,19 +23,19 @@ static int		ft_texture(char *s1, char *s2, t_map *map)
 {
 	if (!ft_strncmp(s1, "NO", 2) && ft_texture_chk(s2))
 	{
-		map->texture.NO = ft_strdup(s2, ft_strlen(s2));
+		map->texture.NO = s2;
 	}
 	else if (!ft_strncmp(s1, "SO", 2) && ft_texture_chk(s2))
 	{
-		map->texture.SO = ft_strdup(s2, ft_strlen(s2));
+		map->texture.SO = s2;
 	}
 	else if (!ft_strncmp(s1, "WE", 2) && ft_texture_chk(s2))
 	{
-		map->texture.WE = ft_strdup(s2, ft_strlen(s2));
+		map->texture.WE = s2;
 	}
 	else if (!ft_strncmp(s1, "EA", 2) && ft_texture_chk(s2))
 	{
-		map->texture.EA = ft_strdup(s2, ft_strlen(s2));
+		map->texture.EA = s2;
 	}
 	else
 		ft_error("Invalid texture value.");
