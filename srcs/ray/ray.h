@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 23:36:11 by junmkang          #+#    #+#             */
-/*   Updated: 2021/02/04 07:36:01 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/04 23:48:15 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,12 @@ t_img	*ft_map_sprite(t_ray_info *ray_info);
 */
 
 void	ft_loop_wall(t_ray_info *ray_info, t_loop_info *info);
+
+/*
+** ft_loop_sprite ----------------------------------------------------
+*/
+
+void		ft_loop_sprite_info(t_ray_info *ray_info, t_sprite_info *sp);
 
 /*
 ** ft_img -----------------------------------------------------------

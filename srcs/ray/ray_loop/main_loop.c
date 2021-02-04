@@ -6,11 +6,11 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/11 03:34:18 by junmkang          #+#    #+#             */
-/*   Updated: 2021/02/04 07:36:30 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/05 00:04:54 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ray.h"
+#include "../ray.h"
 
 int					main_loop(t_ray_info *ray_info)
 {

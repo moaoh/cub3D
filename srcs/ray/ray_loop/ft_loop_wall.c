@@ -6,11 +6,11 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/04 07:20:49 by junmkang          #+#    #+#             */
-/*   Updated: 2021/02/04 07:29:32 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/05 00:04:48 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ray.h"
+#include "../ray.h"
 
 static void			ft_loop_wall_info(t_ray_info *ray_info, t_loop_info *info, int x)
 {

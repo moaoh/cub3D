@@ -6,11 +6,11 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 11:35:55 by junmkang          #+#    #+#             */
-/*   Updated: 2021/02/04 07:15:55 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/05 00:05:18 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ray.h"
+#include "../ray.h"
 
 static void		ft_wall_mapping(t_ray_info *ray_info, t_loop_info *info, t_img *img, t_img_calc *calc)
 {
