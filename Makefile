@@ -6,7 +6,7 @@
 #    By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/05 13:37:51 by junmkang          #+#    #+#              #
-#    Updated: 2021/02/05 14:56:25 by junmkang         ###   ########.fr        #
+#    Updated: 2021/02/05 15:10:35 by junmkang         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -69,7 +69,7 @@ R_LOOP_NAME = \
 	ft_loop_sprite.c \
 	ft_loop_sprite_sort.c
 
-BASIC = $(addprefix $(UTILS_DIR), $(UTILS_NAME));
+BASIC = $(addprefix $(UTILS_DIR), $(UTILS_NAME)) \
 		$(addprefix $(SRCS_DIR), $(SRCS_NAME)) \
 		$(addprefix $(SCREEN_DIR), $(SCREEN_NAME)) \
 		$(addprefix $(GNL_DIR), $(GNL_NAME)) \
@@ -103,9 +103,7 @@ LIBS	= -Lmlx -lmlx -framework OpenGL -framework AppKit -lm
 all : $(NAME)
 
 $(NAME) : $(OBJS)
-	$(CC) $(FLAG) -o $(NAME) $(OBJS) \
-	$(LIBS)
-	
+	$(CC) $(FLAG) -o $(NAME) $(OBJS) $(LIBS)
 	
 norm :
 	norminette $(BASIC) $(HEADERS)
