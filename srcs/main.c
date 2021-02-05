@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/27 23:36:58 by junmkang          #+#    #+#             */
-/*   Updated: 2021/02/05 09:18:17 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/05 09:40:13 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,12 @@ static void			ft_cub_bzero(t_cub_info *cub_chk)
 	cub_chk->c = 0;
 }
 
-static void			ft_info_chk(char **argv, t_map *map, t_cub_info *cub_chk)
+static void			ft_info_chk(char **argv, \
+					t_map *map, t_cub_info *cub_chk)
 {
 	int				fd;
 	char			*line;
-	
+
 	if (argv[2])
 		save_screen_chk(argv[2], map);
 	ft_file_name_chk(argv[1]);

@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/04 18:57:26 by junmkang          #+#    #+#             */
-/*   Updated: 2021/02/05 07:53:56 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/05 11:04:16 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ static int		ft_map_y_count(char *s, char c)
 	return (count);
 }
 
-static int		ft_chk_validation(t_map *map, char **chk_map, t_map_player *player, int y_size)
+static void		ft_chk_validation(t_map *map, \
+				char **chk_map, t_map_player *player, int y_size)
 {
 	int		i;
 	int		j;
@@ -36,30 +37,27 @@ static int		ft_chk_validation(t_map *map, char **chk_map, t_map_player *player, 
 	int		sp_num;
 
 	i = 0;
-	sp_num = map->SP_count - 1;
-	while (chk_map[i])
+	sp_num = map->sp_count - 1;
+	while (chk_map[++i])
 	{
 		j = 0;
 		len = ft_strlen(chk_map[i]);
-		while (j < len && chk_map[i][j])
+		while (++j < len && chk_map[i][j])
 		{
 			ft_map_value_chk(chk_map[i][j], i, j, player);
 			ft_map_validity(chk_map, i, j, y_size);
 			if (chk_map[i][j] == '2')
 			{
-				map->SP_pos[sp_num].y = i + 0.5;
-				map->SP_pos[sp_num].x = j + 0.5;
-				map->SP_pos[sp_num].type = chk_map[i][j];
+				map->sp_pos[sp_num].y = i + 0.5;
+				map->sp_pos[sp_num].x = j + 0.5;
+				map->sp_pos[sp_num].type = chk_map[i][j];
 				sp_num--;
 			}
-			j++;
 		}
-		i++;
 	}
-	return (0);
 }
 
-int				ft_SP_count(char **chk_map)
+int				ft_sp_count(char **chk_map)
 {
 	int			i;
 	int			j;
@@ -90,8 +88,8 @@ int				ft_map_chk(t_map *map)
 	y_size = ft_map_y_count(map->map.buff, '\n');
 	map->map.map = ft_split(map->map.buff, '\n');
 	free(map->map.buff);
-	map->SP_count = ft_SP_count(map->map.map);
-	map->SP_pos = malloc(sizeof(t_sprite_pos) * map->SP_count);
+	map->sp_count = ft_sp_count(map->map.map);
+	map->sp_pos = malloc(sizeof(t_sprite_pos) * map->sp_count);
 	ft_chk_validation(map, map->map.map, &map->player, y_size);
 	if (!map->player.dir)
 		ft_error("have no dir.");

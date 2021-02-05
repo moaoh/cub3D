@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 19:29:03 by junmkang          #+#    #+#             */
-/*   Updated: 2021/02/05 07:25:57 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/05 09:59:49 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,9 @@ static int			ft_value_inc(char **num, t_map *map)
 		ft_error("Invalid color value.");
 	else
 	{
-		map->c_color.R = ft_atoi(num[0]);
-		map->c_color.G = ft_atoi(num[1]);
-		map->c_color.B = ft_atoi(num[2]);
+		map->c_color.r = ft_atoi(num[0]);
+		map->c_color.g = ft_atoi(num[1]);
+		map->c_color.b = ft_atoi(num[2]);
 	}
 	return (_RIGHT);
 }
@@ -51,9 +51,9 @@ static int			ft_value_inf(char **num, t_map *map)
 		ft_error("Invalid color value.");
 	else
 	{
-		map->f_color.R = ft_atoi(num[0]);
-		map->f_color.G = ft_atoi(num[1]);
-		map->f_color.B = ft_atoi(num[2]);
+		map->f_color.r = ft_atoi(num[0]);
+		map->f_color.g = ft_atoi(num[1]);
+		map->f_color.b = ft_atoi(num[2]);
 	}
 	return (_RIGHT);
 }

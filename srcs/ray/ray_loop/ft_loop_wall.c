@@ -6,104 +6,105 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/04 07:20:49 by junmkang          #+#    #+#             */
-/*   Updated: 2021/02/05 06:50:16 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/05 10:59:32 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ray.h"
 
-static void			ft_loop_wall_info(t_ray_info *ray_info, t_loop_info *info, int x)
+static void			ft_loop_wall_info(t_ray_info *ray_info, \
+										t_loop_info *info, int x)
 {
-	info->cameraX = 2 * x / (double)ray_info->screen_X - 1;
-	info->ray.X = ray_info->dir_X + info->cameraX * ray_info->plane_X;
-	info->ray.Y = ray_info->dir_Y + info->cameraX * ray_info->plane_Y;
-	info->map.X = (int)ray_info->pos_X;
-	info->map.Y = (int)ray_info->pos_Y;
-	info->deltaDist.X = fabs(1 / info->ray.X);
-	info->deltaDist.Y = fabs(1 / info->ray.Y);
+	info->camera_x = 2 * x / (double)ray_info->screen_x - 1;
+	info->ray.x = ray_info->dir_x + info->camera_x * ray_info->plane_x;
+	info->ray.y = ray_info->dir_y + info->camera_x * ray_info->plane_y;
+	info->map.x = (int)ray_info->pos_x;
+	info->map.y = (int)ray_info->pos_y;
+	info->delta_dist.x = fabs(1 / info->ray.x);
+	info->delta_dist.y = fabs(1 / info->ray.y);
 }
 
 static void			ft_loop_wall_dir(t_ray_info *ray_info, t_loop_info *info)
 {
-	if (info->ray.Y < 0)
+	if (info->ray.y < 0)
 	{
-		info->step.Y = -1;
-		info->sideDist.Y = (ray_info->pos_Y - info->map.Y) * \
-			info->deltaDist.Y;
+		info->step.y = -1;
+		info->side_dist.y = (ray_info->pos_y - info->map.y) * \
+			info->delta_dist.y;
 	}
 	else
 	{
-		info->step.Y = 1;
-		info->sideDist.Y = (info->map.Y + 1.0 - ray_info->pos_Y) * \
-			info->deltaDist.Y;
+		info->step.y = 1;
+		info->side_dist.y = (info->map.y + 1.0 - ray_info->pos_y) * \
+			info->delta_dist.y;
 	}
-	if (info->ray.X < 0)
+	if (info->ray.x < 0)
 	{
-		info->step.X = -1;
-		info->sideDist.X = (ray_info->pos_X - info->map.X) * \
-			info->deltaDist.X;
+		info->step.x = -1;
+		info->side_dist.x = (ray_info->pos_x - info->map.x) * \
+			info->delta_dist.x;
 	}
 	else
 	{
-		info->step.X = 1;
-		info->sideDist.X = (info->map.X + 1.0 - ray_info->pos_X) * \
-			info->deltaDist.X;
+		info->step.x = 1;
+		info->side_dist.x = (info->map.x + 1.0 - ray_info->pos_x) * \
+			info->delta_dist.x;
 	}
 }
 
-static void			ft_loop_wall_chk_dda(t_ray_info *ray_info, t_loop_info *info)
+static void			ft_loop_wall_chk_dda(t_ray_info *ray_info, \
+											t_loop_info *info)
 {
 	int				tmp;
 
 	tmp = 0;
 	while (1)
 	{
-		if (info->sideDist.X < info->sideDist.Y)
+		if (info->side_dist.x < info->side_dist.y)
 		{
-			info->sideDist.X += info->deltaDist.X;
-			info->map.X += info->step.X;
+			info->side_dist.x += info->delta_dist.x;
+			info->map.x += info->step.x;
 			info->side = 0;
 		}
 		else
 		{
-			info->sideDist.Y += info->deltaDist.Y;
-			info->map.Y += info->step.Y;
+			info->side_dist.y += info->delta_dist.y;
+			info->map.y += info->step.y;
 			info->side = 1;
 		}
-		if (ray_info->map[info->map.Y][info->map.X] == '1')
+		if (ray_info->map[info->map.y][info->map.x] == '1')
 			break ;
 	}
 }
 
-static void			ft_loop_wall_dda(t_ray_info *ray_info, t_loop_info *info, int *x)
+static void			ft_loop_wall_dda(t_ray_info *ray_info, \
+										t_loop_info *info, int *x)
 {
 	if (info->side == 0)
-		info->perpWallDist = \
-		(info->map.X - ray_info->pos_X + (1 - info->step.X) / 2) / info->ray.X;
+		info->perp_wall_dist = \
+		(info->map.x - ray_info->pos_x + (1 - info->step.x) / 2) / info->ray.x;
 	else
-		info->perpWallDist = \
-		(info->map.Y - ray_info->pos_Y + (1 - info->step.Y) / 2) / info->ray.Y;
-	info->lineHeight = (int)(ray_info->screen_Y / info->perpWallDist);
-	if (info->lineHeight < 0)
-		info->lineHeight = INT_MAX;
-
-	info->drawStart = (-info->lineHeight / 2) + (ray_info->screen_Y / 2);
-	if (info->drawStart < 0)
-		info->drawStart = 0;
-	info->drawEnd = (info->lineHeight / 2) + (ray_info->screen_Y / 2);
-	if (info->drawEnd >= ray_info->screen_Y)
-		info->drawEnd = ray_info->screen_Y - 1;
+		info->perp_wall_dist = \
+		(info->map.y - ray_info->pos_y + (1 - info->step.y) / 2) / info->ray.y;
+	info->line_height = (int)(ray_info->screen_y / info->perp_wall_dist);
+	if (info->line_height < 0)
+		info->line_height = INT_MAX;
+	info->draw_start = (-info->line_height / 2) + (ray_info->screen_y / 2);
+	if (info->draw_start < 0)
+		info->draw_start = 0;
+	info->draw_end = (info->line_height / 2) + (ray_info->screen_y / 2);
+	if (info->draw_end >= ray_info->screen_y)
+		info->draw_end = ray_info->screen_y - 1;
 	(*x)++;
-
-	ray_info->SP_dist[(*x)] = info->perpWallDist;
+	ray_info->sp_dist[(*x)] = info->perp_wall_dist;
 }
 
-void		ft_loop_wall(t_ray_info *ray_info, t_loop_info *info)
+void				ft_loop_wall(t_ray_info *ray_info, t_loop_info *info)
 {
-	int		x;
-	
+	int				x;
+
 	x = 0;
-	while (x < ray_info->screen_X)
+	while (x < ray_info->screen_x)
 	{
 		ft_loop_wall_info(ray_info, info, x);
 		ft_loop_wall_dir(ray_info, info);

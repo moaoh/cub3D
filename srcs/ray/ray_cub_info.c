@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 06:10:59 by junmkang          #+#    #+#             */
-/*   Updated: 2021/02/05 08:22:39 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/05 10:37:15 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,23 +16,23 @@ void			player_dir(t_ray_info *info, char dir)
 {
 	if (dir == 'E')
 	{
-		info->dir_Y = 0;
-		info->dir_X = +1;
+		info->dir_y = 0;
+		info->dir_x = +1;
 	}
 	else if (dir == 'W')
 	{
-		info->dir_Y = 0;
-		info->dir_X = -1;
+		info->dir_y = 0;
+		info->dir_x = -1;
 	}
 	else if (dir == 'N')
 	{
-		info->dir_Y = -1;
-		info->dir_X = 0;
+		info->dir_y = -1;
+		info->dir_x = 0;
 	}
 	else if (dir == 'S')
 	{
-		info->dir_Y = +1;
-		info->dir_X = 0;
+		info->dir_y = +1;
+		info->dir_x = 0;
 	}
 }
 
@@ -40,42 +40,40 @@ void			player_plane(t_ray_info *info, char dir)
 {
 	if (dir == 'E')
 	{
-		info->plane_Y = -0.66;
-		info->plane_X = 0;
+		info->plane_y = -0.66;
+		info->plane_x = 0;
 	}
 	else if (dir == 'W')
 	{
-		info->plane_Y = 0.66;
-		info->plane_X = 0;
+		info->plane_y = 0.66;
+		info->plane_x = 0;
 	}
 	else if (dir == 'N')
 	{
-		info->plane_Y = 0;
-		info->plane_X = -0.66;
+		info->plane_y = 0;
+		info->plane_x = -0.66;
 	}
 	else if (dir == 'S')
 	{
-		info->plane_Y = 0;
-		info->plane_X = +0.66;
+		info->plane_y = 0;
+		info->plane_x = +0.66;
 	}
 }
 
 void			ray_map_info(t_ray_info *info, t_map *map)
 {
 	info->map = map->map.map;
-
-	info->c_color.R = map->c_color.R;
-	info->c_color.G = map->c_color.G;
-	info->c_color.B = map->c_color.B;
-	info->f_color.R = map->f_color.R;
-	info->f_color.G = map->f_color.G;
-	info->f_color.B = map->f_color.B;
-	
-	info->texture.EA = map->texture.EA;
-	info->texture.WE = map->texture.WE;
-	info->texture.SO = map->texture.SO;
-	info->texture.NO = map->texture.NO;
-	info->texture.S = map->sprite.S;
+	info->c_color.r = map->c_color.r;
+	info->c_color.g = map->c_color.g;
+	info->c_color.b = map->c_color.b;
+	info->f_color.r = map->f_color.r;
+	info->f_color.g = map->f_color.g;
+	info->f_color.b = map->f_color.b;
+	info->texture.ea = map->texture.ea;
+	info->texture.we = map->texture.we;
+	info->texture.so = map->texture.so;
+	info->texture.no = map->texture.no;
+	info->texture.s = map->sprite.s;
 }
 
 void			ray_sp_info(t_ray_info *info, t_map *map)
@@ -83,24 +81,23 @@ void			ray_sp_info(t_ray_info *info, t_map *map)
 	int			i;
 
 	i = 0;
-	info->SP_count = map->SP_count;
-	info->SP_pos = malloc(sizeof(t_sprite_pos) * info->SP_count + 1);
-	while (i < info->SP_count)
+	info->sp_count = map->sp_count;
+	info->sp_pos = malloc(sizeof(t_sprite_pos) * info->sp_count + 1);
+	while (i < info->sp_count)
 	{
-		info->SP_pos[i].y = map->SP_pos[i].y;
-		info->SP_pos[i].x = map->SP_pos[i].x;
-		info->SP_pos[i].type = map->SP_pos[i].type;
+		info->sp_pos[i].y = map->sp_pos[i].y;
+		info->sp_pos[i].x = map->sp_pos[i].x;
+		info->sp_pos[i].type = map->sp_pos[i].type;
 		i++;
 	}
-	free(map->SP_pos);
+	free(map->sp_pos);
 }
 
 void			ray_cub_info(t_ray_info *info, t_map *map)
 {
 	info->save_bool = map->save_bool;
-
-	info->screen_Y = map->screen.Y;
-	info->screen_X = map->screen.X;
-	info->pos_Y = map->player.y + 0.5;
-	info->pos_X = map->player.x + 0.5;
+	info->screen_y = map->screen.y;
+	info->screen_x = map->screen.x;
+	info->pos_y = map->player.y + 0.5;
+	info->pos_x = map->player.x + 0.5;
 }

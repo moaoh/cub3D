@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 23:36:11 by junmkang          #+#    #+#             */
-/*   Updated: 2021/02/05 02:12:24 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/05 10:36:18 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@
 #	include "ray_struct.h"
 #	include "press.h"
 
-#	define uDiv 1
-#	define vDiv 1
-#	define vMove 0.0
+#	define _UDIR	1
+#	define _VDIR	1
+#	define _VMOVE	0.0
 
 /*
 ** cub3d --------------------------------------------------
@@ -60,33 +60,34 @@ void		ray_cub_info(t_ray_info *info, t_map *map);
 ** main_loop ----------------------------------------------
 */
 
-int		main_loop(t_ray_info *ray_info);
+int			main_loop(t_ray_info *ray_info);
 
 /*
 ** ft_loop_sprite ----------------------------------------------
 */
 
-void	ft_loop_sprite(t_ray_info *ray_info, t_sprite_info *sp);
+void		ft_loop_sprite(t_ray_info *ray_info, t_sprite_info *sp);
 
 /*
 ** change ----------------------------------------------------
 */
 
-void	ft_wall_change(t_ray_info *ray_info, t_loop_info *info, int start, int end);
-void	ft_sprite_change(t_ray_info *ray_info, t_sprite_info *sp);
+void		ft_wall_change(t_ray_info *ray_info, t_loop_info *info, \
+						int start, int end);
+void		ft_sprite_change(t_ray_info *ray_info, t_sprite_info *sp);
 
 /*
 ** ft_img_map_chk ---------------------------------------------------
 */
 
-t_img	*ft_map_wall(t_ray_info *ray_info, t_loop_info *info);
-t_img	*ft_map_sprite(t_ray_info *ray_info);
+t_img		*ft_map_wall(t_ray_info *ray_info, t_loop_info *info);
+t_img		*ft_map_sprite(t_ray_info *ray_info);
 
 /*
 ** ft_loop_wall ----------------------------------------------------
 */
 
-void	ft_loop_wall(t_ray_info *ray_info, t_loop_info *info);
+void		ft_loop_wall(t_ray_info *ray_info, t_loop_info *info);
 
 /*
 ** ft_loop_sprite ----------------------------------------------------
@@ -98,8 +99,8 @@ void		ft_loop_sprite_info(t_ray_info *ray_info, t_sprite_info *sp);
 ** ft_img -----------------------------------------------------------
 */
 
-void	ft_my_mlx_pixel_put(t_img img, int y, int x, int color);
-void	ft_wall(t_ray_info *ray_info, t_loop_info *info, int *x);
-void	ft_sprite(t_ray_info *ray_info, t_sprite_info *sp);
+void		ft_my_mlx_pixel_put(t_img img, int y, int x, int color);
+void		ft_wall(t_ray_info *ray_info, t_loop_info *info, int *x);
+void		ft_sprite(t_ray_info *ray_info, t_sprite_info *sp);
 
 #	endif

@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 08:12:19 by junmkang          #+#    #+#             */
-/*   Updated: 2021/02/05 03:47:35 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/05 10:26:04 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@ void	ft_max_screen_chk(t_ray_info *info, t_map *map)
 	int	h_max;
 
 	mlx_get_screen_size(info->mlx, &w_max, &h_max);
-	if (map->screen.X > w_max)
+	if (map->screen.x > w_max)
 	{
-		info->screen_X = w_max;
-		map->screen.X = w_max;
+		info->screen_x = w_max;
+		map->screen.x = w_max;
 	}
-	if (map->screen.Y > h_max)
+	if (map->screen.y > h_max)
 	{
-		info->screen_Y = h_max;
-		map->screen.Y = h_max;
+		info->screen_y = h_max;
+		map->screen.y = h_max;
 	}
 }

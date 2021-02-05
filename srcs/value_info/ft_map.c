@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 19:38:55 by junmkang          #+#    #+#             */
-/*   Updated: 2021/02/05 08:08:25 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/05 09:57:44 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int					ft_map(char *line, t_map *map)
 	char			*temp;
 
 	s = "\n";
-	line = ft_strjoin(line, s); // x
+	line = ft_strjoin(line, s);
 	temp = ft_strjoin(!(map->map.buff) ? "" : map->map.buff, line);
 	if (map->map.buff)
 		free(map->map.buff);

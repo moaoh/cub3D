@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 13:01:48 by junmkang          #+#    #+#             */
-/*   Updated: 2021/02/04 07:37:36 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/05 10:41:28 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,36 +20,35 @@
 ** sprite -------------------------------------------------
 */
 
-typedef struct 			s_sprite_info
+typedef struct			s_sprite_info
 {
-	double				spriteY;
-	double				spriteX;
-	double				invDet;
-	double				transformY;
-	double				transformX;
-	int					spriteScreenX;
-	int					vMoveScreen;
-	int					spriteHeight;
-	int					drawStartY;
-	int					drawEndY;
-	int					spriteWidth;
-	int					drawStartX;
-	int					drawEndX;
-	int					texX;
-	int					texY;
+	double				sprite_y;
+	double				sprite_x;
+	double				inv_det;
+	double				transform_y;
+	double				transform_x;
+	int					sprite_screen_x;
+	int					v_move_screen;
+	int					sprite_height;
+	int					draw_start_y;
+	int					draw_end_y;
+	int					sprite_width;
+	int					draw_start_x;
+	int					draw_end_x;
+	int					tex_x;
+	int					tex_y;
 	int					d;
 }						t_sprite_info;
 
 typedef struct			s_dist_sprite
 {
-	double				SP_dist;
+	double				sp_dist;
 }						t_dist_sprite;
 
-
-typedef struct 			s_sprite_pwd
+typedef struct			s_sprite_pwd
 {
-	int					*spriteOrder;
-	double				*spriteDistance;
+	int					*sprite_order;
+	double				*sprite_distance;
 }						t_sprite_pwd;
 
 typedef struct			s_pair
@@ -78,48 +77,47 @@ typedef struct			s_img
 ** cub3d_info ---------------------------------------------
 */
 
-typedef struct		s_ray_texture
+typedef struct			s_ray_texture
 {
-	char			*EA;
-	char			*WE;
-	char			*SO;
-	char			*NO;
-	char			*S;
-}					t_ray_texture;
+	char				*ea;
+	char				*we;
+	char				*so;
+	char				*no;
+	char				*s;
+}						t_ray_texture;
 
-
-typedef struct		s_ray_info
+typedef struct			s_ray_info
 {
-	int				screen_Y;
-	int				screen_X;
-	double			pos_Y;
-	double			pos_X;
-	double			dir_Y;
-	double			dir_X;
-	double			plane_Y;
-	double			plane_X;
-	void			*mlx;
-	void			*win;
-	char			**map;
-	t_map_color		f_color;
-	t_map_color		c_color;
+	int					screen_y;
+	int					screen_x;
+	double				pos_y;
+	double				pos_x;
+	double				dir_y;
+	double				dir_x;
+	double				plane_y;
+	double				plane_x;
+	void				*mlx;
+	void				*win;
+	char				**map;
+	t_map_color			f_color;
+	t_map_color			c_color;
 
-	double			moveSpeed;
-	double			rotSpeed;
-	
-	double			oldDirX;
-	double			oldPlaneX;
+	double				move_speed;
+	double				rot_speed;
 
-	int				img_x;
-	t_ray_texture	texture;
-	t_img			img[10];
-	int				save_bool;
-	
-	t_sprite_pos	*SP_pos;
-	t_sprite_pwd	SP_pwd;
-	int				SP_count;
-	double			*SP_dist;
-}					t_ray_info;
+	double				old_dir_x;
+	double				old_plane_x;
+
+	int					img_x;
+	t_ray_texture		texture;
+	t_img				img[10];
+	int					save_bool;
+
+	t_sprite_pos		*sp_pos;
+	t_sprite_pwd		sp_pwd;
+	int					sp_count;
+	double				*sp_dist;
+}						t_ray_info;
 
 /*
 ** t_img_calc ---------------------------------------------
@@ -140,47 +138,47 @@ typedef struct			s_img_calc
 
 typedef	struct			s_loop_ray
 {
-	double				X;
-	double				Y;
+	double				x;
+	double				y;
 }						t_loop_ray;
 
-typedef	struct			s_loop_sideDist
+typedef	struct			s_loop_side_dist
 {
-	double				X;
-	double				Y;
-}						t_loop_sideDist;
+	double				x;
+	double				y;
+}						t_loop_side_dist;
 
 typedef struct			s_loop_map
 {
-	int					Y;
-	int					X;	
+	int					y;
+	int					x;
 }						t_loop_map;
 
-typedef struct			s_loop_deltaDist
+typedef struct			s_loop_delta_dist
 {
-	double				Y;
-	double				X;
-}						t_loop_deltaDist;
+	double				y;
+	double				x;
+}						t_loop_delta_dist;
 
 typedef struct			s_loop_step
 {
-	int					Y;
-	int					X;
+	int					y;
+	int					x;
 }						t_loop_step;
 
 typedef struct			s_loop_info
 {
-	double				cameraX;
+	double				camera_x;
 	t_loop_ray			ray;
-	t_loop_sideDist		sideDist;
+	t_loop_side_dist	side_dist;
 	t_loop_map			map;
-	t_loop_deltaDist	deltaDist;
+	t_loop_delta_dist	delta_dist;
 	t_loop_step			step;
 	int					side;
-	double				perpWallDist;
-	int					lineHeight;
-	int					drawStart;
-	int					drawEnd;
+	double				perp_wall_dist;
+	int					line_height;
+	int					draw_start;
+	int					draw_end;
 	int					color;
 	t_img_calc			calc;
 }						t_loop_info;

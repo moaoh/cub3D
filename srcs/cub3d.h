@@ -6,12 +6,15 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 18:39:36 by junmkang          #+#    #+#             */
-/*   Updated: 2021/01/31 15:33:47 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/05 09:39:39 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #	ifndef CUB3D_H
 #	define CUB3D_H
+
+#	define _WRONG 0
+#	define _RIGHT 1
 
 /*
 ** header file --------------------------------------------
@@ -36,8 +39,5 @@
 #	include <limits.h>
 
 void	ft_error(char *s);
-
-#	define	_WRONG	0
-#	define	_RIGHT	1
 
 #	endif
