@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/30 06:55:13 by junmkang          #+#    #+#             */
-/*   Updated: 2021/02/05 11:03:02 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/06 06:39:19 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void		save_screen(t_ray_info *ray_info)
 	int		j;
 
 	bitmap_sizeline = (ray_info->screen_x * ray_info->img[0].bpp / 8);
-	if (!(fd = open("cub3d_save.bmp", O_RDWR)))
+	if (!(fd = fopen("cub3d_save.bmp", O_RDWR)))
 		ft_error("cub3d_save.bmp file does not exist.");
 	write(fd, "BM", 2);
 	put_data_fd(fd, ray_info->screen_y * (bitmap_sizeline) + 54, 4);
