@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
+/*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/21 12:55:04 by junmkang          #+#    #+#             */
-/*   Updated: 2020/12/02 16:37:05 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/05 09:05:25 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

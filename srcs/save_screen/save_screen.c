@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/30 06:55:13 by junmkang          #+#    #+#             */
-/*   Updated: 2021/02/05 06:07:18 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/05 09:30:22 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,5 +70,6 @@ void		save_screen(t_ray_info *ray_info)
 		write(fd, ray_info->img[0].data + (ray_info->img[0].size_l / 4) * j, \
 			(bitmap_sizeline));
 	close(fd);
+	while(1);
 	exit(0);
 }

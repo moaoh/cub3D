@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/27 23:36:58 by junmkang          #+#    #+#             */
-/*   Updated: 2021/02/05 07:42:04 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/05 09:18:17 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ static void			ft_info_chk(char **argv, t_map *map, t_cub_info *cub_chk)
 		ft_value_info(line, map, cub_chk);
 		free(line);
 	}
+	free(line);
 	ft_map_chk(map);
 }
 
