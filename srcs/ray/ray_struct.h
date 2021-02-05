@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 13:01:48 by junmkang          #+#    #+#             */
-/*   Updated: 2021/02/05 10:41:28 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/05 13:33:43 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,21 @@
 
 #	include "ray.h"
 #	include "../cub3d.h"
+
+/*
+** press -------------------------------------------------
+*/
+
+typedef struct			s_key
+{
+	double				move_x;
+	double				move_y;
+
+	double				m_c;
+	double				m_s;
+	double				p_c;
+	double				p_s;
+}						t_key;
 
 /*
 ** sprite -------------------------------------------------
@@ -64,7 +79,7 @@ typedef struct			s_pair
 typedef struct			s_img
 {
 	void				*img;
-	int					*data;
+	unsigned int		*data;
 	int					size_l;
 	int					bpp;
 	int					endian;

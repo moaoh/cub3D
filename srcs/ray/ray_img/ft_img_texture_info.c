@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/23 09:57:14 by junmkang          #+#    #+#             */
-/*   Updated: 2021/02/05 10:40:37 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/05 13:34:12 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ static void			ft_img_texture_putin(t_ray_info *ray_info, \
 	img->img = \
 	mlx_png_file_to_image(ray_info->mlx, texture, &img->width, &img->height);
 	img->data = \
-	(int *)mlx_get_data_addr(img->img, &img->bpp, &img->size_l, &img->endian);
+	(unsigned int *)mlx_get_data_addr(img->img, &img->bpp, \
+									&img->size_l, &img->endian);
 }
 
 static void			ft_img_texture_type(t_ray_info *ray_info)
