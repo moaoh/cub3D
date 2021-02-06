@@ -6,17 +6,13 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/30 06:55:26 by junmkang          #+#    #+#             */
-/*   Updated: 2021/02/06 11:58:21 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/06 13:16:35 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #	ifndef SAVE_SCREEN_H
 #	define SAVE_SCREEN_H
 
-#	include "../ray/ray_struct.h"
-#	include "../cub3d_struct.h"
-#	include "../ray/ray_struct.h"
-#	include "../ray/ray.h"
 #	include "../cub3d.h"
 
 void	save_screen_chk(char *line, t_map *map);

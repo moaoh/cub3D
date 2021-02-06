@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 03:36:35 by junmkang          #+#    #+#             */
-/*   Updated: 2021/02/06 08:43:59 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/06 13:47:50 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void			ft_loop_sprite(t_ray_info *ray_info, t_sprite_info *sp)
 {
 	int			sp_i;
 
-	ft_loop_sprite_info(ray_info, sp);
+	ft_loop_sprite_info(ray_info);
 	sp_i = 0;
 	while (sp_i < ray_info->sp_count)
 	{

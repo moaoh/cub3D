@@ -6,15 +6,12 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 13:01:48 by junmkang          #+#    #+#             */
-/*   Updated: 2021/02/06 12:04:50 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/06 13:16:44 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #	ifndef RAY_STRUCT_H
 #	define RAY_STRUCT_H
-
-#	include "ray.h"
-#	include "../cub3d.h"
 
 /*
 ** press -------------------------------------------------

@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/12 00:27:16 by junmkang          #+#    #+#             */
-/*   Updated: 2021/02/05 13:36:46 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/06 13:46:14 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ static int		key_press_ad(int key, t_ray_info *info, \
 	return (0);
 }
 
-static int		key_press_lr(int key, t_ray_info *info, double c, double s)
+static int		key_press_lr(t_ray_info *info, double c, double s)
 {
 	info->old_dir_x = info->dir_x;
 	info->dir_x = info->dir_x * c - info->dir_y * s;
@@ -88,9 +88,9 @@ int				key_press(int key, t_ray_info *info)
 	if (key == KEY_A || key == KEY_D)
 		key_press_ad(key, info, key_info.move_y, key_info.move_x);
 	if (key == KEY_LEFT)
-		key_press_lr(key, info, key_info.p_c, key_info.p_s);
+		key_press_lr(info, key_info.p_c, key_info.p_s);
 	if (key == KEY_RIGHT)
-		key_press_lr(key, info, key_info.m_c, key_info.m_s);
+		key_press_lr(info, key_info.m_c, key_info.m_s);
 	if (key == KEY_ESC)
 	{
 		printf("bye :D\n");

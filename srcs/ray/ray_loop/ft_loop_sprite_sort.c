@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/04 23:47:08 by junmkang          #+#    #+#             */
-/*   Updated: 2021/02/05 10:55:57 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/06 13:47:21 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void		sortsprites(int *order, double *dist, int sp_count)
 	free(sprites);
 }
 
-void		ft_loop_sprite_info(t_ray_info *ray_info, t_sprite_info *sp)
+void		ft_loop_sprite_info(t_ray_info *ray_info)
 {
 	int			sp_i;
 

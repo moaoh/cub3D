@@ -6,7 +6,7 @@
 #    By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/05 13:37:51 by junmkang          #+#    #+#              #
-#    Updated: 2021/02/06 12:54:33 by junmkang         ###   ########.fr        #
+#    Updated: 2021/02/06 14:18:55 by junmkang         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,9 @@ NAME = cub3D
 # 					srcs/ray/ray_img/ft_img.c	srcs/ray/ray_img/ft_sprite_change.c	srcs/ray/ray_img/ft_wall_change.c	srcs/ray/ray_img/ft_img_map_chk.c	srcs/ray/ray_img/ft_img_texture_info.c	\
 # 					srcs/ray/ray_loop/ft_loop_sprite.c	srcs/ray/ray_loop/ft_loop_sprite_sort.c	srcs/ray/ray_loop/ft_loop_wall.c	srcs/ray/ray_loop/main_loop.c	\
 # 					utils/ft_memcpy.c	utils/ft_split.c	utils/ft_atoi.c	utils/ft_strncmp.c
+
+# OPENGL_DIR = ./mlx/
+# OPENGL = libmlx.a
 
 UTILS_DIR = ./utils/
 UTILS_NAME = \
@@ -80,15 +83,15 @@ R_LOOP_NAME = \
 	main_loop.c 
 
 BASIC = \
-		$(addprefix $(R_IMG_DIR), $(R_IMG_NAME)) \
-		$(addprefix $(R_LOOP_DIR), $(R_LOOP_NAME)) \
-		$(addprefix $(RAY_DIR), $(RAY_NAME)) \
-		$(addprefix $(V_INFO_DIR), $(V_INFO_NAME)) \
-		$(addprefix $(MAP_DIR), $(MAP_NAME)) \
+		$(addprefix $(UTILS_DIR), $(UTILS_NAME)) \
+		$(addprefix $(SRCS_DIR), $(SRCS_NAME)) \
 		$(addprefix $(GNL_DIR), $(GNL_NAME)) \
 		$(addprefix $(SCREEN_DIR), $(SCREEN_NAME)) \
-		$(addprefix $(UTILS_DIR), $(UTILS_NAME)) \
-		$(addprefix $(SRCS_DIR), $(SRCS_NAME)) 
+		$(addprefix $(V_INFO_DIR), $(V_INFO_NAME)) \
+		$(addprefix $(MAP_DIR), $(MAP_NAME)) \
+		$(addprefix $(RAY_DIR), $(RAY_NAME)) \
+		$(addprefix $(R_IMG_DIR), $(R_IMG_NAME)) \
+		$(addprefix $(R_LOOP_DIR), $(R_LOOP_NAME)) 
 
 HEADERS = \
 		$(UTILS_DIR)utils.h \
@@ -106,17 +109,22 @@ HEADERS = \
 OBJS	= $(BASIC:.c=.o)
 
 CC = gcc
-FLAG = -Wall -Wextra -Werror -I
+# FLAG = -Wall -Wextra -Werror -O3
+FLAG = -Wall -Wextra -Werror -O3
 
 RM		= rm -f
 MLX		= libmlx.dylib
-LIBS	= -Lmlx -lmlx -framework OpenGL -framework AppKit -lm
-# LXFLAGS = -lmlx -framework OpenGL -framework AppKit
+# LIBS	= -Lmlx -lmlx -framework -framework -lm
+LIBS	= -lmlx -framework OpenGL -framework AppKit -lm
 
 all : $(NAME)
 
 $(NAME) : $(MLX) $(OBJS)
-	$(CC) $(FLAG) $(PATH) -o $(NAME) $(OBJS) $(LIBS)
+	$(FLAG) -o $(NAME) $(OBJS) $(LIBS)
+
+# $(PATH)
+%.o : %.c
+	$(CC) $(FLAG) -c $*.c -o $@
 	
 norm :
 	norminette $(BASIC) $(HEADERS)

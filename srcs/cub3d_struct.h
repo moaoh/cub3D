@@ -6,14 +6,12 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 18:47:35 by junmkang          #+#    #+#             */
-/*   Updated: 2021/02/05 09:42:42 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/06 13:06:38 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #	ifndef CUB3D_STRUCT_H
 #	define CUB3D_STRUCT_H
-
-#	include "cub3d.h"
 
 /*
 ** sprite_count -------------------------------------------
