@@ -1,0 +1,40 @@
+SRCS			=	srcs/main.c \
+					srcs/save_screen/save_screen.c \
+					srcs/get_next_line/get_next_line.c	srcs/get_next_line/get_next_line_utils.c	\
+					srcs/map_chk/ft_map_chk.c	srcs/map_chk/ft_map_validity.c	\
+					srcs/map_chk/ft_map_chk.c	srcs/map_chk/ft_map_validity.c	srcs/map_chk/ft_map_value_chk.c	\
+					srcs/value_info/ft_value_info.c	srcs/value_info/ft_value_screen.c	srcs/value_info/ft_value_texture.c	srcs/value_info/ft_value_sprite.c	srcs/value_info/ft_map.c	\
+					srcs/ray/cub3d.c	srcs/ray/ft_max_screen_chk.c	srcs/ray/ft_press.c	srcs/ray/ray_cub_info.c	\
+					srcs/ray/ray_img/ft_img.c	srcs/ray/ray_img/ft_sprite_change.c	srcs/ray/ray_img/ft_wall_change.c	srcs/ray/ray_img/ft_img_map_chk.c	srcs/ray/ray_img/ft_img_texture_info.c	\
+					srcs/ray/ray_loop/ft_loop_sprite.c	srcs/ray/ray_loop/ft_loop_sprite_sort.c	srcs/ray/ray_loop/ft_loop_wall.c	srcs/ray/ray_loop/main_loop.c	\
+					utils/ft_memcpy.c	utils/ft_split.c	utils/ft_atoi.c	utils/ft_strncmp.c
+
+OBJS			= $(SRCS:.c=.o)
+
+CC				= gcc
+RM				= rm -f
+CFLAGS			= -O3 -Wall -Wextra -Werror -I.
+LIBS			= -Lmlx -llibmlx -framework OpenGL -framework AppKit -lm
+MLX				= libmlx.dylib
+
+NAME			= cub3D
+
+all:			$(NAME)
+
+$(NAME):		$(MLX) $(OBJS)
+				gcc ${CFLAGS} -o ${NAME} ${OBJS} ${LIBS}
+
+$(MLX):
+	@$(MAKE) -C mlx
+	@mv mlx/$(MLX) .
+
+clean:
+				@$(MAKE) -C mlx clean
+				$(RM) $(OBJS) $(BONUS_OBJS)
+
+fclean:			clean
+				$(RM) $(NAME) $(MLX)
+
+re:				fclean $(NAME)
+
+.PHONY:			all clean fclean re

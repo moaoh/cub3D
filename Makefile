@@ -6,7 +6,7 @@
 #    By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/05 13:37:51 by junmkang          #+#    #+#              #
-#    Updated: 2021/02/06 14:18:55 by junmkang         ###   ########.fr        #
+#    Updated: 2021/02/07 02:29:11 by junmkang         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME = cub3D
 # SRCS			=	srcs/main.c \
 # 					srcs/save_screen/save_screen.c \
 # 					srcs/get_next_line/get_next_line.c	srcs/get_next_line/get_next_line_utils.c	\
-# 					srcs/map_chk/ft_map_chk.c	srcs/map_chk/ft_map_validity.c	srcs/map_chk/get_next_line_utils.c	\
+# 					srcs/map_chk/ft_map_chk.c	srcs/map_chk/ft_map_validity.c	\
 # 					srcs/map_chk/ft_map_chk.c	srcs/map_chk/ft_map_validity.c	srcs/map_chk/ft_map_value_chk.c	\
 # 					srcs/value_info/ft_value_info.c	srcs/value_info/ft_value_screen.c	srcs/value_info/ft_value_texture.c	srcs/value_info/ft_value_sprite.c	srcs/value_info/ft_map.c	\
 # 					srcs/ray/cub3d.c	srcs/ray/ft_max_screen_chk.c	srcs/ray/ft_press.c	srcs/ray/ray_cub_info.c	\
@@ -23,8 +23,8 @@ NAME = cub3D
 # 					srcs/ray/ray_loop/ft_loop_sprite.c	srcs/ray/ray_loop/ft_loop_sprite_sort.c	srcs/ray/ray_loop/ft_loop_wall.c	srcs/ray/ray_loop/main_loop.c	\
 # 					utils/ft_memcpy.c	utils/ft_split.c	utils/ft_atoi.c	utils/ft_strncmp.c
 
-# OPENGL_DIR = ./mlx/
-# OPENGL = libmlx.a
+MLX_DIR = ./mlx
+MLX_NAME = mlx
 
 UTILS_DIR = ./utils/
 UTILS_NAME = \
@@ -58,6 +58,7 @@ V_INFO_NAME = \
 	ft_value_screen.c \
 	ft_value_texture.c \
 	ft_value_sprite.c \
+	ft_value_color.c \
 	ft_map.c
 
 RAY_DIR = ./srcs/ray/
@@ -110,17 +111,26 @@ OBJS	= $(BASIC:.c=.o)
 
 CC = gcc
 # FLAG = -Wall -Wextra -Werror -O3
-FLAG = -Wall -Wextra -Werror -O3
+FLAG = -O3 -Wall -Wextra -Werror -I.
 
 RM		= rm -f
 MLX		= libmlx.dylib
 # LIBS	= -Lmlx -lmlx -framework -framework -lm
-LIBS	= -lmlx -framework OpenGL -framework AppKit -lm
+# LIBS	= -L mlx -l mlx -framework OpenGL -framework AppKit -lm
+LIBS	= -Lmlx -lmlx -framework OpenGL -framework Appkit
 
 all : $(NAME)
 
 $(NAME) : $(MLX) $(OBJS)
-	$(FLAG) -o $(NAME) $(OBJS) $(LIBS)
+	$(CC) $(FLAG) -o $(NAME) $(OBJS) $(LIBS) 
+
+$(MLX) :
+	make -C mlx
+	# mv mlx/$(MLX) .
+
+# $(MLX) :
+# 	make -C $(MLX_DIR)
+# 	mv $(MLX_DIR)$(MLX) ./$(MLX)
 
 # $(PATH)
 %.o : %.c
@@ -143,6 +153,7 @@ clean :
 	$(RM) $(R_LOOP_DIR)*.o
 
 fclean : clean
-	$(RM) $(NAME)
+	$(RM) $(NAME) $(MLX)
+
 
 re : fclean $(NAME)

@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/12 00:27:16 by junmkang          #+#    #+#             */
-/*   Updated: 2021/02/06 13:46:14 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/06 17:08:45 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int				screen_close(void)
 {
+	
 	exit(0);
 	return (0);
 }
