@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 23:36:11 by junmkang          #+#    #+#             */
-/*   Updated: 2021/02/05 10:36:18 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/06 12:27:58 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,13 @@ void		ft_wall_change(t_ray_info *ray_info, t_loop_info *info, \
 						int start, int end);
 void		ft_sprite_change(t_ray_info *ray_info, t_sprite_info *sp);
 
+
+/*
+** ft_img -----------------------------------------------------------
+*/
+
+void		ft_my_mlx_pixel_put(t_img img, int y, int x, int color);
+
 /*
 ** ft_img_map_chk ---------------------------------------------------
 */
@@ -94,13 +101,5 @@ void		ft_loop_wall(t_ray_info *ray_info, t_loop_info *info);
 */
 
 void		ft_loop_sprite_info(t_ray_info *ray_info, t_sprite_info *sp);
-
-/*
-** ft_img -----------------------------------------------------------
-*/
-
-void		ft_my_mlx_pixel_put(t_img img, int y, int x, int color);
-void		ft_wall(t_ray_info *ray_info, t_loop_info *info, int *x);
-void		ft_sprite(t_ray_info *ray_info, t_sprite_info *sp);
 
 #	endif

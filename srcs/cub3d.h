@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 18:39:36 by junmkang          #+#    #+#             */
-/*   Updated: 2021/02/05 09:39:39 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/06 11:55:41 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,16 @@
 ** header file --------------------------------------------
 */
 
-#	include "../mlx/minilibx_mms_20200219/mlx.h"
+#	include "../mlx/mlx.h"
 #	include "cub3d_struct.h"
 #	include "value_info/value_info.h"
 #	include "../utils/utils.h"
 #	include "get_next_line/get_next_line.h"
 #	include "map_chk/map_chk.h"
-#	include "ray/ray.h"
-#	include "ray/ray_struct.h"
 #	include "save_screen/save_screen.h"
+#	include "ray/ray_struct.h"
+#	include "ray/ray.h"
+#	include "ray/press.h"
 
 #	include <stdio.h>
 #	include <unistd.h>

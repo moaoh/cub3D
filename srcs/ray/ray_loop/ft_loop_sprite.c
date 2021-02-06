@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 03:36:35 by junmkang          #+#    #+#             */
-/*   Updated: 2021/02/05 10:54:20 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/06 08:43:59 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static void		ft_loop_sprite_value(t_ray_info *ray_info, \
 }
 
 static void		ft_loop_sprite_draw(t_ray_info *ray_info, \
-									t_sprite_info *sp, int *sp_i)
+									t_sprite_info *sp)
 {
 	sp->sprite_height = \
 	(int)fabs((ray_info->screen_y / sp->transform_y) / _VDIR);
@@ -72,7 +72,7 @@ void			ft_loop_sprite(t_ray_info *ray_info, t_sprite_info *sp)
 	while (sp_i < ray_info->sp_count)
 	{
 		ft_loop_sprite_value(ray_info, sp, &sp_i);
-		ft_loop_sprite_draw(ray_info, sp, &sp_i);
+		ft_loop_sprite_draw(ray_info, sp);
 		ft_sprite(ray_info, sp);
 		sp_i++;
 	}
