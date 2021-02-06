@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 06:10:59 by junmkang          #+#    #+#             */
-/*   Updated: 2021/02/05 10:37:15 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/07 03:06:24 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,8 @@ void			ray_sp_info(t_ray_info *info, t_map *map)
 
 	i = 0;
 	info->sp_count = map->sp_count;
-	info->sp_pos = malloc(sizeof(t_sprite_pos) * info->sp_count + 1);
+	if (!(info->sp_pos = malloc(sizeof(t_sprite_pos) * info->sp_count + 1)))
+		ft_error("malloc error. sprite_dir");
 	while (i < info->sp_count)
 	{
 		info->sp_pos[i].y = map->sp_pos[i].y;

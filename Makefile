@@ -6,7 +6,7 @@
 #    By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/05 13:37:51 by junmkang          #+#    #+#              #
-#    Updated: 2021/02/07 02:33:30 by junmkang         ###   ########.fr        #
+#    Updated: 2021/02/07 02:51:11 by junmkang         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -110,7 +110,6 @@ HEADERS = \
 OBJS	= $(BASIC:.c=.o)
 
 CC = gcc
-# FLAG = -Wall -Wextra -Werror -O3
 FLAG = -O3 -Wall -Wextra -Werror -I.
 
 RM		= rm -f
@@ -128,16 +127,12 @@ $(MLX) :
 	make -C mlx
 	cp mlx/$(MLX) .
 
-# $(MLX) :
-# 	make -C $(MLX_DIR)
-# 	mv $(MLX_DIR)$(MLX) ./$(MLX)
-
 # $(PATH)
 %.o : %.c
 	$(CC) $(FLAG) -c $*.c -o $@
 	
-norm :
-	norminette $(BASIC) $(HEADERS)
+# norm :
+# 	norminette $(BASIC) $(HEADERS)
 
 clean :
 	$(RM) $(UTILS_DIR)*.o
@@ -151,6 +146,7 @@ clean :
 	$(RM) $(RAY_DIR)*.o 
 	$(RM) $(R_IMG_DIR)*.o 
 	$(RM) $(R_LOOP_DIR)*.o
+	make clean -C $(MLX_DIR)
 
 fclean : clean
 	$(RM) $(NAME) $(MLX)

@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/27 23:48:12 by junmkang          #+#    #+#             */
-/*   Updated: 2021/02/05 12:27:06 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/07 03:09:08 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,15 @@ static void		ray_putin_info(t_ray_info *info, t_map *map)
 	ray_sp_info(info, map);
 	info->move_speed = 0.05;
 	info->rot_speed = 0.05;
-	info->sp_dist = \
-	(double *)malloc(sizeof(double) * (info->screen_x + 1));
-	info->sp_pwd.sprite_order = \
-	(int *)malloc(sizeof(int) * (info->sp_count + 1));
-	info->sp_pwd.sprite_distance = \
-	(double *)malloc(sizeof(double) * (info->sp_count + 1));
+	if (!(info->sp_dist = \
+	(double *)malloc(sizeof(double) * (info->screen_x + 1))))
+		ft_error("malloc error. sp_dist");
+	if (!(info->sp_pwd.sprite_order = \
+	(int *)malloc(sizeof(int) * (info->sp_count + 1))))
+		ft_error("malloc error. sprite_order");
+	if (!(info->sp_pwd.sprite_distance = \
+	(double *)malloc(sizeof(double) * (info->sp_count + 1))))
+		ft_error("malloc error. sprite_distance");
 }
 
 static void		ft_imgs_info(t_ray_info *info, t_map *map)

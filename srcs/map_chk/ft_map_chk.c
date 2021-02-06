@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/04 18:57:26 by junmkang          #+#    #+#             */
-/*   Updated: 2021/02/05 11:04:16 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/07 03:08:34 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,8 @@ int				ft_map_chk(t_map *map)
 	map->map.map = ft_split(map->map.buff, '\n');
 	free(map->map.buff);
 	map->sp_count = ft_sp_count(map->map.map);
-	map->sp_pos = malloc(sizeof(t_sprite_pos) * map->sp_count);
+	if (!(map->sp_pos = malloc(sizeof(t_sprite_pos) * map->sp_count)))
+		ft_error("malloc error. map_chk");
 	ft_chk_validation(map, map->map.map, &map->player, y_size);
 	if (!map->player.dir)
 		ft_error("have no dir.");

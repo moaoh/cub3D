@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/04 23:47:08 by junmkang          #+#    #+#             */
-/*   Updated: 2021/02/06 13:47:21 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/07 03:06:00 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,8 @@ void		sortsprites(int *order, double *dist, int sp_count)
 	t_pair	*sprites;
 
 	i = 0;
-	sprites = (t_pair*)malloc(sizeof(t_pair) * sp_count);
+	if (!(sprites = (t_pair*)malloc(sizeof(t_pair) * sp_count)))
+		ft_error("malloc error. sprite");
 	while (i < sp_count)
 	{
 		sprites[i].first = dist[i];

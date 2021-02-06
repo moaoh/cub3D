@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 23:36:11 by junmkang          #+#    #+#             */
-/*   Updated: 2021/02/06 13:47:29 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/07 03:47:12 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,6 @@ void		ft_loop_sprite(t_ray_info *ray_info, t_sprite_info *sp);
 void		ft_wall_change(t_ray_info *ray_info, t_loop_info *info, \
 						int start, int end);
 void		ft_sprite_change(t_ray_info *ray_info, t_sprite_info *sp);
-
 
 /*
 ** ft_img -----------------------------------------------------------
