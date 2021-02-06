@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 23:36:11 by junmkang          #+#    #+#             */
-/*   Updated: 2021/02/06 12:27:58 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/06 13:02:15 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #	define RAY_H
 
 #	include "../cub3d.h"
-#	include "ray_struct.h"
 #	include "press.h"
 
 #	define _UDIR	1
@@ -81,12 +80,13 @@ void		ft_sprite_change(t_ray_info *ray_info, t_sprite_info *sp);
 ** ft_img -----------------------------------------------------------
 */
 
+void		ft_wall(t_ray_info *ray_info, t_loop_info *info, int *x);
+void		ft_sprite(t_ray_info *ray_info, t_sprite_info *sp);
 void		ft_my_mlx_pixel_put(t_img img, int y, int x, int color);
 
 /*
 ** ft_img_map_chk ---------------------------------------------------
 */
-
 t_img		*ft_map_wall(t_ray_info *ray_info, t_loop_info *info);
 t_img		*ft_map_sprite(t_ray_info *ray_info);
 

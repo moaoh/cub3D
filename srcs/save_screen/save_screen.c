@@ -6,13 +6,13 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/30 06:55:13 by junmkang          #+#    #+#             */
-/*   Updated: 2021/02/06 11:56:10 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/06 12:59:46 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "save_screen.h"
 
-void		save_screen_chk(char *line, t_map *map)
+void				save_screen_chk(char *line, t_map *map)
 {
 	if (!ft_strncmp(line, "--save", 6))
 		map->save_bool = 1;
@@ -42,7 +42,7 @@ static size_t		put_data_fd(int fd, size_t data, size_t size)
 **			arr
 */
 
-void		save_screen(t_ray_info *ray_info)
+void				save_screen(t_ray_info *ray_info)
 {
 	int		bitmap_sizeline;
 	int		fd;
