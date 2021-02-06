@@ -6,7 +6,7 @@
 #    By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/05 13:37:51 by junmkang          #+#    #+#              #
-#    Updated: 2021/02/07 02:29:11 by junmkang         ###   ########.fr        #
+#    Updated: 2021/02/07 02:33:30 by junmkang         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -126,7 +126,7 @@ $(NAME) : $(MLX) $(OBJS)
 
 $(MLX) :
 	make -C mlx
-	# mv mlx/$(MLX) .
+	cp mlx/$(MLX) .
 
 # $(MLX) :
 # 	make -C $(MLX_DIR)
