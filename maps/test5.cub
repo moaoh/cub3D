@@ -1,4 +1,4 @@
-R 1500 800
+R 1000 800
 NO ./texture/pics/bluestone.png
 SO ./texture/pics/colorstone.png
 WE ./texture/pics/greystone.png
@@ -6,13 +6,13 @@ EA ./texture/pics/mossy.png
 
 S ./texture/pics/barrel.png
 
-F 225,0,0
-C 0,255,0
+F 255,0,0
+C 0,0,255
 
 111111111
 100000001
 100000001
-1002000W1
+100200W01
 120000001
 100000001
 111111111
