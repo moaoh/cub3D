@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/12 00:27:16 by junmkang          #+#    #+#             */
-/*   Updated: 2021/02/08 03:01:14 by junmkang         ###   ########.fr       */
+/*   Updated: 2021/02/09 11:34:56 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,16 +26,20 @@ static int		key_press_ws(int key, t_ray_info *info, \
 		if (info->map[(int)(info->pos_y + move_y)][(int)(info->pos_x)] == '1' \
 		|| info->map[(int)(info->pos_y)][(int)(info->pos_x + move_x)] == '1')
 			return (0);
-		info->pos_y += move_y;
-		info->pos_x += move_x;
+		if (info->map[(int)(info->pos_y + move_y)][(int)(info->pos_x)])
+			info->pos_y += move_y;
+		if (info->map[(int)(info->pos_y)][(int)(info->pos_x + move_x)])
+			info->pos_x += move_x;
 	}
 	if (key == KEY_S)
 	{
 		if (info->map[(int)(info->pos_y - move_y)][(int)(info->pos_x)] == '1' \
 		|| info->map[(int)(info->pos_y)][(int)(info->pos_x - move_x)] == '1')
 			return (0);
-		info->pos_y -= move_y;
-		info->pos_x -= move_x;
+		if (info->map[(int)(info->pos_y - move_y)][(int)(info->pos_x)])
+			info->pos_y -= move_y;
+		if (info->map[(int)(info->pos_y)][(int)(info->pos_x - move_x)])
+			info->pos_x -= move_x;
 	}
 	return (0);
 }
@@ -48,16 +52,20 @@ static int		key_press_ad(int key, t_ray_info *info, \
 		if (info->map[(int)(info->pos_y + move_x)][(int)(info->pos_x)] == '1' \
 		|| info->map[(int)(info->pos_y)][(int)(info->pos_x - move_y)] == '1')
 			return (0);
-		info->pos_y += move_x;
-		info->pos_x -= move_y;
+		if (info->map[(int)(info->pos_y + move_x)][(int)(info->pos_x)])
+			info->pos_y += move_x;
+		if (info->map[(int)(info->pos_y)][(int)(info->pos_x - move_y)])
+			info->pos_x -= move_y;
 	}
 	if (key == KEY_D)
 	{
 		if (info->map[(int)(info->pos_y - move_x)][(int)(info->pos_x)] == '1' \
 		|| info->map[(int)(info->pos_y)][(int)(info->pos_x + move_y)] == '1')
 			return (0);
-		info->pos_y -= move_x;
-		info->pos_x += move_y;
+		if (info->map[(int)(info->pos_y - move_x)][(int)(info->pos_x)])
+			info->pos_y -= move_x;
+		if (info->map[(int)(info->pos_y)][(int)(info->pos_x + move_y)])
+			info->pos_x += move_y;
 	}
 	return (0);
 }
